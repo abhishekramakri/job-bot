@@ -5,6 +5,7 @@ import json
 import os
 import re
 import sys
+import time
 from pathlib import Path
 
 import requests
@@ -346,9 +347,16 @@ def send_discord_alert(company, job):
         print(f"[no webhook set] would alert: {company} - {job['title']}")
         return
     content = f"**New job at {company}**: {job['title']}\n{job['url']}"
-    resp = requests.post(WEBHOOK_URL, json={"content": content}, timeout=20, headers=HEADERS)
-    if resp.status_code >= 300:
-        print(f"Discord webhook error {resp.status_code}: {resp.text}", file=sys.stderr)
+    for attempt in range(5):
+        resp = requests.post(WEBHOOK_URL, json={"content": content}, timeout=20, headers=HEADERS)
+        if resp.status_code == 429:
+            retry_after = resp.json().get("retry_after", 1)
+            time.sleep(retry_after + 0.1)
+            continue
+        if resp.status_code >= 300:
+            print(f"Discord webhook error {resp.status_code}: {resp.text}", file=sys.stderr)
+        break
+    time.sleep(0.5)
 
 
 def main():
