@@ -573,7 +573,7 @@ def main():
             if title_passes_filter(job["title"], exclude_re, include_keywords):
                 send_discord_alert(name, job)
 
-        seen[key] = sorted(current_ids)
+        seen[key] = sorted(seen_ids | current_ids)
 
     with open(SEEN_FILE, "w") as f:
         json.dump(seen, f, indent=2)
