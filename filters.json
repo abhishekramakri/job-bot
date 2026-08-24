@@ -1,0 +1,4 @@
+{
+  "exclude_regex": "\\b(senior|sr\\.?|staff|principal|lead|manager|mgr|director|head of|vp|vice president|chief|group product manager|gpm)\\b",
+  "include_keywords": []
+}
