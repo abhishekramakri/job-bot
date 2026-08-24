@@ -6,6 +6,7 @@ import os
 import re
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
 
 import requests
@@ -21,6 +22,17 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
+
+STALE_DAYS = 14
+
+
+def parse_date(text, fmt):
+    if not text:
+        return None
+    try:
+        return datetime.strptime(text, fmt).timestamp()
+    except ValueError:
+        return None
 
 
 def fetch_greenhouse(company):
@@ -102,6 +114,7 @@ def fetch_phenom(company):
                     "id": str(p.get("id", "")),
                     "title": p.get("name", ""),
                     "url": f"https://{host}{careers_path}/{p.get('id', '')}",
+                    "posted_ts": p.get("postedTs"),
                 }
             )
         start += page_size
@@ -139,6 +152,7 @@ def fetch_phenom_v2(company):
                     "id": str(p.get("id", "")),
                     "title": p.get("name", ""),
                     "url": p.get("canonicalPositionUrl", ""),
+                    "posted_ts": p.get("t_create"),
                 }
             )
         start += page_size
@@ -182,6 +196,7 @@ def fetch_apple(company):
                     "id": r.get("id", position_id),
                     "title": r.get("postingTitle", ""),
                     "url": f"https://jobs.apple.com/en-us/details/{position_id}",
+                    "posted_ts": parse_date(r.get("postingDate"), "%b %d, %Y"),
                 }
             )
         page += 1
@@ -216,6 +231,7 @@ def fetch_amazon(company):
                     "id": str(j.get("id_icims", "")),
                     "title": j.get("title", ""),
                     "url": "https://www.amazon.jobs" + j.get("job_path", ""),
+                    "posted_ts": parse_date(j.get("posted_date"), "%B %d, %Y"),
                 }
             )
         offset += limit
@@ -394,9 +410,13 @@ def main():
         seen_ids = set(seen.get(key, []))
         current_ids = set()
 
+        stale_cutoff = time.time() - STALE_DAYS * 86400
         for job in jobs:
             current_ids.add(job["id"])
             if job["id"] in seen_ids:
+                continue
+            posted_ts = job.get("posted_ts")
+            if posted_ts is not None and posted_ts < stale_cutoff:
                 continue
             if title_passes_filter(job["title"], exclude_re, include_keywords):
                 send_discord_alert(name, job)
