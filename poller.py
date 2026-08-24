@@ -90,9 +90,15 @@ def parse_iso_date(text):
         return None
 
 
-def request_with_retry(method, url, max_retries=5, **kwargs):
+def request_with_retry(method, url, max_retries=5, timeout=20, **kwargs):
     for attempt in range(max_retries):
-        resp = requests.request(method, url, timeout=20, headers=HEADERS, **kwargs)
+        try:
+            resp = requests.request(method, url, timeout=timeout, headers=HEADERS, **kwargs)
+        except requests.exceptions.RequestException:
+            if attempt < max_retries - 1:
+                time.sleep(min(2**attempt, 30))
+                continue
+            raise
         if resp.status_code in (429, 503) and attempt < max_retries - 1:
             retry_after = resp.headers.get("Retry-After")
             wait = float(retry_after) if retry_after else min(2**attempt, 30)
@@ -100,8 +106,6 @@ def request_with_retry(method, url, max_retries=5, **kwargs):
             continue
         resp.raise_for_status()
         return resp
-    resp.raise_for_status()
-    return resp
 
 
 
@@ -250,7 +254,8 @@ def fetch_apple(company):
         resp = request_with_retry(
             "GET",
             "https://jobs.apple.com/en-us/search",
-            params={"search": query, "page": page},
+            params={"search": query, "page": page, "location": "united-states-USA"},
+            timeout=30,
         )
         html = resp.text
         marker = 'window.__staticRouterHydrationData = JSON.parse("'
