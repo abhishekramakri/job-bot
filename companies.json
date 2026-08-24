@@ -20,7 +20,7 @@
   {"name": "LANDR", "ats": "bamboohr", "slug": "landr"},
   {"name": "Roland", "ats": "teamtailor", "host": "www.rolandcareers.com"},
   {"name": "SoundCloud", "ats": "greenhouse", "slug": "soundcloud71"},
-  {"name": "Microsoft", "ats": "phenom", "host": "apply.careers.microsoft.com", "domain": "microsoft.com", "careers_path": "/us/en/job", "queries": ["software engineer", "audio"]},
+  {"name": "Microsoft", "ats": "phenom", "host": "apply.careers.microsoft.com", "domain": "microsoft.com", "queries": ["software engineer", "audio"]},
   {"name": "Netflix", "ats": "phenom_v2", "host": "explore.jobs.netflix.net", "queries": ["software engineer", "audio"]},
   {"name": "Apple", "ats": "apple", "queries": ["software engineer", "audio"]},
   {"name": "Amazon", "ats": "amazon", "queries": ["software engineer", "audio"], "disabled": true},
