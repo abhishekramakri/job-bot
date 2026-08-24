@@ -81,6 +81,15 @@ def parse_date(text, fmt):
         return None
 
 
+def parse_iso_date(text):
+    if not text:
+        return None
+    try:
+        return datetime.fromisoformat(text).timestamp()
+    except ValueError:
+        return None
+
+
 def request_with_retry(method, url, max_retries=5, **kwargs):
     for attempt in range(max_retries):
         resp = requests.request(method, url, timeout=20, headers=HEADERS, **kwargs)
@@ -112,6 +121,7 @@ def fetch_greenhouse(company):
                 "title": j["title"],
                 "url": j.get("absolute_url", ""),
                 "location": location,
+                "posted_ts": parse_iso_date(j.get("first_published")),
             }
         )
     return result
@@ -357,6 +367,7 @@ def fetch_teamtailor(company):
                 "title": j.get("title", ""),
                 "url": j.get("url", ""),
                 "country_code": country_code,
+                "posted_ts": parse_iso_date(j.get("date_published")),
             }
         )
     return result
