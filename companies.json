@@ -23,5 +23,15 @@
   {"name": "Microsoft", "ats": "phenom", "host": "apply.careers.microsoft.com", "domain": "microsoft.com", "careers_path": "/us/en/job", "queries": ["software engineer", "audio"]},
   {"name": "Netflix", "ats": "phenom_v2", "host": "explore.jobs.netflix.net", "queries": ["software engineer", "audio"]},
   {"name": "Apple", "ats": "apple", "queries": ["software engineer", "audio"]},
-  {"name": "Amazon", "ats": "amazon", "queries": ["software engineer", "audio"]}
+  {"name": "Amazon", "ats": "amazon", "queries": ["software engineer", "audio"], "disabled": true},
+  {"name": "Snap", "ats": "snap"},
+  {"name": "Reddit", "ats": "greenhouse", "slug": "reddit"},
+  {"name": "Duolingo", "ats": "greenhouse", "slug": "duolingo"},
+  {"name": "Notion", "ats": "ashby", "slug": "notion"},
+  {"name": "Airbnb", "ats": "greenhouse", "slug": "airbnb"},
+  {"name": "Roblox", "ats": "greenhouse", "slug": "roblox"},
+  {"name": "Niantic", "ats": "ashby", "slug": "niantic"},
+  {"name": "Riot Games", "ats": "greenhouse", "slug": "riotgames"},
+  {"name": "Strava", "ats": "ashby", "slug": "strava"},
+  {"name": "Etsy", "ats": "workday", "host": "etsy.wd5.myworkdayjobs.com", "tenant": "etsy", "site": "Etsy_Careers"}
 ]

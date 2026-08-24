@@ -148,15 +148,21 @@ def fetch_ashby(company):
     url = f"https://api.ashbyhq.com/posting-api/job-board/{slug}"
     resp = request_with_retry("GET", url)
     jobs = resp.json().get("jobs", [])
-    return [
-        {
-            "id": j.get("id", ""),
-            "title": j.get("title", ""),
-            "url": j.get("jobUrl", ""),
-            "location": j.get("location", ""),
-        }
-        for j in jobs
-    ]
+    result = []
+    for j in jobs:
+        country = (
+            (j.get("address") or {}).get("postalAddress", {}).get("addressCountry")
+        )
+        result.append(
+            {
+                "id": j.get("id", ""),
+                "title": j.get("title", ""),
+                "url": j.get("jobUrl", ""),
+                "location": j.get("location", "") or country or "",
+                "posted_ts": parse_iso_date(j.get("publishedAt")),
+            }
+        )
+    return result
 
 
 def fetch_phenom(company):
@@ -373,6 +379,58 @@ def fetch_teamtailor(company):
     return result
 
 
+def extract_js_object(html, marker):
+    start = html.find(marker)
+    if start == -1:
+        return None
+    start += len(marker)
+    depth = 0
+    in_str = False
+    esc = False
+    for i in range(start, len(html)):
+        c = html[i]
+        if in_str:
+            if esc:
+                esc = False
+            elif c == "\\":
+                esc = True
+            elif c == '"':
+                in_str = False
+            continue
+        if c == '"':
+            in_str = True
+        elif c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return html[start : i + 1]
+    return None
+
+
+def fetch_snap(company):
+    resp = request_with_retry("GET", "https://careers.snap.com/jobs")
+    raw = extract_js_object(resp.text, "window.ASYNC_DATA_CONTROLLER_CACHE = ")
+    if not raw:
+        return []
+    data = json.loads(raw)
+    jobs = []
+    for entry in data.values():
+        for hit in entry.get("data", {}).get("body", []):
+            src = hit.get("_source", {})
+            offices = src.get("offices") or []
+            location = offices[0].get("location", "") if offices else src.get("primary_location", "")
+            jobs.append(
+                {
+                    "id": src.get("id", ""),
+                    "title": src.get("title", ""),
+                    "url": src.get("absolute_url", ""),
+                    "location": location,
+                }
+            )
+    return jobs
+
+
 def fetch_workday(company):
     host = company["host"]
     tenant = company["tenant"]
@@ -424,6 +482,7 @@ FETCHERS = {
     "workable": fetch_workable,
     "bamboohr": fetch_bamboohr,
     "teamtailor": fetch_teamtailor,
+    "snap": fetch_snap,
 }
 
 
@@ -468,6 +527,8 @@ def main():
     include_keywords = filters.get("include_keywords", [])
 
     for company in companies:
+        if company.get("disabled"):
+            continue
         name = company["name"]
         ats = company["ats"]
         key = company.get("slug") or name
