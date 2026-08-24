@@ -25,6 +25,52 @@ HEADERS = {
 
 STALE_DAYS = 14
 
+US_LOCATION_RE = re.compile(r"\bunited states\b|\bu\.s\.a?\.?\b|\busa\b", re.IGNORECASE)
+
+US_STATE_ABBREVS = {
+    "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN",
+    "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV",
+    "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN",
+    "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "DC",
+}
+US_STATE_NAMES = {
+    "alabama", "alaska", "arizona", "arkansas", "california", "colorado", "connecticut",
+    "delaware", "florida", "georgia", "hawaii", "idaho", "illinois", "indiana", "iowa",
+    "kansas", "kentucky", "louisiana", "maine", "maryland", "massachusetts", "michigan",
+    "minnesota", "mississippi", "missouri", "montana", "nebraska", "nevada",
+    "new hampshire", "new jersey", "new mexico", "new york", "north carolina",
+    "north dakota", "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island",
+    "south carolina", "south dakota", "tennessee", "texas", "utah", "vermont",
+    "virginia", "washington", "west virginia", "wisconsin", "wyoming",
+}
+US_CITY_HINTS = {
+    "san francisco", "new york", "seattle", "boston", "austin", "chicago",
+    "los angeles", "san jose", "cupertino", "redmond", "mountain view", "sunnyvale",
+    "menlo park", "palo alto", "bellevue", "denver", "atlanta", "dallas", "houston",
+    "phoenix", "san diego", "portland", "pittsburgh", "raleigh", "durham",
+    "nashville", "miami", "minneapolis", "detroit", "philadelphia",
+    "salt lake city", "charlotte", "santa barbara", "santa clara",
+}
+
+
+def is_us_job(job):
+    country_code = job.get("country_code")
+    if country_code:
+        return country_code.upper() in ("US", "USA")
+
+    text = (job.get("location") or "").strip()
+    if not text:
+        return False
+    lower = text.lower()
+    if US_LOCATION_RE.search(lower):
+        return True
+    if any(re.search(rf"\b{re.escape(name)}\b", lower) for name in US_STATE_NAMES):
+        return True
+    if any(city in lower for city in US_CITY_HINTS):
+        return True
+    last_token = re.split(r"[,/]", text)[-1].strip().upper()
+    return last_token in US_STATE_ABBREVS
+
 
 def parse_date(text, fmt):
     if not text:
@@ -35,33 +81,53 @@ def parse_date(text, fmt):
         return None
 
 
+def request_with_retry(method, url, max_retries=5, **kwargs):
+    for attempt in range(max_retries):
+        resp = requests.request(method, url, timeout=20, headers=HEADERS, **kwargs)
+        if resp.status_code in (429, 503) and attempt < max_retries - 1:
+            retry_after = resp.headers.get("Retry-After")
+            wait = float(retry_after) if retry_after else min(2**attempt, 30)
+            time.sleep(wait)
+            continue
+        resp.raise_for_status()
+        return resp
+    resp.raise_for_status()
+    return resp
+
+
+
+
 def fetch_greenhouse(company):
     slug = company["slug"]
     url = f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs"
-    resp = requests.get(url, timeout=20, headers=HEADERS)
-    resp.raise_for_status()
+    resp = request_with_retry("GET", url)
     jobs = resp.json().get("jobs", [])
-    return [
-        {
-            "id": str(j["id"]),
-            "title": j["title"],
-            "url": j.get("absolute_url", ""),
-        }
-        for j in jobs
-    ]
+    result = []
+    for j in jobs:
+        offices = j.get("offices") or []
+        location = offices[0].get("location", "") if offices else (j.get("location") or {}).get("name", "")
+        result.append(
+            {
+                "id": str(j["id"]),
+                "title": j["title"],
+                "url": j.get("absolute_url", ""),
+                "location": location,
+            }
+        )
+    return result
 
 
 def fetch_lever(company):
     slug = company["slug"]
     url = f"https://api.lever.co/v0/postings/{slug}?mode=json"
-    resp = requests.get(url, timeout=20, headers=HEADERS)
-    resp.raise_for_status()
+    resp = request_with_retry("GET", url)
     jobs = resp.json()
     return [
         {
             "id": j.get("id", j.get("text", "")),
             "title": j.get("text", ""),
             "url": j.get("hostedUrl", ""),
+            "country_code": j.get("country"),
         }
         for j in jobs
     ]
@@ -70,14 +136,14 @@ def fetch_lever(company):
 def fetch_ashby(company):
     slug = company["slug"]
     url = f"https://api.ashbyhq.com/posting-api/job-board/{slug}"
-    resp = requests.get(url, timeout=20, headers=HEADERS)
-    resp.raise_for_status()
+    resp = request_with_retry("GET", url)
     jobs = resp.json().get("jobs", [])
     return [
         {
             "id": j.get("id", ""),
             "title": j.get("title", ""),
             "url": j.get("jobUrl", ""),
+            "location": j.get("location", ""),
         }
         for j in jobs
     ]
@@ -95,13 +161,11 @@ def fetch_phenom(company):
     page_size = 10
     total = None
     while True:
-        resp = requests.get(
+        resp = request_with_retry(
+            "GET",
             api_url,
             params={"domain": domain, "query": query, "location": "", "start": start},
-            timeout=20,
-            headers=HEADERS,
         )
-        resp.raise_for_status()
         data = resp.json().get("data", {})
         if total is None:
             total = data.get("count", 0)
@@ -115,6 +179,7 @@ def fetch_phenom(company):
                     "title": p.get("name", ""),
                     "url": f"https://{host}{careers_path}/{p.get('id', '')}",
                     "posted_ts": p.get("postedTs"),
+                    "location": ", ".join(p.get("locations") or []),
                 }
             )
         start += page_size
@@ -133,13 +198,11 @@ def fetch_phenom_v2(company):
     page_size = 20
     total = None
     while True:
-        resp = requests.get(
+        resp = request_with_retry(
+            "GET",
             api_url,
             params={"query": query, "start": start, "num": page_size},
-            timeout=20,
-            headers=HEADERS,
         )
-        resp.raise_for_status()
         data = resp.json()
         if total is None:
             total = data.get("count", 0)
@@ -153,6 +216,7 @@ def fetch_phenom_v2(company):
                     "title": p.get("name", ""),
                     "url": p.get("canonicalPositionUrl", ""),
                     "posted_ts": p.get("t_create"),
+                    "location": p.get("location", ""),
                 }
             )
         start += page_size
@@ -167,13 +231,11 @@ def fetch_apple(company):
     page = 1
     total = None
     while True:
-        resp = requests.get(
+        resp = request_with_retry(
+            "GET",
             "https://jobs.apple.com/en-us/search",
             params={"search": query, "page": page},
-            timeout=20,
-            headers=HEADERS,
         )
-        resp.raise_for_status()
         html = resp.text
         marker = 'window.__staticRouterHydrationData = JSON.parse("'
         start = html.find(marker)
@@ -191,12 +253,15 @@ def fetch_apple(company):
             break
         for r in results:
             position_id = r.get("positionId", "")
+            locations = r.get("locations") or []
+            location = ", ".join(loc.get("countryName", "") for loc in locations)
             jobs.append(
                 {
                     "id": r.get("id", position_id),
                     "title": r.get("postingTitle", ""),
                     "url": f"https://jobs.apple.com/en-us/details/{position_id}",
                     "posted_ts": parse_date(r.get("postingDate"), "%b %d, %Y"),
+                    "location": location,
                 }
             )
         page += 1
@@ -212,13 +277,11 @@ def fetch_amazon(company):
     limit = 20
     total = None
     while True:
-        resp = requests.get(
+        resp = request_with_retry(
+            "GET",
             "https://www.amazon.jobs/en/search.json",
             params={"base_query": query, "result_limit": limit, "offset": offset},
-            timeout=20,
-            headers=HEADERS,
         )
-        resp.raise_for_status()
         data = resp.json()
         if total is None:
             total = data.get("hits", 0)
@@ -232,6 +295,7 @@ def fetch_amazon(company):
                     "title": j.get("title", ""),
                     "url": "https://www.amazon.jobs" + j.get("job_path", ""),
                     "posted_ts": parse_date(j.get("posted_date"), "%B %d, %Y"),
+                    "country_code": j.get("country_code"),
                 }
             )
         offset += limit
@@ -243,30 +307,34 @@ def fetch_amazon(company):
 def fetch_workable(company):
     slug = company["slug"]
     url = f"https://apply.workable.com/api/v1/widget/accounts/{slug}?details=true"
-    resp = requests.get(url, timeout=20, headers=HEADERS)
-    resp.raise_for_status()
+    resp = request_with_retry("GET", url)
     jobs = resp.json().get("jobs", [])
-    return [
-        {
-            "id": j.get("shortcode", ""),
-            "title": j.get("title", ""),
-            "url": j.get("url", ""),
-        }
-        for j in jobs
-    ]
+    result = []
+    for j in jobs:
+        locations = j.get("locations") or []
+        country_code = locations[0].get("countryCode") if locations else None
+        result.append(
+            {
+                "id": j.get("shortcode", ""),
+                "title": j.get("title", ""),
+                "url": j.get("url", ""),
+                "country_code": country_code,
+            }
+        )
+    return result
 
 
 def fetch_bamboohr(company):
     slug = company["slug"]
     url = f"https://{slug}.bamboohr.com/careers/list"
-    resp = requests.get(url, timeout=20, headers=HEADERS)
-    resp.raise_for_status()
+    resp = request_with_retry("GET", url)
     jobs = resp.json().get("result", [])
     return [
         {
             "id": str(j.get("id", "")),
             "title": j.get("jobOpeningName", ""),
             "url": f"https://{slug}.bamboohr.com/careers/{j.get('id', '')}",
+            "location": f"{(j.get('location') or {}).get('city', '')}, {(j.get('location') or {}).get('state', '')}",
         }
         for j in jobs
     ]
@@ -275,17 +343,23 @@ def fetch_bamboohr(company):
 def fetch_teamtailor(company):
     host = company["host"]
     url = f"https://{host}/jobs.json"
-    resp = requests.get(url, timeout=20, headers=HEADERS)
-    resp.raise_for_status()
+    resp = request_with_retry("GET", url)
     items = resp.json().get("items", [])
-    return [
-        {
-            "id": j.get("id", ""),
-            "title": j.get("title", ""),
-            "url": j.get("url", ""),
-        }
-        for j in items
-    ]
+    result = []
+    for j in items:
+        job_locations = j.get("_jobposting", {}).get("jobLocation") or []
+        country_code = None
+        if job_locations:
+            country_code = job_locations[0].get("address", {}).get("addressCountry")
+        result.append(
+            {
+                "id": j.get("id", ""),
+                "title": j.get("title", ""),
+                "url": j.get("url", ""),
+                "country_code": country_code,
+            }
+        )
+    return result
 
 
 def fetch_workday(company):
@@ -300,13 +374,11 @@ def fetch_workday(company):
     limit = 20
     total = None
     while True:
-        resp = requests.post(
+        resp = request_with_retry(
+            "POST",
             api_url,
             json={"appliedFacets": {}, "limit": limit, "offset": offset, "searchText": ""},
-            timeout=20,
-            headers=HEADERS,
         )
-        resp.raise_for_status()
         data = resp.json()
         if total is None:
             total = data.get("total", 0)
@@ -320,6 +392,7 @@ def fetch_workday(company):
                     "id": path or j.get("title", ""),
                     "title": j.get("title", ""),
                     "url": careers_url + path,
+                    "location": j.get("locationsText", ""),
                 }
             )
         offset += limit
@@ -417,6 +490,8 @@ def main():
                 continue
             posted_ts = job.get("posted_ts")
             if posted_ts is not None and posted_ts < stale_cutoff:
+                continue
+            if not is_us_job(job):
                 continue
             if title_passes_filter(job["title"], exclude_re, include_keywords):
                 send_discord_alert(name, job)

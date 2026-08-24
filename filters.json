@@ -1,4 +1,18 @@
 {
-  "exclude_regex": "\\b(senior|sr\\.?|staff|principal|lead|manager|mgr|director|head of|vp|vice president|chief|group product manager|gpm)\\b",
-  "include_keywords": []
+  "exclude_regex": "\\b(senior|sr\\.?|staff|principal|lead|manager|mgr|director|head of|vp|vice president|chief|group product manager|gpm|ii|iii|iv|v)\\b|\\bl[2-9]\\b|\\blevel\\s*[2-9]\\b|\\b[2-9]\\b",
+  "include_keywords": [
+    "software engineer",
+    "software developer",
+    "software development engineer",
+    "full stack",
+    "fullstack",
+    "full-stack",
+    "backend",
+    "back-end",
+    "back end",
+    "audio",
+    "multimedia",
+    "dsp",
+    "sound engineer"
+  ]
 }
