@@ -1,1 +1,11 @@
-[]
+[
+  {"name": "Nintendo", "ats": "greenhouse", "slug": "nintendo"},
+  {"name": "Impinj", "ats": "greenhouse", "slug": "impinjexternal"},
+  {"name": "Microsoft", "ats": "phenom", "host": "apply.careers.microsoft.com", "domain": "microsoft.com", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "Amazon", "ats": "amazon", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "Blue Origin", "ats": "workday", "host": "blueorigin.wd5.myworkdayjobs.com", "tenant": "blueorigin", "site": "blueorigin", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "T-Mobile", "ats": "workday", "host": "tmobile.wd1.myworkdayjobs.com", "tenant": "tmobile", "site": "External", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "F5", "ats": "workday", "host": "ffive.wd5.myworkdayjobs.com", "tenant": "ffive", "site": "f5jobs", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "Fluke (Fortive)", "ats": "phenom", "host": "fortive.eightfold.ai", "domain": "fortive.com", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "Stryker", "ats": "workday", "host": "stryker.wd1.myworkdayjobs.com", "tenant": "stryker", "site": "StrykerCareers", "queries": ["embedded", "fpga", "signal processing"]}
+]

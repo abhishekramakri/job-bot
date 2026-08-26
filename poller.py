@@ -459,6 +459,7 @@ def fetch_workday(company):
     host = company["host"]
     tenant = company["tenant"]
     site = company["site"]
+    query = company.get("query", "")
     api_url = f"https://{host}/wday/cxs/{tenant}/{site}/jobs"
     careers_url = f"https://{host}/{site}"
 
@@ -470,7 +471,7 @@ def fetch_workday(company):
         resp = request_with_retry(
             "POST",
             api_url,
-            json={"appliedFacets": {}, "limit": limit, "offset": offset, "searchText": ""},
+            json={"appliedFacets": {}, "limit": limit, "offset": offset, "searchText": query},
         )
         data = resp.json()
         if total is None:
