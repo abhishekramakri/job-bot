@@ -7,5 +7,17 @@
   {"name": "T-Mobile", "ats": "workday", "host": "tmobile.wd1.myworkdayjobs.com", "tenant": "tmobile", "site": "External", "queries": ["embedded", "fpga", "signal processing"]},
   {"name": "F5", "ats": "workday", "host": "ffive.wd5.myworkdayjobs.com", "tenant": "ffive", "site": "f5jobs", "queries": ["embedded", "fpga", "signal processing"]},
   {"name": "Fluke (Fortive)", "ats": "phenom", "host": "fortive.eightfold.ai", "domain": "fortive.com", "queries": ["embedded", "fpga", "signal processing"]},
-  {"name": "Stryker", "ats": "workday", "host": "stryker.wd1.myworkdayjobs.com", "tenant": "stryker", "site": "StrykerCareers", "queries": ["embedded", "fpga", "signal processing"]}
+  {"name": "Stryker", "ats": "workday", "host": "stryker.wd1.myworkdayjobs.com", "tenant": "stryker", "site": "StrykerCareers", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "Apple", "ats": "apple", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "Intel", "ats": "workday", "host": "intel.wd1.myworkdayjobs.com", "tenant": "intel", "site": "External", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "Altera", "ats": "workday", "host": "altera.wd1.myworkdayjobs.com", "tenant": "altera", "site": "Altera"},
+  {"name": "NVIDIA", "ats": "workday", "host": "nvidia.wd5.myworkdayjobs.com", "tenant": "nvidia", "site": "NVIDIAExternalCareerSite", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "Qualcomm", "ats": "phenom", "host": "careers.qualcomm.com", "domain": "qualcomm.com", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "AMD", "ats": "amd", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "Micron", "ats": "workday", "host": "micron.wd1.myworkdayjobs.com", "tenant": "micron", "site": "External", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "Cadence", "ats": "workday", "host": "cadence.wd1.myworkdayjobs.com", "tenant": "cadence", "site": "External_Careers", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "Trimble", "ats": "workday", "host": "trimble.wd1.myworkdayjobs.com", "tenant": "trimble", "site": "TrimbleCareers", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "HP", "ats": "workday", "host": "hp.wd5.myworkdayjobs.com", "tenant": "hp", "site": "ExternalCareerSite", "queries": ["embedded", "fpga", "signal processing"]},
+  {"name": "Western Digital", "ats": "smartrecruiters", "identifier": "WesternDigital"},
+  {"name": "ASML (Cymer)", "ats": "smartrecruiters", "identifier": "ASML1"}
 ]

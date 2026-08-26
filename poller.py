@@ -455,6 +455,88 @@ def fetch_snap(company):
     return jobs
 
 
+def fetch_amd(company):
+    query = company.get("query", "")
+    jobs = []
+    page = 1
+    total = None
+    while True:
+        resp = request_with_retry(
+            "GET",
+            "https://careers.amd.com/api/jobs",
+            params={
+                "page": page,
+                "sortBy": "relevance",
+                "descending": "false",
+                "internal": "false",
+                "keywords": query,
+            },
+        )
+        data = resp.json()
+        if total is None:
+            total = data.get("totalCount", 0)
+        entries = data.get("jobs", [])
+        if not entries:
+            break
+        for entry in entries:
+            j = entry.get("data", {})
+            req_id = j.get("req_id", "")
+            location = f"{j.get('city', '')}, {j.get('state', '')}".strip(", ")
+            jobs.append(
+                {
+                    "id": req_id,
+                    "title": j.get("title", ""),
+                    "url": f"https://careers.amd.com/careers-home/jobs/{req_id}?lang=en-us",
+                    "location": location,
+                    "country_code": j.get("country_code"),
+                    "posted_ts": parse_iso_date(j.get("posted_date")),
+                }
+            )
+        page += 1
+        if len(jobs) >= total:
+            break
+    return jobs
+
+
+def fetch_smartrecruiters(company):
+    identifier = company["identifier"]
+    query = company.get("query", "")
+    url = f"https://api.smartrecruiters.com/v1/companies/{identifier}/postings"
+
+    jobs = []
+    offset = 0
+    limit = 100
+    total = None
+    while True:
+        resp = request_with_retry(
+            "GET",
+            url,
+            params={"limit": limit, "offset": offset, "q": query},
+        )
+        data = resp.json()
+        if total is None:
+            total = data.get("totalFound", 0)
+        postings = data.get("content", [])
+        if not postings:
+            break
+        for p in postings:
+            loc = p.get("location") or {}
+            jobs.append(
+                {
+                    "id": p.get("id", ""),
+                    "title": p.get("name", ""),
+                    "url": f"https://jobs.smartrecruiters.com/{identifier}/{p.get('id', '')}",
+                    "location": loc.get("fullLocation", ""),
+                    "country_code": loc.get("country"),
+                    "posted_ts": parse_iso_date(p.get("releasedDate")),
+                }
+            )
+        offset += limit
+        if offset >= total:
+            break
+    return jobs
+
+
 def fetch_workday(company):
     host = company["host"]
     tenant = company["tenant"]
@@ -508,6 +590,8 @@ FETCHERS = {
     "bamboohr": fetch_bamboohr,
     "teamtailor": fetch_teamtailor,
     "snap": fetch_snap,
+    "amd": fetch_amd,
+    "smartrecruiters": fetch_smartrecruiters,
 }
 
 
