@@ -37,7 +37,7 @@ jobs:
           pushed=false
           for attempt in 1 2 3 4 5; do
             git fetch origin main
-            git checkout origin/main -- "$SEEN_PATH"
+            git reset --hard origin/main
             python3 merge_seen.py /tmp/run_seen.json "$SEEN_PATH"
 
             git add "$SEEN_PATH"
@@ -54,7 +54,6 @@ jobs:
               break
             fi
             echo "push rejected, retrying with fresh merge (attempt $attempt)"
-            git reset --soft HEAD~1
           done
 
           if [ "$pushed" != "true" ]; then
@@ -90,7 +89,7 @@ jobs:
           pushed=false
           for attempt in 1 2 3 4 5; do
             git fetch origin main
-            git checkout origin/main -- "$SEEN_PATH"
+            git reset --hard origin/main
             python3 merge_seen.py /tmp/run_seen.json "$SEEN_PATH"
 
             git add "$SEEN_PATH"
@@ -107,7 +106,6 @@ jobs:
               break
             fi
             echo "push rejected, retrying with fresh merge (attempt $attempt)"
-            git reset --soft HEAD~1
           done
 
           if [ "$pushed" != "true" ]; then

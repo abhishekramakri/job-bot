@@ -109,6 +109,21 @@ def parse_iso_date(text):
         return None
 
 
+def parse_workday_relative_date(text):
+    if not text:
+        return None
+    lower = text.strip().lower()
+    now = time.time()
+    if "today" in lower:
+        return now
+    if "yesterday" in lower:
+        return now - 86400
+    m = re.search(r"(\d+)\+?\s*days?\s*ago", lower)
+    if m:
+        return now - int(m.group(1)) * 86400
+    return None
+
+
 def request_with_retry(method, url, max_retries=5, timeout=20, **kwargs):
     for attempt in range(max_retries):
         try:
@@ -569,6 +584,7 @@ def fetch_workday(company):
                     "title": j.get("title", ""),
                     "url": careers_url + path,
                     "location": j.get("locationsText", ""),
+                    "posted_ts": parse_workday_relative_date(j.get("postedOn")),
                 }
             )
         offset += limit
