@@ -12,9 +12,6 @@ from pathlib import Path
 import requests
 
 ROOT = Path(__file__).parent
-COMPANIES_FILE = ROOT / "companies.json"
-SEEN_FILE = ROOT / "seen.json"
-FILTERS_FILE = ROOT / "filters.json"
 
 WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
@@ -70,6 +67,28 @@ def is_us_job(job):
         return True
     last_token = re.split(r"[,/]", text)[-1].strip().upper()
     return last_token in US_STATE_ABBREVS
+
+
+SEATTLE_METRO_CITIES = {
+    "seattle", "bellevue", "redmond", "kirkland", "renton", "tacoma", "everett",
+    "bothell", "issaquah", "sammamish", "kent", "auburn", "federal way",
+    "mercer island", "woodinville", "lynnwood", "kenmore", "shoreline", "burien",
+    "seatac", "tukwila", "newcastle", "snoqualmie", "duvall", "marysville",
+    "edmonds", "mountlake terrace", "mukilteo", "puyallup", "bremerton",
+    "snohomish", "monroe",
+}
+SEATTLE_METRO_RE = re.compile(
+    r"\b(" + "|".join(re.escape(c) for c in SEATTLE_METRO_CITIES) + r")\b"
+    r"|\bgreater seattle\b|\bseattle metro\b|\bpuget sound\b",
+    re.IGNORECASE,
+)
+
+
+def is_seattle_job(job):
+    text = (job.get("location") or "").strip()
+    if not text:
+        return False
+    return bool(SEATTLE_METRO_RE.search(text))
 
 
 def parse_date(text, fmt):
@@ -524,12 +543,25 @@ def send_discord_alert(company, job):
 
 
 def main():
-    companies = load_json(COMPANIES_FILE, [])
-    seen = load_json(SEEN_FILE, {})
-    filters = load_json(FILTERS_FILE, {"exclude_regex": "", "include_keywords": []})
+    if len(sys.argv) < 2:
+        print("usage: poller.py <profile>", file=sys.stderr)
+        sys.exit(1)
+    profile = sys.argv[1]
+    profile_dir = ROOT / "profiles" / profile
+    if not profile_dir.is_dir():
+        print(f"unknown profile: {profile}", file=sys.stderr)
+        sys.exit(1)
+    companies_file = profile_dir / "companies.json"
+    seen_file = profile_dir / "seen.json"
+    filters_file = profile_dir / "filters.json"
+
+    companies = load_json(companies_file, [])
+    seen = load_json(seen_file, {})
+    filters = load_json(filters_file, {"exclude_regex": "", "include_keywords": []})
 
     exclude_re = re.compile(filters["exclude_regex"], re.IGNORECASE)
     include_keywords = filters.get("include_keywords", [])
+    location_check = is_seattle_job if filters.get("region") == "seattle" else is_us_job
 
     for company in companies:
         if company.get("disabled"):
@@ -568,14 +600,14 @@ def main():
             posted_ts = job.get("posted_ts")
             if posted_ts is not None and posted_ts < stale_cutoff:
                 continue
-            if not is_us_job(job):
+            if not location_check(job):
                 continue
             if title_passes_filter(job["title"], exclude_re, include_keywords):
                 send_discord_alert(name, job)
 
         seen[key] = sorted(seen_ids | current_ids)
 
-    with open(SEEN_FILE, "w") as f:
+    with open(seen_file, "w") as f:
         json.dump(seen, f, indent=2)
         f.write("\n")
 

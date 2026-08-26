@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  poll:
+  poll-abhi:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,28 +23,83 @@ jobs:
       - name: Run poller
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: python poller.py
+        run: python poller.py abhi
 
       - name: Commit updated seen.json
+        env:
+          SEEN_PATH: profiles/abhi/seen.json
         run: |
           git config user.name "job-bot"
           git config user.email "job-bot@users.noreply.github.com"
 
-          cp seen.json /tmp/run_seen.json
+          cp "$SEEN_PATH" /tmp/run_seen.json
 
           pushed=false
           for attempt in 1 2 3 4 5; do
             git fetch origin main
-            git checkout origin/main -- seen.json
-            python3 merge_seen.py /tmp/run_seen.json seen.json
+            git checkout origin/main -- "$SEEN_PATH"
+            python3 merge_seen.py /tmp/run_seen.json "$SEEN_PATH"
 
-            git add seen.json
+            git add "$SEEN_PATH"
             if git diff --quiet --cached; then
               echo "no changes to commit"
               pushed=true
               break
             fi
-            git commit -m "update seen jobs"
+            git commit -m "update seen jobs (abhi)"
+
+            if git push origin HEAD:main; then
+              echo "pushed successfully"
+              pushed=true
+              break
+            fi
+            echo "push rejected, retrying with fresh merge (attempt $attempt)"
+            git reset --soft HEAD~1
+          done
+
+          if [ "$pushed" != "true" ]; then
+            echo "::error::failed to push seen.json after 5 attempts"
+            exit 1
+          fi
+
+  poll-aparna:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Run poller
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_APARNA }}
+        run: python poller.py aparna
+
+      - name: Commit updated seen.json
+        env:
+          SEEN_PATH: profiles/aparna/seen.json
+        run: |
+          git config user.name "job-bot"
+          git config user.email "job-bot@users.noreply.github.com"
+
+          cp "$SEEN_PATH" /tmp/run_seen.json
+
+          pushed=false
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout origin/main -- "$SEEN_PATH"
+            python3 merge_seen.py /tmp/run_seen.json "$SEEN_PATH"
+
+            git add "$SEEN_PATH"
+            if git diff --quiet --cached; then
+              echo "no changes to commit"
+              pushed=true
+              break
+            fi
+            git commit -m "update seen jobs (aparna)"
 
             if git push origin HEAD:main; then
               echo "pushed successfully"

@@ -1,0 +1,19 @@
+{
+  "region": "seattle",
+  "exclude_regex": "\\b(senior|sr\\.?|staff|principal|lead|manager|mgr|director|head of|vp|vice president|chief|group product manager|gpm|ii|iii|iv|v)\\b|\\bl[2-9]\\b|\\blevel\\s*[2-9]\\b|\\b[2-9]\\b",
+  "include_keywords": [
+    "fpga",
+    "embedded",
+    "embedded systems",
+    "signal processing",
+    "dsp",
+    "firmware",
+    "hardware engineer",
+    "electrical engineer",
+    "asic",
+    "verilog",
+    "vhdl",
+    "rf engineer",
+    "systems engineer"
+  ]
+}
