@@ -33,5 +33,12 @@
   {"name": "Niantic", "ats": "ashby", "slug": "niantic"},
   {"name": "Riot Games", "ats": "greenhouse", "slug": "riotgames"},
   {"name": "Strava", "ats": "ashby", "slug": "strava"},
-  {"name": "Etsy", "ats": "workday", "host": "etsy.wd5.myworkdayjobs.com", "tenant": "etsy", "site": "Etsy_Careers"}
+  {"name": "Etsy", "ats": "workday", "host": "etsy.wd5.myworkdayjobs.com", "tenant": "etsy", "site": "Etsy_Careers"},
+  {"name": "Reverb", "ats": "workday", "host": "etsy.wd5.myworkdayjobs.com", "tenant": "etsy", "site": "Reverb_Careers"},
+  {"name": "Output", "ats": "ashby", "slug": "output"},
+  {"name": "Airtable", "ats": "greenhouse", "slug": "airtable"},
+  {"name": "Webflow", "ats": "greenhouse", "slug": "webflow"},
+  {"name": "Patreon", "ats": "ashby", "slug": "patreon"},
+  {"name": "Substack", "ats": "ashby", "slug": "substack"},
+  {"name": "Kickstarter", "ats": "greenhouse", "slug": "kickstarter"}
 ]
