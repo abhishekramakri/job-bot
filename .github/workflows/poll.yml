@@ -1,8 +1,10 @@
 name: Poll job boards
 
 on:
-  schedule:
-    - cron: "*/15 * * * *"
+  # Scheduling is handled externally now (cron-job.org calling the
+  # workflow_dispatch API on a reliable timer) since GitHub's own
+  # `schedule:` trigger was being delayed by hours instead of running
+  # every 15 minutes. See conversation history / commit log for why.
   workflow_dispatch: {}
 
 permissions:
