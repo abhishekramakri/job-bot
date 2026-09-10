@@ -38,5 +38,19 @@
   {"name": "Output", "ats": "ashby", "slug": "output"},
   {"name": "Patreon", "ats": "ashby", "slug": "patreon"},
   {"name": "Substack", "ats": "ashby", "slug": "substack"},
-  {"name": "Kickstarter", "ats": "greenhouse", "slug": "kickstarter"}
+  {"name": "Kickstarter", "ats": "greenhouse", "slug": "kickstarter"},
+  {"name": "ServiceNow", "ats": "smartrecruiters", "identifier": "ServiceNow"},
+  {"name": "Atlassian", "ats": "atlassian"},
+  {"name": "Snowflake", "ats": "ashby", "slug": "snowflake"},
+  {"name": "Databricks", "ats": "greenhouse", "slug": "databricks"},
+  {"name": "Asana", "ats": "greenhouse", "slug": "asana"},
+  {"name": "Dropbox", "ats": "greenhouse", "slug": "dropbox"},
+  {"name": "Stripe", "ats": "greenhouse", "slug": "stripe"},
+  {"name": "Block (Square)", "ats": "greenhouse", "slug": "block"},
+  {"name": "Robinhood", "ats": "greenhouse", "slug": "robinhood"},
+  {"name": "Plaid", "ats": "ashby", "slug": "plaid"},
+  {"name": "Chime", "ats": "greenhouse", "slug": "chime"},
+  {"name": "Affirm", "ats": "greenhouse", "slug": "affirm"},
+  {"name": "Lyft", "ats": "greenhouse", "slug": "lyft"},
+  {"name": "Instacart", "ats": "greenhouse", "slug": "instacart"}
 ]

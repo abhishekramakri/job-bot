@@ -69,26 +69,75 @@ def is_us_job(job):
     return last_token in US_STATE_ABBREVS
 
 
-SEATTLE_METRO_CITIES = {
-    "seattle", "bellevue", "redmond", "kirkland", "renton", "tacoma", "everett",
-    "bothell", "issaquah", "sammamish", "kent", "auburn", "federal way",
-    "mercer island", "woodinville", "lynnwood", "kenmore", "shoreline", "burien",
-    "seatac", "tukwila", "newcastle", "snoqualmie", "duvall", "marysville",
-    "edmonds", "mountlake terrace", "mukilteo", "puyallup", "bremerton",
-    "snohomish", "monroe",
+def _metro_re(cities, extra_phrases=()):
+    pattern = r"\b(" + "|".join(re.escape(c) for c in cities) + r")\b"
+    for phrase in extra_phrases:
+        pattern += r"|\b" + phrase + r"\b"
+    return re.compile(pattern, re.IGNORECASE)
+
+
+METRO_REGEX = {
+    "seattle": _metro_re(
+        {
+            "seattle", "bellevue", "redmond", "kirkland", "renton", "tacoma",
+            "everett", "bothell", "issaquah", "sammamish", "kent", "auburn",
+            "federal way", "mercer island", "woodinville", "lynnwood",
+            "kenmore", "shoreline", "burien", "seatac", "tukwila", "newcastle",
+            "snoqualmie", "duvall", "marysville", "edmonds",
+            "mountlake terrace", "mukilteo", "puyallup", "bremerton",
+            "snohomish", "monroe",
+        },
+        ["greater seattle", "seattle metro", "puget sound"],
+    ),
+    "san francisco": _metro_re(
+        {
+            "san francisco", "oakland", "berkeley", "san jose", "palo alto",
+            "mountain view", "menlo park", "sunnyvale", "santa clara",
+            "redwood city", "cupertino", "fremont", "south san francisco",
+            "san mateo", "burlingame", "daly city", "emeryville", "alameda",
+            "walnut creek", "san rafael", "foster city", "milpitas",
+            "campbell", "los gatos", "saratoga", "pleasanton", "dublin",
+            "san ramon", "concord", "richmond", "hayward", "union city",
+            "morgan hill", "los altos", "belmont", "millbrae",
+        },
+        ["bay area", "sf bay area", "silicon valley"],
+    ),
+    "chicago": _metro_re(
+        {
+            "chicago", "evanston", "oak park", "schaumburg", "naperville",
+            "skokie", "niles", "cicero", "elgin", "aurora", "joliet",
+            "waukegan", "arlington heights", "downers grove", "oak brook",
+            "rosemont", "deerfield", "northbrook", "glenview", "wheaton",
+            "hoffman estates", "elk grove village", "bolingbrook",
+            "orland park", "tinley park", "palatine",
+        },
+        ["chicagoland"],
+    ),
+    "new york": _metro_re(
+        {
+            "new york", "brooklyn", "manhattan", "queens", "bronx",
+            "staten island", "jersey city", "hoboken", "long island city",
+            "newark", "weehawken", "white plains", "yonkers", "secaucus",
+            "stamford", "greenwich",
+        },
+        ["nyc", "new york city"],
+    ),
 }
-SEATTLE_METRO_RE = re.compile(
-    r"\b(" + "|".join(re.escape(c) for c in SEATTLE_METRO_CITIES) + r")\b"
-    r"|\bgreater seattle\b|\bseattle metro\b|\bpuget sound\b",
-    re.IGNORECASE,
-)
 
 
 def is_seattle_job(job):
+    return is_in_metro(job, ["seattle"])
+
+
+def is_in_metro(job, metro_names):
     text = (job.get("location") or "").strip()
     if not text:
         return False
-    return bool(SEATTLE_METRO_RE.search(text))
+    for name in metro_names:
+        regex = METRO_REGEX.get(name)
+        if regex and regex.search(text):
+            return True
+    return False
 
 
 def parse_date(text, fmt):
@@ -470,6 +519,31 @@ def fetch_snap(company):
     return jobs
 
 
+def fetch_atlassian(company):
+    resp = request_with_retry("GET", "https://www.atlassian.com/endpoint/careers/listings")
+    postings = resp.json()
+    jobs = []
+    for j in postings:
+        locations = j.get("locations") or []
+        updated = j.get("portalJobPost", {}).get("updatedDate")
+        posted_ts = None
+        if updated:
+            try:
+                posted_ts = datetime.strptime(updated, "%Y-%m-%d %I:%M %p").timestamp()
+            except ValueError:
+                posted_ts = None
+        jobs.append(
+            {
+                "id": str(j.get("id", "")),
+                "title": j.get("title", ""),
+                "url": j.get("applyUrl", ""),
+                "location": ", ".join(locations),
+                "posted_ts": posted_ts,
+            }
+        )
+    return jobs
+
+
 def fetch_amd(company):
     query = company.get("query", "")
     jobs = []
@@ -607,6 +681,7 @@ FETCHERS = {
     "teamtailor": fetch_teamtailor,
     "snap": fetch_snap,
     "amd": fetch_amd,
+    "atlassian": fetch_atlassian,
     "smartrecruiters": fetch_smartrecruiters,
 }
 
@@ -662,7 +737,12 @@ def main():
 
     exclude_re = re.compile(filters["exclude_regex"], re.IGNORECASE)
     include_keywords = filters.get("include_keywords", [])
-    location_check = is_seattle_job if filters.get("region") == "seattle" else is_us_job
+    region = filters.get("region", "us")
+    if region == "us":
+        location_check = is_us_job
+    else:
+        metro_names = region if isinstance(region, list) else [region]
+        location_check = lambda job: is_in_metro(job, metro_names)
 
     for company in companies:
         if company.get("disabled"):
