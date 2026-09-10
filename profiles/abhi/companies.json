@@ -53,5 +53,9 @@
   {"name": "Affirm", "ats": "greenhouse", "slug": "affirm"},
   {"name": "Lyft", "ats": "greenhouse", "slug": "lyft"},
   {"name": "Instacart", "ats": "greenhouse", "slug": "instacart"},
-  {"name": "Salesforce", "ats": "salesforce"}
+  {"name": "Salesforce", "ats": "salesforce"},
+  {"name": "Visa", "ats": "workday", "host": "visa.wd5.myworkdayjobs.com", "tenant": "visa", "site": "Visa"},
+  {"name": "Mastercard", "ats": "workday", "host": "mastercard.wd1.myworkdayjobs.com", "tenant": "mastercard", "site": "CorporateCareers"},
+  {"name": "PayPal", "ats": "workday", "host": "paypal.wd1.myworkdayjobs.com", "tenant": "paypal", "site": "jobs"},
+  {"name": "DoorDash", "ats": "greenhouse", "slug": "doordashusa"}
 ]
