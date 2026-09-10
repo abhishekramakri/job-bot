@@ -52,5 +52,6 @@
   {"name": "Chime", "ats": "greenhouse", "slug": "chime"},
   {"name": "Affirm", "ats": "greenhouse", "slug": "affirm"},
   {"name": "Lyft", "ats": "greenhouse", "slug": "lyft"},
-  {"name": "Instacart", "ats": "greenhouse", "slug": "instacart"}
+  {"name": "Instacart", "ats": "greenhouse", "slug": "instacart"},
+  {"name": "Salesforce", "ats": "salesforce"}
 ]

@@ -1,4 +1,5 @@
 [
+  {"name": "Apple", "ats": "apple", "max_pages": 50, "queries": ["product manager", "program manager", "project manager", "events"]},
   {"name": "Amazon", "ats": "amazon", "queries": ["product manager", "program manager", "project manager", "events"]},
   {"name": "Microsoft", "ats": "phenom", "host": "apply.careers.microsoft.com", "domain": "microsoft.com", "queries": ["product manager", "program manager", "project manager", "events"]},
   {"name": "Netflix", "ats": "phenom_v2", "host": "explore.jobs.netflix.net", "queries": ["product manager", "program manager", "project manager", "events"]},
@@ -25,5 +26,6 @@
   {"name": "Instacart", "ats": "greenhouse", "slug": "instacart"},
   {"name": "Anthropic", "ats": "greenhouse", "slug": "anthropic"},
   {"name": "Scale AI", "ats": "greenhouse", "slug": "scaleai"},
-  {"name": "OpenAI", "ats": "ashby", "slug": "openai"}
+  {"name": "OpenAI", "ats": "ashby", "slug": "openai"},
+  {"name": "Salesforce", "ats": "salesforce"}
 ]

@@ -330,10 +330,13 @@ def fetch_phenom_v2(company):
 
 def fetch_apple(company):
     query = company.get("query", "")
+    max_pages = company.get("max_pages")
     jobs = []
     page = 1
     total = None
     while True:
+        if max_pages is not None and page > max_pages:
+            break
         resp = request_with_retry(
             "GET",
             "https://jobs.apple.com/en-us/search",
@@ -544,6 +547,29 @@ def fetch_atlassian(company):
     return jobs
 
 
+def fetch_salesforce(company):
+    resp = request_with_retry(
+        "GET", "https://a.sfdcstatic.com/digital/xsf/careers/prod/jobs_1.json", timeout=30
+    )
+    data = resp.json()
+    jobs = []
+    for e in data.get("Report_Entry", []):
+        if "United States of America" not in (e.get("Countries") or []):
+            continue
+        location = ", ".join(e.get("Locations") or []) or e.get("Job_Requisition_Primary_Location", "")
+        jobs.append(
+            {
+                "id": e.get("Job_Requisition_Ref_ID", ""),
+                "title": e.get("Job_Posting_Title", ""),
+                "url": e.get("External_Job_Posting_Site", ""),
+                "location": location,
+                "country_code": "US",
+                "posted_ts": parse_iso_date(e.get("External_Job_Posting_Start_Date")),
+            }
+        )
+    return jobs
+
+
 def fetch_amd(company):
     query = company.get("query", "")
     jobs = []
@@ -676,6 +702,7 @@ FETCHERS = {
     "phenom_v2": fetch_phenom_v2,
     "apple": fetch_apple,
     "amazon": fetch_amazon,
+    "salesforce": fetch_salesforce,
     "workable": fetch_workable,
     "bamboohr": fetch_bamboohr,
     "teamtailor": fetch_teamtailor,
