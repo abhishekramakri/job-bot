@@ -1,5 +1,6 @@
 {
   "region": ["san francisco", "chicago", "new york", "seattle"],
+  "max_years_experience": 2,
   "exclude_regex": "\\b(senior|sr\\.?|staff|principal|lead|director|vp|vice president|chief|head of|group product manager|gpm|ii|iii|iv|v)\\b|\\bl[2-9]\\b|\\blevel\\s*[2-9]\\b|\\b[2-9]\\b",
   "include_keywords": [
     "associate product manager",

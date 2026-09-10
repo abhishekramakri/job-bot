@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Poll company ATS job boards, filter by title, alert new matches to Discord."""
 
+import html
 import json
 import os
 import re
@@ -196,7 +197,7 @@ def request_with_retry(method, url, max_retries=5, timeout=20, **kwargs):
 def fetch_greenhouse(company):
     slug = company["slug"]
     url = f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs"
-    resp = request_with_retry("GET", url)
+    resp = request_with_retry("GET", url, params={"content": "true"})
     jobs = resp.json().get("jobs", [])
     result = []
     for j in jobs:
@@ -209,6 +210,7 @@ def fetch_greenhouse(company):
                 "url": j.get("absolute_url", ""),
                 "location": location,
                 "posted_ts": parse_iso_date(j.get("first_published")),
+                "description": strip_html(j.get("content", "")),
             }
         )
     return result
@@ -225,6 +227,7 @@ def fetch_lever(company):
             "title": j.get("text", ""),
             "url": j.get("hostedUrl", ""),
             "country_code": j.get("country"),
+            "description": strip_html(j.get("descriptionPlain") or j.get("description", "")),
         }
         for j in jobs
     ]
@@ -247,6 +250,7 @@ def fetch_ashby(company):
                 "url": j.get("jobUrl", ""),
                 "location": j.get("location", "") or country or "",
                 "posted_ts": parse_iso_date(j.get("publishedAt")),
+                "description": strip_html(j.get("descriptionPlain", "")),
             }
         )
     return result
@@ -565,6 +569,7 @@ def fetch_salesforce(company):
                 "location": location,
                 "country_code": "US",
                 "posted_ts": parse_iso_date(e.get("External_Job_Posting_Start_Date")),
+                "description": strip_html(e.get("Job_Description", "")),
             }
         )
     return jobs
@@ -769,6 +774,37 @@ def title_passes_filter(title, exclude_re, include_keywords):
     return True
 
 
+def strip_html(text):
+    if not text:
+        return ""
+    return html.unescape(re.sub(r"<[^>]+>", " ", text))
+
+
+YEARS_RE = re.compile(r"(?:(\d+)\s*(?:-|–|—|to)\s*)?(\d+)\s*(\+)?\s*years?\b", re.IGNORECASE)
+
+
+def exceeds_experience_cap(text, cap, context_window=60):
+    """True only if the description clearly states a requirement above `cap` years.
+    Returns False (keep the job) whenever the signal is missing or ambiguous."""
+    if not text:
+        return False
+    for m in YEARS_RE.finditer(text):
+        number = int(m.group(2))
+        if number <= cap:
+            continue
+        start, end = m.start(), m.end()
+        window = text[max(0, start - context_window) : min(len(text), end + context_window)].lower()
+        has_context = (
+            "experience" in window
+            or "years of" in window
+            or "yrs of" in window
+            or re.search(r"years?\s+(in|managing|working|of)\b", window)
+        )
+        if has_context:
+            return True
+    return False
+
+
 def send_discord_alert(company, job):
     if not WEBHOOK_URL:
         print(f"[no webhook set] would alert: {company} - {job['title']}")
@@ -805,6 +841,7 @@ def main():
 
     exclude_re = re.compile(filters["exclude_regex"], re.IGNORECASE)
     include_keywords = filters.get("include_keywords", [])
+    max_years_experience = filters.get("max_years_experience")
     region = filters.get("region", "us")
     if region == "us":
         location_check = is_us_job
@@ -851,8 +888,13 @@ def main():
                 continue
             if not location_check(job):
                 continue
-            if title_passes_filter(job["title"], exclude_re, include_keywords):
-                send_discord_alert(name, job)
+            if not title_passes_filter(job["title"], exclude_re, include_keywords):
+                continue
+            if max_years_experience is not None and exceeds_experience_cap(
+                job.get("description", ""), max_years_experience
+            ):
+                continue
+            send_discord_alert(name, job)
 
         seen[key] = sorted(seen_ids | current_ids)
 
