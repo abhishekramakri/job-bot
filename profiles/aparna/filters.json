@@ -1,6 +1,7 @@
 {
   "region": "seattle",
-  "exclude_regex": "\\b(senior|sr\\.?|staff|principal|lead|manager|mgr|director|head of|vp|vice president|chief|group product manager|gpm|ii|iii|iv|v)\\b|\\bl[2-9]\\b|\\blevel\\s*[2-9]\\b|\\b[2-9]\\b",
+  "max_years_experience": 2,
+  "exclude_regex": "\\b(senior|sr\\.?|staff|principal|lead|manager|mgr|director|head of|vp|vice president|chief|group product manager|gpm|internship|intern|co-op|coop|ii|iii|iv|v)\\b|\\bl[2-9]\\b|\\blevel\\s*[2-9]\\b|\\b[2-9]\\b",
   "include_keywords": [
     "fpga",
     "fpga design",
