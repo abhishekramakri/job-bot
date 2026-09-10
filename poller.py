@@ -570,6 +570,46 @@ def fetch_salesforce(company):
     return jobs
 
 
+def fetch_ea(company):
+    jobs = []
+    offset = 0
+    limit = 20
+    while True:
+        resp = request_with_retry(
+            "GET",
+            "https://jobs.ea.com/en_US/careers/Home/",
+            params={"jobRecordsPerPage": limit, "jobOffset": offset},
+            timeout=30,
+        )
+        html = resp.text
+        cards = re.findall(
+            r'<article class="article article--result article--non-toggle".*?</article>',
+            html,
+            re.DOTALL,
+        )
+        if not cards:
+            break
+        for card in cards:
+            title_m = re.search(
+                r'<a class="link link_result" href="([^"]+)"[^>]*>\s*([^<]+?)\s*</a>', card, re.DOTALL
+            )
+            if not title_m:
+                continue
+            loc_m = re.search(r'list-item-location">([^<]+)</span>', card)
+            id_m = re.search(r"list-item-id\">Role ID (\d+)</span>", card)
+            url = title_m.group(1)
+            jobs.append(
+                {
+                    "id": id_m.group(1) if id_m else url,
+                    "title": title_m.group(2).strip(),
+                    "url": url,
+                    "location": loc_m.group(1).strip() if loc_m else "",
+                }
+            )
+        offset += limit
+    return jobs
+
+
 def fetch_amd(company):
     query = company.get("query", "")
     jobs = []
@@ -703,6 +743,7 @@ FETCHERS = {
     "apple": fetch_apple,
     "amazon": fetch_amazon,
     "salesforce": fetch_salesforce,
+    "ea": fetch_ea,
     "workable": fetch_workable,
     "bamboohr": fetch_bamboohr,
     "teamtailor": fetch_teamtailor,

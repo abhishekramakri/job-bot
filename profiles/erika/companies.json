@@ -31,5 +31,6 @@
   {"name": "Visa", "ats": "workday", "host": "visa.wd5.myworkdayjobs.com", "tenant": "visa", "site": "Visa", "queries": ["product manager", "program manager", "project manager", "events"]},
   {"name": "Mastercard", "ats": "workday", "host": "mastercard.wd1.myworkdayjobs.com", "tenant": "mastercard", "site": "CorporateCareers", "queries": ["product manager", "program manager", "project manager", "events"]},
   {"name": "PayPal", "ats": "workday", "host": "paypal.wd1.myworkdayjobs.com", "tenant": "paypal", "site": "jobs", "queries": ["product manager", "program manager", "project manager", "events"]},
-  {"name": "DoorDash", "ats": "greenhouse", "slug": "doordashusa"}
+  {"name": "DoorDash", "ats": "greenhouse", "slug": "doordashusa"},
+  {"name": "EA", "ats": "ea"}
 ]
