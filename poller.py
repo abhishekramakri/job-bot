@@ -876,6 +876,40 @@ def fetch_workday(company):
     return jobs
 
 
+def fetch_workday_description(job, company):
+    host = company["host"]
+    tenant = company["tenant"]
+    site = company["site"]
+    path = job["id"]
+    resp = request_with_retry("GET", f"https://{host}/wday/cxs/{tenant}/{site}{path}", timeout=20)
+    info = resp.json().get("jobPostingInfo", {})
+    return strip_html(info.get("jobDescription", ""))
+
+
+def fetch_smartrecruiters_description(job, company):
+    identifier = company["identifier"]
+    resp = request_with_retry(
+        "GET", f"https://api.smartrecruiters.com/v1/companies/{identifier}/postings/{job['id']}", timeout=20
+    )
+    sections = resp.json().get("jobAd", {}).get("sections", {})
+    parts = [s.get("text", "") for s in sections.values() if isinstance(s, dict)]
+    return strip_html(" ".join(parts))
+
+
+def fetch_phenom_description(job, company):
+    host = company["host"]
+    resp = request_with_retry("GET", f"https://{host}/api/apply/v2/jobs/{job['id']}", timeout=20)
+    return strip_html(resp.json().get("job_description", ""))
+
+
+DESCRIPTION_FETCHERS = {
+    "workday": fetch_workday_description,
+    "smartrecruiters": fetch_smartrecruiters_description,
+    "phenom": fetch_phenom_description,
+    "phenom_v2": fetch_phenom_description,
+}
+
+
 FETCHERS = {
     "greenhouse": fetch_greenhouse,
     "lever": fetch_lever,
@@ -1036,10 +1070,17 @@ def main():
                 continue
             if not title_passes_filter(job["title"], exclude_re, include_keywords, require_keywords):
                 continue
-            if max_years_experience is not None and exceeds_experience_cap(
-                job.get("description", ""), max_years_experience
-            ):
-                continue
+            if max_years_experience is not None:
+                description = job.get("description", "")
+                if not description:
+                    detail_fetcher = DESCRIPTION_FETCHERS.get(ats)
+                    if detail_fetcher:
+                        try:
+                            description = detail_fetcher(job, company)
+                        except Exception as e:
+                            print(f"[warn] {name}: description fetch failed for {job['id']!r}: {e}", file=sys.stderr)
+                if exceeds_experience_cap(description, max_years_experience):
+                    continue
             send_discord_alert(name, job)
 
         seen[key] = sorted(seen_ids | current_ids)
