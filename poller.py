@@ -9,6 +9,7 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import quote
 
 import requests
 
@@ -218,7 +219,8 @@ def fetch_greenhouse(company):
 
 def fetch_lever(company):
     slug = company["slug"]
-    url = f"https://api.lever.co/v0/postings/{slug}?mode=json"
+    api_host = company.get("api_host", "api.lever.co")
+    url = f"https://{api_host}/v0/postings/{slug}?mode=json"
     resp = request_with_retry("GET", url)
     jobs = resp.json()
     return [
@@ -503,6 +505,142 @@ def extract_js_object(html, marker):
     return None
 
 
+def fetch_jobs2web(company):
+    host = company["host"]
+    path = company.get("path", "")
+    query = company.get("query", "")
+    card_re = re.compile(
+        r'<a[^>]*class="jobTitle-link"[^>]*href="([^"]+)"[^>]*>(.*?)</a>', re.DOTALL
+    )
+    loc_re = re.compile(r'<span class="jobLocation">(.*?)</span>', re.DOTALL)
+
+    jobs_by_id = {}
+    startrow = 0
+    page_size = 25
+    while True:
+        resp = request_with_retry(
+            "GET",
+            f"https://{host}{path}/search/",
+            params={"q": query, "startrow": startrow},
+            timeout=30,
+        )
+        html_text = resp.text
+        new_count = 0
+        for m in card_re.finditer(html_text):
+            href, inner = m.group(1), m.group(2)
+            id_m = re.search(r"/(\d+)/?$", href)
+            job_id = id_m.group(1) if id_m else href
+            if job_id in jobs_by_id:
+                continue
+            new_count += 1
+            title = re.sub(r"\s+", " ", strip_html(inner)).strip()
+            window = html_text[m.end() : m.end() + 500]
+            loc_m = loc_re.search(window)
+            location = re.sub(r"\s+", " ", strip_html(loc_m.group(1))).strip() if loc_m else ""
+            jobs_by_id[job_id] = {
+                "id": job_id,
+                "title": title,
+                "url": f"https://{host}{html.unescape(href)}",
+                "location": location,
+            }
+        if new_count == 0:
+            break
+        startrow += page_size
+    return list(jobs_by_id.values())
+
+
+def fetch_radancy(company):
+    host = company["host"]
+    title_class = company["title_class"]
+    location_class = company["location_class"]
+    query = company.get("query", "")
+    card_re = re.compile(
+        r'<a class="' + re.escape(title_class) + r'[^"]*"\s+href="([^"]+)"\s+data-job-id="(\d+)">(.*?)</a>',
+        re.DOTALL,
+    )
+    loc_re = re.compile(r'<span class="' + re.escape(location_class) + r'"[^>]*>(.*?)</span>', re.DOTALL)
+
+    jobs_by_id = {}
+    page = 1
+    max_pages = 15
+    while page <= max_pages:
+        resp = request_with_retry(
+            "GET", f"https://{host}/search-jobs/{quote(query)}", params={"CurrentPage": page}, timeout=30
+        )
+        html_text = resp.text
+        cards = list(card_re.finditer(html_text))
+        if not cards:
+            break
+        new_count = 0
+        for m in cards:
+            href, job_id, inner = m.group(1), m.group(2), m.group(3)
+            if job_id in jobs_by_id:
+                continue
+            new_count += 1
+            h2_m = re.search(r"<h2[^>]*>(.*?)</h2>", inner, re.DOTALL)
+            title = strip_html(h2_m.group(1)) if h2_m else strip_html(inner)
+            title = re.sub(r"\s+", " ", title).strip()
+            loc_m = loc_re.search(inner)
+            if not loc_m:
+                window = html_text[m.end() : m.end() + 800]
+                loc_m = loc_re.search(window)
+            location = re.sub(r"\s+", " ", strip_html(loc_m.group(1))).strip() if loc_m else ""
+            jobs_by_id[job_id] = {
+                "id": job_id,
+                "title": title,
+                "url": f"https://{host}{href}",
+                "location": location,
+            }
+        if new_count == 0:
+            break
+        page += 1
+    return list(jobs_by_id.values())
+
+
+def fetch_oracle_recruiting(company):
+    host = company["host"]
+    site_number = company["site_number"]
+    query = company.get("query", "")
+    api_url = f"https://{host}/hcmRestApi/resources/latest/recruitingCEJobRequisitions"
+
+    jobs = []
+    offset = 0
+    limit = 25
+    total = None
+    while True:
+        resp = request_with_retry(
+            "GET",
+            api_url,
+            params={
+                "onlyData": "true",
+                "expand": "requisitionList",
+                "finder": f"findReqs;siteNumber={site_number},limit={limit},offset={offset},keyword={query}",
+            },
+        )
+        item = resp.json().get("items", [{}])[0]
+        if total is None:
+            total = item.get("TotalJobsCount", 0)
+        reqs = item.get("requisitionList", [])
+        if not reqs:
+            break
+        for r in reqs:
+            req_id = r.get("Id", "")
+            jobs.append(
+                {
+                    "id": req_id,
+                    "title": r.get("Title", ""),
+                    "url": f"https://{host}/hcmUI/CandidateExperience/en/sites/{site_number}/job/{req_id}",
+                    "location": r.get("PrimaryLocation", ""),
+                    "country_code": r.get("PrimaryLocationCountry"),
+                    "posted_ts": parse_iso_date(r.get("PostedDate")),
+                }
+            )
+        offset += limit
+        if offset >= total:
+            break
+    return jobs
+
+
 def fetch_snap(company):
     resp = request_with_retry("GET", "https://careers.snap.com/jobs")
     raw = extract_js_object(resp.text, "window.ASYNC_DATA_CONTROLLER_CACHE = ")
@@ -748,6 +886,9 @@ FETCHERS = {
     "apple": fetch_apple,
     "amazon": fetch_amazon,
     "salesforce": fetch_salesforce,
+    "oracle_recruiting": fetch_oracle_recruiting,
+    "radancy": fetch_radancy,
+    "jobs2web": fetch_jobs2web,
     "ea": fetch_ea,
     "workable": fetch_workable,
     "bamboohr": fetch_bamboohr,

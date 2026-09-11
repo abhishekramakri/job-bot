@@ -84,6 +84,34 @@
     "max_pages": 50
   },
   {
+    "name": "Applied Materials",
+    "ats": "phenom",
+    "host": "careers.appliedmaterials.com",
+    "domain": "appliedmaterials.com",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
+  },
+  {
+    "name": "Arista Networks",
+    "ats": "smartrecruiters",
+    "identifier": "AristaNetworks"
+  },
+  {
+    "name": "Arm",
+    "ats": "radancy",
+    "host": "careers.arm.com",
+    "title_class": "job-card__title",
+    "location_class": "location",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
+  },
+  {
     "name": "Asana",
     "ats": "greenhouse",
     "slug": "asana"
@@ -137,6 +165,12 @@
     "name": "Chime",
     "ats": "greenhouse",
     "slug": "chime"
+  },
+  {
+    "name": "Cirrus Logic",
+    "ats": "lever",
+    "slug": "cirrus",
+    "api_host": "api.eu.lever.co"
   },
   {
     "name": "Databricks",
@@ -218,6 +252,18 @@
     ]
   },
   {
+    "name": "GlobalFoundries",
+    "ats": "workday",
+    "host": "globalfoundries.wd1.myworkdayjobs.com",
+    "tenant": "globalfoundries",
+    "site": "External",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
+  },
+  {
     "name": "HP",
     "ats": "workday",
     "host": "hp.wd5.myworkdayjobs.com",
@@ -233,6 +279,17 @@
     "name": "Impinj",
     "ats": "greenhouse",
     "slug": "impinjexternal"
+  },
+  {
+    "name": "Infineon Technologies",
+    "ats": "phenom",
+    "host": "jobs.infineon.com",
+    "domain": "infineon.com",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
   },
   {
     "name": "Instacart",
@@ -252,9 +309,44 @@
     ]
   },
   {
+    "name": "KLA Corporation",
+    "ats": "workday",
+    "host": "kla.wd1.myworkdayjobs.com",
+    "tenant": "kla",
+    "site": "Search",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
+  },
+  {
     "name": "Kickstarter",
     "ats": "greenhouse",
     "slug": "kickstarter"
+  },
+  {
+    "name": "Lam Research",
+    "ats": "phenom",
+    "host": "lamresearch.eightfold.ai",
+    "domain": "lamresearch.com",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
+  },
+  {
+    "name": "Lattice Semiconductor",
+    "ats": "workday",
+    "host": "latticesemi.wd5.myworkdayjobs.com",
+    "tenant": "latticesemi",
+    "site": "latticesemiconductorscareers",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
   },
   {
     "name": "Lyft",
@@ -279,6 +371,18 @@
     "host": "mastercard.wd1.myworkdayjobs.com",
     "tenant": "mastercard",
     "site": "CorporateCareers",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
+  },
+  {
+    "name": "Microchip Technology",
+    "ats": "workday",
+    "host": "microchiphr.wd5.myworkdayjobs.com",
+    "tenant": "microchiphr",
+    "site": "External",
     "queries": [
       "fpga",
       "hardware engineer",
@@ -321,6 +425,18 @@
     ]
   },
   {
+    "name": "NXP Semiconductors",
+    "ats": "workday",
+    "host": "nxp.wd3.myworkdayjobs.com",
+    "tenant": "nxp",
+    "site": "careers",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
+  },
+  {
     "name": "Netflix",
     "ats": "phenom_v2",
     "host": "explore.jobs.netflix.net",
@@ -339,6 +455,11 @@
     "name": "Nintendo",
     "ats": "greenhouse",
     "slug": "nintendo"
+  },
+  {
+    "name": "Nordic Semiconductor",
+    "ats": "teamtailor",
+    "host": "careers.nordicsemi.com"
   },
   {
     "name": "Notion",
@@ -378,6 +499,16 @@
     "slug": "plaid"
   },
   {
+    "name": "Qorvo",
+    "ats": "jobs2web",
+    "host": "careers.qorvo.com",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
+  },
+  {
     "name": "Qualcomm",
     "ats": "phenom",
     "host": "careers.qualcomm.com",
@@ -392,6 +523,11 @@
     "name": "Reddit",
     "ats": "greenhouse",
     "slug": "reddit"
+  },
+  {
+    "name": "Renesas Electronics",
+    "ats": "smartrecruiters",
+    "identifier": "RenesasElectronics"
   },
   {
     "name": "Riot Games",
@@ -409,8 +545,30 @@
     "slug": "roblox"
   },
   {
+    "name": "STMicroelectronics",
+    "ats": "phenom_v2",
+    "host": "stmicroelectronics.eightfold.ai",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
+  },
+  {
     "name": "Salesforce",
     "ats": "salesforce"
+  },
+  {
+    "name": "Samsung",
+    "ats": "workday",
+    "host": "sec.wd3.myworkdayjobs.com",
+    "tenant": "sec",
+    "site": "Samsung_Careers",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
   },
   {
     "name": "Scale AI",
@@ -471,11 +629,44 @@
     "slug": "substack"
   },
   {
+    "name": "Synopsys",
+    "ats": "radancy",
+    "host": "careers.synopsys.com",
+    "title_class": "sr-job-link",
+    "location_class": "job-location",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
+  },
+  {
     "name": "T-Mobile",
     "ats": "workday",
     "host": "tmobile.wd1.myworkdayjobs.com",
     "tenant": "tmobile",
     "site": "External",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
+  },
+  {
+    "name": "Teradyne",
+    "ats": "jobs2web",
+    "host": "jobs.teradyne.com",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
+  },
+  {
+    "name": "Texas Instruments",
+    "ats": "oracle_recruiting",
+    "host": "edbz.fa.us2.oraclecloud.com",
+    "site_number": "CX",
     "queries": [
       "fpga",
       "hardware engineer",
@@ -534,6 +725,17 @@
     "host": "zebra.wd501.myworkdayjobs.com",
     "tenant": "zebra",
     "site": "Zebra_careers",
+    "queries": [
+      "fpga",
+      "hardware engineer",
+      "asic"
+    ]
+  },
+  {
+    "name": "onsemi",
+    "ats": "oracle_recruiting",
+    "host": "hctz.fa.us2.oraclecloud.com",
+    "site_number": "CX_1001",
     "queries": [
       "fpga",
       "hardware engineer",
