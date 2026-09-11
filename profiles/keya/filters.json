@@ -1,0 +1,31 @@
+{
+  "region": "us",
+  "exclude_regex": "\\b(senior|sr\\.?|staff|principal|lead|manager|mgr|director|head of|vp|vice president|chief|group product manager|gpm|ii|iii|iv|v)\\b|\\bl[2-9]\\b|\\blevel\\s*[2-9]\\b|\\b[2-9]\\b",
+  "include_keywords": [
+    "fpga",
+    "fpga engineer",
+    "fpga developer",
+    "fpga design",
+    "hardware engineer",
+    "hardware design engineer",
+    "hardware design",
+    "electrical engineer",
+    "hardware verification",
+    "verification engineer",
+    "computer architecture",
+    "vlsi",
+    "vlsi design",
+    "asic",
+    "asic design",
+    "asic verification",
+    "firmware",
+    "firmware engineer",
+    "firmware engineering"
+  ],
+  "require_keywords": [
+    "intern",
+    "internship",
+    "co-op",
+    "coop"
+  ]
+}

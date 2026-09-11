@@ -766,11 +766,15 @@ def load_json(path, default):
     return default
 
 
-def title_passes_filter(title, exclude_re, include_keywords):
+def title_passes_filter(title, exclude_re, include_keywords, require_keywords=None):
     if exclude_re.search(title):
         return False
     if include_keywords:
-        return any(kw.lower() in title.lower() for kw in include_keywords)
+        if not any(kw.lower() in title.lower() for kw in include_keywords):
+            return False
+    if require_keywords:
+        if not any(kw.lower() in title.lower() for kw in require_keywords):
+            return False
     return True
 
 
@@ -841,6 +845,7 @@ def main():
 
     exclude_re = re.compile(filters["exclude_regex"], re.IGNORECASE)
     include_keywords = filters.get("include_keywords", [])
+    require_keywords = filters.get("require_keywords", [])
     max_years_experience = filters.get("max_years_experience")
     region = filters.get("region", "us")
     if region == "us":
@@ -888,7 +893,7 @@ def main():
                 continue
             if not location_check(job):
                 continue
-            if not title_passes_filter(job["title"], exclude_re, include_keywords):
+            if not title_passes_filter(job["title"], exclude_re, include_keywords, require_keywords):
                 continue
             if max_years_experience is not None and exceeds_experience_cap(
                 job.get("description", ""), max_years_experience

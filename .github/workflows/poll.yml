@@ -166,3 +166,55 @@ jobs:
             echo "::error::failed to push seen.json after 5 attempts"
             exit 1
           fi
+
+  poll-keya:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Run poller
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_KEYA }}
+        run: python poller.py keya
+
+      - name: Commit updated seen.json
+        env:
+          SEEN_PATH: profiles/keya/seen.json
+        run: |
+          git config user.name "job-bot"
+          git config user.email "job-bot@users.noreply.github.com"
+
+          cp "$SEEN_PATH" /tmp/run_seen.json
+
+          pushed=false
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            python3 merge_seen.py /tmp/run_seen.json "$SEEN_PATH"
+
+            git add "$SEEN_PATH"
+            if git diff --quiet --cached; then
+              echo "no changes to commit"
+              pushed=true
+              break
+            fi
+            git commit -m "update seen jobs (keya)"
+
+            if git push origin HEAD:main; then
+              echo "pushed successfully"
+              pushed=true
+              break
+            fi
+            echo "push rejected, retrying with fresh merge (attempt $attempt)"
+          done
+
+          if [ "$pushed" != "true" ]; then
+            echo "::error::failed to push seen.json after 5 attempts"
+            exit 1
+          fi
