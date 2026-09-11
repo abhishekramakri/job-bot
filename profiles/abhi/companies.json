@@ -1,62 +1,384 @@
 [
-  {"name": "Discord", "ats": "greenhouse", "slug": "discord"},
-  {"name": "Figma", "ats": "greenhouse", "slug": "figma"},
-  {"name": "Datadog", "ats": "greenhouse", "slug": "datadog"},
-  {"name": "Nintendo", "ats": "greenhouse", "slug": "nintendo"},
-  {"name": "Universal Audio", "ats": "greenhouse", "slug": "universalaudio"},
-  {"name": "Native Instruments", "ats": "greenhouse", "slug": "nativeinstruments"},
-  {"name": "Pinterest", "ats": "greenhouse", "slug": "pinterest"},
-  {"name": "Twitch", "ats": "greenhouse", "slug": "twitch"},
-  {"name": "Spotify", "ats": "lever", "slug": "spotify"},
-  {"name": "Splice", "ats": "greenhouse", "slug": "splice"},
-  {"name": "Epic Games", "ats": "greenhouse", "slug": "epicgames"},
-  {"name": "Descript", "ats": "greenhouse", "slug": "descript"},
-  {"name": "Sonos", "ats": "workday", "host": "sonos.wd1.myworkdayjobs.com", "tenant": "sonos", "site": "Sonos"},
-  {"name": "Adobe", "ats": "workday", "host": "adobe.wd5.myworkdayjobs.com", "tenant": "adobe", "site": "external_experienced"},
-  {"name": "Unity", "ats": "workday", "host": "unitytech.wd1.myworkdayjobs.com", "tenant": "unitytech", "site": "Unity"},
-  {"name": "Dolby", "ats": "phenom", "host": "jobs.dolby.com", "domain": "dolby.com", "careers_path": "/careers/job"},
-  {"name": "Focusrite Group", "ats": "workable", "slug": "focusrite"},
-  {"name": "Fender (PreSonus)", "ats": "greenhouse", "slug": "fender"},
-  {"name": "LANDR", "ats": "bamboohr", "slug": "landr"},
-  {"name": "Roland", "ats": "teamtailor", "host": "www.rolandcareers.com"},
-  {"name": "SoundCloud", "ats": "greenhouse", "slug": "soundcloud71"},
-  {"name": "Microsoft", "ats": "phenom", "host": "apply.careers.microsoft.com", "domain": "microsoft.com", "queries": ["software engineer", "audio"]},
-  {"name": "Netflix", "ats": "phenom_v2", "host": "explore.jobs.netflix.net", "queries": ["software engineer", "audio"]},
-  {"name": "Apple", "ats": "apple", "queries": ["software engineer", "audio"]},
-  {"name": "Amazon", "ats": "amazon", "queries": ["software engineer", "audio"], "disabled": true},
-  {"name": "Snap", "ats": "snap"},
-  {"name": "Reddit", "ats": "greenhouse", "slug": "reddit"},
-  {"name": "Duolingo", "ats": "greenhouse", "slug": "duolingo"},
-  {"name": "Notion", "ats": "ashby", "slug": "notion"},
-  {"name": "Airbnb", "ats": "greenhouse", "slug": "airbnb"},
-  {"name": "Roblox", "ats": "greenhouse", "slug": "roblox"},
-  {"name": "Niantic", "ats": "ashby", "slug": "niantic"},
-  {"name": "Riot Games", "ats": "greenhouse", "slug": "riotgames"},
-  {"name": "Strava", "ats": "ashby", "slug": "strava"},
-  {"name": "Etsy", "ats": "workday", "host": "etsy.wd5.myworkdayjobs.com", "tenant": "etsy", "site": "Etsy_Careers"},
-  {"name": "Reverb", "ats": "workday", "host": "etsy.wd5.myworkdayjobs.com", "tenant": "etsy", "site": "Reverb_Careers"},
-  {"name": "Output", "ats": "ashby", "slug": "output"},
-  {"name": "Patreon", "ats": "ashby", "slug": "patreon"},
-  {"name": "Substack", "ats": "ashby", "slug": "substack"},
-  {"name": "Kickstarter", "ats": "greenhouse", "slug": "kickstarter"},
-  {"name": "ServiceNow", "ats": "smartrecruiters", "identifier": "ServiceNow"},
-  {"name": "Atlassian", "ats": "atlassian"},
-  {"name": "Snowflake", "ats": "ashby", "slug": "snowflake"},
-  {"name": "Databricks", "ats": "greenhouse", "slug": "databricks"},
-  {"name": "Asana", "ats": "greenhouse", "slug": "asana"},
-  {"name": "Dropbox", "ats": "greenhouse", "slug": "dropbox"},
-  {"name": "Stripe", "ats": "greenhouse", "slug": "stripe"},
-  {"name": "Block (Square)", "ats": "greenhouse", "slug": "block"},
-  {"name": "Robinhood", "ats": "greenhouse", "slug": "robinhood"},
-  {"name": "Plaid", "ats": "ashby", "slug": "plaid"},
-  {"name": "Chime", "ats": "greenhouse", "slug": "chime"},
-  {"name": "Affirm", "ats": "greenhouse", "slug": "affirm"},
-  {"name": "Lyft", "ats": "greenhouse", "slug": "lyft"},
-  {"name": "Instacart", "ats": "greenhouse", "slug": "instacart"},
-  {"name": "Salesforce", "ats": "salesforce"},
-  {"name": "Visa", "ats": "workday", "host": "visa.wd5.myworkdayjobs.com", "tenant": "visa", "site": "Visa"},
-  {"name": "Mastercard", "ats": "workday", "host": "mastercard.wd1.myworkdayjobs.com", "tenant": "mastercard", "site": "CorporateCareers"},
-  {"name": "PayPal", "ats": "workday", "host": "paypal.wd1.myworkdayjobs.com", "tenant": "paypal", "site": "jobs"},
-  {"name": "DoorDash", "ats": "greenhouse", "slug": "doordashusa"},
-  {"name": "EA", "ats": "ea"}
+  {
+    "name": "AMD",
+    "ats": "amd",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
+    "name": "Adobe",
+    "ats": "workday",
+    "host": "adobe.wd5.myworkdayjobs.com",
+    "tenant": "adobe",
+    "site": "external_experienced"
+  },
+  {
+    "name": "Affirm",
+    "ats": "greenhouse",
+    "slug": "affirm"
+  },
+  {
+    "name": "Airbnb",
+    "ats": "greenhouse",
+    "slug": "airbnb"
+  },
+  {
+    "name": "Amazon",
+    "ats": "amazon",
+    "queries": [
+      "software engineer",
+      "audio"
+    ],
+    "disabled": true
+  },
+  {
+    "name": "Analog Devices",
+    "ats": "workday",
+    "host": "analogdevices.wd1.myworkdayjobs.com",
+    "tenant": "analogdevices",
+    "site": "External",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
+    "name": "Apple",
+    "ats": "apple",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
+    "name": "Asana",
+    "ats": "greenhouse",
+    "slug": "asana"
+  },
+  {
+    "name": "Atlassian",
+    "ats": "atlassian"
+  },
+  {
+    "name": "Block (Square)",
+    "ats": "greenhouse",
+    "slug": "block"
+  },
+  {
+    "name": "Chime",
+    "ats": "greenhouse",
+    "slug": "chime"
+  },
+  {
+    "name": "Databricks",
+    "ats": "greenhouse",
+    "slug": "databricks"
+  },
+  {
+    "name": "Datadog",
+    "ats": "greenhouse",
+    "slug": "datadog"
+  },
+  {
+    "name": "Descript",
+    "ats": "greenhouse",
+    "slug": "descript"
+  },
+  {
+    "name": "Discord",
+    "ats": "greenhouse",
+    "slug": "discord"
+  },
+  {
+    "name": "Dolby",
+    "ats": "phenom",
+    "host": "jobs.dolby.com",
+    "domain": "dolby.com",
+    "careers_path": "/careers/job"
+  },
+  {
+    "name": "DoorDash",
+    "ats": "greenhouse",
+    "slug": "doordashusa"
+  },
+  {
+    "name": "Dropbox",
+    "ats": "greenhouse",
+    "slug": "dropbox"
+  },
+  {
+    "name": "Duolingo",
+    "ats": "greenhouse",
+    "slug": "duolingo"
+  },
+  {
+    "name": "EA",
+    "ats": "ea"
+  },
+  {
+    "name": "Epic Games",
+    "ats": "greenhouse",
+    "slug": "epicgames"
+  },
+  {
+    "name": "Etsy",
+    "ats": "workday",
+    "host": "etsy.wd5.myworkdayjobs.com",
+    "tenant": "etsy",
+    "site": "Etsy_Careers"
+  },
+  {
+    "name": "Fender (PreSonus)",
+    "ats": "greenhouse",
+    "slug": "fender"
+  },
+  {
+    "name": "Figma",
+    "ats": "greenhouse",
+    "slug": "figma"
+  },
+  {
+    "name": "Focusrite Group",
+    "ats": "workable",
+    "slug": "focusrite"
+  },
+  {
+    "name": "Instacart",
+    "ats": "greenhouse",
+    "slug": "instacart"
+  },
+  {
+    "name": "Intel",
+    "ats": "workday",
+    "host": "intel.wd1.myworkdayjobs.com",
+    "tenant": "intel",
+    "site": "External",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
+    "name": "Kickstarter",
+    "ats": "greenhouse",
+    "slug": "kickstarter"
+  },
+  {
+    "name": "LANDR",
+    "ats": "bamboohr",
+    "slug": "landr"
+  },
+  {
+    "name": "Lyft",
+    "ats": "greenhouse",
+    "slug": "lyft"
+  },
+  {
+    "name": "Mastercard",
+    "ats": "workday",
+    "host": "mastercard.wd1.myworkdayjobs.com",
+    "tenant": "mastercard",
+    "site": "CorporateCareers"
+  },
+  {
+    "name": "Micron",
+    "ats": "workday",
+    "host": "micron.wd1.myworkdayjobs.com",
+    "tenant": "micron",
+    "site": "External",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
+    "name": "Microsoft",
+    "ats": "phenom",
+    "host": "apply.careers.microsoft.com",
+    "domain": "microsoft.com",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
+    "name": "NVIDIA",
+    "ats": "workday",
+    "host": "nvidia.wd5.myworkdayjobs.com",
+    "tenant": "nvidia",
+    "site": "NVIDIAExternalCareerSite",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
+    "name": "Native Instruments",
+    "ats": "greenhouse",
+    "slug": "nativeinstruments"
+  },
+  {
+    "name": "Netflix",
+    "ats": "phenom_v2",
+    "host": "explore.jobs.netflix.net",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
+    "name": "Niantic",
+    "ats": "ashby",
+    "slug": "niantic"
+  },
+  {
+    "name": "Nintendo",
+    "ats": "greenhouse",
+    "slug": "nintendo"
+  },
+  {
+    "name": "Notion",
+    "ats": "ashby",
+    "slug": "notion"
+  },
+  {
+    "name": "Output",
+    "ats": "ashby",
+    "slug": "output"
+  },
+  {
+    "name": "Patreon",
+    "ats": "ashby",
+    "slug": "patreon"
+  },
+  {
+    "name": "PayPal",
+    "ats": "workday",
+    "host": "paypal.wd1.myworkdayjobs.com",
+    "tenant": "paypal",
+    "site": "jobs"
+  },
+  {
+    "name": "Pinterest",
+    "ats": "greenhouse",
+    "slug": "pinterest"
+  },
+  {
+    "name": "Plaid",
+    "ats": "ashby",
+    "slug": "plaid"
+  },
+  {
+    "name": "Reddit",
+    "ats": "greenhouse",
+    "slug": "reddit"
+  },
+  {
+    "name": "Reverb",
+    "ats": "workday",
+    "host": "etsy.wd5.myworkdayjobs.com",
+    "tenant": "etsy",
+    "site": "Reverb_Careers"
+  },
+  {
+    "name": "Riot Games",
+    "ats": "greenhouse",
+    "slug": "riotgames"
+  },
+  {
+    "name": "Robinhood",
+    "ats": "greenhouse",
+    "slug": "robinhood"
+  },
+  {
+    "name": "Roblox",
+    "ats": "greenhouse",
+    "slug": "roblox"
+  },
+  {
+    "name": "Roland",
+    "ats": "teamtailor",
+    "host": "www.rolandcareers.com"
+  },
+  {
+    "name": "Salesforce",
+    "ats": "salesforce"
+  },
+  {
+    "name": "ServiceNow",
+    "ats": "smartrecruiters",
+    "identifier": "ServiceNow"
+  },
+  {
+    "name": "Snap",
+    "ats": "snap"
+  },
+  {
+    "name": "Snowflake",
+    "ats": "ashby",
+    "slug": "snowflake"
+  },
+  {
+    "name": "Sonos",
+    "ats": "workday",
+    "host": "sonos.wd1.myworkdayjobs.com",
+    "tenant": "sonos",
+    "site": "Sonos"
+  },
+  {
+    "name": "SoundCloud",
+    "ats": "greenhouse",
+    "slug": "soundcloud71"
+  },
+  {
+    "name": "Splice",
+    "ats": "greenhouse",
+    "slug": "splice"
+  },
+  {
+    "name": "Spotify",
+    "ats": "lever",
+    "slug": "spotify"
+  },
+  {
+    "name": "Strava",
+    "ats": "ashby",
+    "slug": "strava"
+  },
+  {
+    "name": "Stripe",
+    "ats": "greenhouse",
+    "slug": "stripe"
+  },
+  {
+    "name": "Substack",
+    "ats": "ashby",
+    "slug": "substack"
+  },
+  {
+    "name": "Twitch",
+    "ats": "greenhouse",
+    "slug": "twitch"
+  },
+  {
+    "name": "Unity",
+    "ats": "workday",
+    "host": "unitytech.wd1.myworkdayjobs.com",
+    "tenant": "unitytech",
+    "site": "Unity"
+  },
+  {
+    "name": "Universal Audio",
+    "ats": "greenhouse",
+    "slug": "universalaudio"
+  },
+  {
+    "name": "Visa",
+    "ats": "workday",
+    "host": "visa.wd5.myworkdayjobs.com",
+    "tenant": "visa",
+    "site": "Visa"
+  }
 ]

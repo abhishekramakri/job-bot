@@ -1,156 +1,5 @@
 [
   {
-    "name": "Nintendo",
-    "ats": "greenhouse",
-    "slug": "nintendo"
-  },
-  {
-    "name": "Impinj",
-    "ats": "greenhouse",
-    "slug": "impinjexternal"
-  },
-  {
-    "name": "Microsoft",
-    "ats": "phenom",
-    "host": "apply.careers.microsoft.com",
-    "domain": "microsoft.com",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "Amazon",
-    "ats": "amazon",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "Blue Origin",
-    "ats": "workday",
-    "host": "blueorigin.wd5.myworkdayjobs.com",
-    "tenant": "blueorigin",
-    "site": "blueorigin",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "T-Mobile",
-    "ats": "workday",
-    "host": "tmobile.wd1.myworkdayjobs.com",
-    "tenant": "tmobile",
-    "site": "External",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "F5",
-    "ats": "workday",
-    "host": "ffive.wd5.myworkdayjobs.com",
-    "tenant": "ffive",
-    "site": "f5jobs",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "Fluke (Fortive)",
-    "ats": "phenom",
-    "host": "fortive.eightfold.ai",
-    "domain": "fortive.com",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "Stryker",
-    "ats": "workday",
-    "host": "stryker.wd1.myworkdayjobs.com",
-    "tenant": "stryker",
-    "site": "StrykerCareers",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "Apple",
-    "ats": "apple",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "Intel",
-    "ats": "workday",
-    "host": "intel.wd1.myworkdayjobs.com",
-    "tenant": "intel",
-    "site": "External",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "Altera",
-    "ats": "workday",
-    "host": "altera.wd1.myworkdayjobs.com",
-    "tenant": "altera",
-    "site": "Altera"
-  },
-  {
-    "name": "NVIDIA",
-    "ats": "workday",
-    "host": "nvidia.wd5.myworkdayjobs.com",
-    "tenant": "nvidia",
-    "site": "NVIDIAExternalCareerSite",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "Qualcomm",
-    "ats": "phenom",
-    "host": "careers.qualcomm.com",
-    "domain": "qualcomm.com",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
     "name": "AMD",
     "ats": "amd",
     "queries": [
@@ -161,86 +10,40 @@
     ]
   },
   {
-    "name": "Micron",
-    "ats": "workday",
-    "host": "micron.wd1.myworkdayjobs.com",
-    "tenant": "micron",
-    "site": "External",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "Cadence",
-    "ats": "workday",
-    "host": "cadence.wd1.myworkdayjobs.com",
-    "tenant": "cadence",
-    "site": "External_Careers",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "Trimble",
-    "ats": "workday",
-    "host": "trimble.wd1.myworkdayjobs.com",
-    "tenant": "trimble",
-    "site": "TrimbleCareers",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "HP",
-    "ats": "workday",
-    "host": "hp.wd5.myworkdayjobs.com",
-    "tenant": "hp",
-    "site": "ExternalCareerSite",
-    "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
-      "software engineer"
-    ]
-  },
-  {
-    "name": "Western Digital",
-    "ats": "smartrecruiters",
-    "identifier": "WesternDigital"
-  },
-  {
     "name": "ASML (Cymer)",
     "ats": "smartrecruiters",
     "identifier": "ASML1"
   },
   {
-    "name": "Zebra Technologies",
+    "name": "Adobe",
     "ats": "workday",
-    "host": "zebra.wd501.myworkdayjobs.com",
-    "tenant": "zebra",
-    "site": "Zebra_careers",
+    "host": "adobe.wd5.myworkdayjobs.com",
+    "tenant": "adobe",
+    "site": "external_experienced",
     "queries": [
-      "embedded",
-      "fpga",
-      "signal processing",
       "software engineer"
     ]
   },
   {
-    "name": "Broadcom",
+    "name": "Affirm",
+    "ats": "greenhouse",
+    "slug": "affirm"
+  },
+  {
+    "name": "Airbnb",
+    "ats": "greenhouse",
+    "slug": "airbnb"
+  },
+  {
+    "name": "Altera",
     "ats": "workday",
-    "host": "broadcom.wd1.myworkdayjobs.com",
-    "tenant": "broadcom",
-    "site": "External_Career",
+    "host": "altera.wd1.myworkdayjobs.com",
+    "tenant": "altera",
+    "site": "Altera"
+  },
+  {
+    "name": "Amazon",
+    "ats": "amazon",
     "queries": [
       "embedded",
       "fpga",
@@ -262,6 +65,298 @@
     ]
   },
   {
+    "name": "Apple",
+    "ats": "apple",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Applied Materials",
+    "ats": "phenom",
+    "host": "careers.appliedmaterials.com",
+    "domain": "appliedmaterials.com",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Arista Networks",
+    "ats": "smartrecruiters",
+    "identifier": "AristaNetworks"
+  },
+  {
+    "name": "Arm",
+    "ats": "radancy",
+    "host": "careers.arm.com",
+    "title_class": "job-card__title",
+    "location_class": "location",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Asana",
+    "ats": "greenhouse",
+    "slug": "asana"
+  },
+  {
+    "name": "Atlassian",
+    "ats": "atlassian"
+  },
+  {
+    "name": "Block (Square)",
+    "ats": "greenhouse",
+    "slug": "block"
+  },
+  {
+    "name": "Blue Origin",
+    "ats": "workday",
+    "host": "blueorigin.wd5.myworkdayjobs.com",
+    "tenant": "blueorigin",
+    "site": "blueorigin",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Broadcom",
+    "ats": "workday",
+    "host": "broadcom.wd1.myworkdayjobs.com",
+    "tenant": "broadcom",
+    "site": "External_Career",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Cadence",
+    "ats": "workday",
+    "host": "cadence.wd1.myworkdayjobs.com",
+    "tenant": "cadence",
+    "site": "External_Careers",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Chime",
+    "ats": "greenhouse",
+    "slug": "chime"
+  },
+  {
+    "name": "Cirrus Logic",
+    "ats": "lever",
+    "slug": "cirrus",
+    "api_host": "api.eu.lever.co"
+  },
+  {
+    "name": "Databricks",
+    "ats": "greenhouse",
+    "slug": "databricks"
+  },
+  {
+    "name": "Datadog",
+    "ats": "greenhouse",
+    "slug": "datadog"
+  },
+  {
+    "name": "Discord",
+    "ats": "greenhouse",
+    "slug": "discord"
+  },
+  {
+    "name": "DoorDash",
+    "ats": "greenhouse",
+    "slug": "doordashusa"
+  },
+  {
+    "name": "Dropbox",
+    "ats": "greenhouse",
+    "slug": "dropbox"
+  },
+  {
+    "name": "Duolingo",
+    "ats": "greenhouse",
+    "slug": "duolingo"
+  },
+  {
+    "name": "EA",
+    "ats": "ea"
+  },
+  {
+    "name": "Epic Games",
+    "ats": "greenhouse",
+    "slug": "epicgames"
+  },
+  {
+    "name": "Etsy",
+    "ats": "workday",
+    "host": "etsy.wd5.myworkdayjobs.com",
+    "tenant": "etsy",
+    "site": "Etsy_Careers",
+    "queries": [
+      "software engineer"
+    ]
+  },
+  {
+    "name": "F5",
+    "ats": "workday",
+    "host": "ffive.wd5.myworkdayjobs.com",
+    "tenant": "ffive",
+    "site": "f5jobs",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Figma",
+    "ats": "greenhouse",
+    "slug": "figma"
+  },
+  {
+    "name": "Fluke (Fortive)",
+    "ats": "phenom",
+    "host": "fortive.eightfold.ai",
+    "domain": "fortive.com",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "GlobalFoundries",
+    "ats": "workday",
+    "host": "globalfoundries.wd1.myworkdayjobs.com",
+    "tenant": "globalfoundries",
+    "site": "External",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "HP",
+    "ats": "workday",
+    "host": "hp.wd5.myworkdayjobs.com",
+    "tenant": "hp",
+    "site": "ExternalCareerSite",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Impinj",
+    "ats": "greenhouse",
+    "slug": "impinjexternal"
+  },
+  {
+    "name": "Infineon Technologies",
+    "ats": "phenom",
+    "host": "jobs.infineon.com",
+    "domain": "infineon.com",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Instacart",
+    "ats": "greenhouse",
+    "slug": "instacart"
+  },
+  {
+    "name": "Intel",
+    "ats": "workday",
+    "host": "intel.wd1.myworkdayjobs.com",
+    "tenant": "intel",
+    "site": "External",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "KLA Corporation",
+    "ats": "workday",
+    "host": "kla.wd1.myworkdayjobs.com",
+    "tenant": "kla",
+    "site": "Search",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Kickstarter",
+    "ats": "greenhouse",
+    "slug": "kickstarter"
+  },
+  {
+    "name": "Lam Research",
+    "ats": "phenom",
+    "host": "lamresearch.eightfold.ai",
+    "domain": "lamresearch.com",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Lattice Semiconductor",
+    "ats": "workday",
+    "host": "latticesemi.wd5.myworkdayjobs.com",
+    "tenant": "latticesemi",
+    "site": "latticesemiconductorscareers",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Lyft",
+    "ats": "greenhouse",
+    "slug": "lyft"
+  },
+  {
     "name": "Marvell",
     "ats": "workday",
     "host": "marvell.wd1.myworkdayjobs.com",
@@ -273,6 +368,210 @@
       "signal processing",
       "software engineer"
     ]
+  },
+  {
+    "name": "Mastercard",
+    "ats": "workday",
+    "host": "mastercard.wd1.myworkdayjobs.com",
+    "tenant": "mastercard",
+    "site": "CorporateCareers",
+    "queries": [
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Microchip Technology",
+    "ats": "workday",
+    "host": "microchiphr.wd5.myworkdayjobs.com",
+    "tenant": "microchiphr",
+    "site": "External",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Micron",
+    "ats": "workday",
+    "host": "micron.wd1.myworkdayjobs.com",
+    "tenant": "micron",
+    "site": "External",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Microsoft",
+    "ats": "phenom",
+    "host": "apply.careers.microsoft.com",
+    "domain": "microsoft.com",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "NVIDIA",
+    "ats": "workday",
+    "host": "nvidia.wd5.myworkdayjobs.com",
+    "tenant": "nvidia",
+    "site": "NVIDIAExternalCareerSite",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "NXP Semiconductors",
+    "ats": "workday",
+    "host": "nxp.wd3.myworkdayjobs.com",
+    "tenant": "nxp",
+    "site": "careers",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Netflix",
+    "ats": "phenom_v2",
+    "host": "explore.jobs.netflix.net",
+    "queries": [
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Niantic",
+    "ats": "ashby",
+    "slug": "niantic"
+  },
+  {
+    "name": "Nintendo",
+    "ats": "greenhouse",
+    "slug": "nintendo"
+  },
+  {
+    "name": "Nordic Semiconductor",
+    "ats": "teamtailor",
+    "host": "careers.nordicsemi.com"
+  },
+  {
+    "name": "Notion",
+    "ats": "ashby",
+    "slug": "notion"
+  },
+  {
+    "name": "Patreon",
+    "ats": "ashby",
+    "slug": "patreon"
+  },
+  {
+    "name": "PayPal",
+    "ats": "workday",
+    "host": "paypal.wd1.myworkdayjobs.com",
+    "tenant": "paypal",
+    "site": "jobs",
+    "queries": [
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Pinterest",
+    "ats": "greenhouse",
+    "slug": "pinterest"
+  },
+  {
+    "name": "Plaid",
+    "ats": "ashby",
+    "slug": "plaid"
+  },
+  {
+    "name": "Qorvo",
+    "ats": "jobs2web",
+    "host": "careers.qorvo.com",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Qualcomm",
+    "ats": "phenom",
+    "host": "careers.qualcomm.com",
+    "domain": "qualcomm.com",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Reddit",
+    "ats": "greenhouse",
+    "slug": "reddit"
+  },
+  {
+    "name": "Renesas Electronics",
+    "ats": "smartrecruiters",
+    "identifier": "RenesasElectronics"
+  },
+  {
+    "name": "Riot Games",
+    "ats": "greenhouse",
+    "slug": "riotgames"
+  },
+  {
+    "name": "Robinhood",
+    "ats": "greenhouse",
+    "slug": "robinhood"
+  },
+  {
+    "name": "Roblox",
+    "ats": "greenhouse",
+    "slug": "roblox"
+  },
+  {
+    "name": "STMicroelectronics",
+    "ats": "phenom_v2",
+    "host": "stmicroelectronics.eightfold.ai",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Samsung",
+    "ats": "workday",
+    "host": "sec.wd3.myworkdayjobs.com",
+    "tenant": "sec",
+    "site": "Samsung_Careers",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "ServiceNow",
+    "ats": "smartrecruiters",
+    "identifier": "ServiceNow"
   },
   {
     "name": "Silicon Labs",
@@ -288,44 +587,108 @@
     ]
   },
   {
-    "name": "Discord",
-    "ats": "greenhouse",
-    "slug": "discord"
+    "name": "Snap",
+    "ats": "snap"
   },
   {
-    "name": "Figma",
-    "ats": "greenhouse",
-    "slug": "figma"
+    "name": "Snowflake",
+    "ats": "ashby",
+    "slug": "snowflake"
   },
   {
-    "name": "Datadog",
-    "ats": "greenhouse",
-    "slug": "datadog"
+    "name": "Strava",
+    "ats": "ashby",
+    "slug": "strava"
   },
   {
-    "name": "Pinterest",
+    "name": "Stripe",
     "ats": "greenhouse",
-    "slug": "pinterest"
+    "slug": "stripe"
+  },
+  {
+    "name": "Stryker",
+    "ats": "workday",
+    "host": "stryker.wd1.myworkdayjobs.com",
+    "tenant": "stryker",
+    "site": "StrykerCareers",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Substack",
+    "ats": "ashby",
+    "slug": "substack"
+  },
+  {
+    "name": "Synopsys",
+    "ats": "radancy",
+    "host": "careers.synopsys.com",
+    "title_class": "sr-job-link",
+    "location_class": "job-location",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "T-Mobile",
+    "ats": "workday",
+    "host": "tmobile.wd1.myworkdayjobs.com",
+    "tenant": "tmobile",
+    "site": "External",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Teradyne",
+    "ats": "jobs2web",
+    "host": "jobs.teradyne.com",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Texas Instruments",
+    "ats": "oracle_recruiting",
+    "host": "edbz.fa.us2.oraclecloud.com",
+    "site_number": "CX",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
+  },
+  {
+    "name": "Trimble",
+    "ats": "workday",
+    "host": "trimble.wd1.myworkdayjobs.com",
+    "tenant": "trimble",
+    "site": "TrimbleCareers",
+    "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
+      "software engineer"
+    ]
   },
   {
     "name": "Twitch",
     "ats": "greenhouse",
     "slug": "twitch"
-  },
-  {
-    "name": "Epic Games",
-    "ats": "greenhouse",
-    "slug": "epicgames"
-  },
-  {
-    "name": "Adobe",
-    "ats": "workday",
-    "host": "adobe.wd5.myworkdayjobs.com",
-    "tenant": "adobe",
-    "site": "external_experienced",
-    "queries": [
-      "software engineer"
-    ]
   },
   {
     "name": "Unity",
@@ -338,156 +701,6 @@
     ]
   },
   {
-    "name": "Netflix",
-    "ats": "phenom_v2",
-    "host": "explore.jobs.netflix.net",
-    "queries": [
-      "software engineer"
-    ]
-  },
-  {
-    "name": "Snap",
-    "ats": "snap"
-  },
-  {
-    "name": "Reddit",
-    "ats": "greenhouse",
-    "slug": "reddit"
-  },
-  {
-    "name": "Duolingo",
-    "ats": "greenhouse",
-    "slug": "duolingo"
-  },
-  {
-    "name": "Notion",
-    "ats": "ashby",
-    "slug": "notion"
-  },
-  {
-    "name": "Airbnb",
-    "ats": "greenhouse",
-    "slug": "airbnb"
-  },
-  {
-    "name": "Roblox",
-    "ats": "greenhouse",
-    "slug": "roblox"
-  },
-  {
-    "name": "Niantic",
-    "ats": "ashby",
-    "slug": "niantic"
-  },
-  {
-    "name": "Riot Games",
-    "ats": "greenhouse",
-    "slug": "riotgames"
-  },
-  {
-    "name": "Strava",
-    "ats": "ashby",
-    "slug": "strava"
-  },
-  {
-    "name": "Etsy",
-    "ats": "workday",
-    "host": "etsy.wd5.myworkdayjobs.com",
-    "tenant": "etsy",
-    "site": "Etsy_Careers",
-    "queries": [
-      "software engineer"
-    ]
-  },
-  {
-    "name": "Patreon",
-    "ats": "ashby",
-    "slug": "patreon"
-  },
-  {
-    "name": "Substack",
-    "ats": "ashby",
-    "slug": "substack"
-  },
-  {
-    "name": "Kickstarter",
-    "ats": "greenhouse",
-    "slug": "kickstarter"
-  },
-  {
-    "name": "ServiceNow",
-    "ats": "smartrecruiters",
-    "identifier": "ServiceNow"
-  },
-  {
-    "name": "Atlassian",
-    "ats": "atlassian"
-  },
-  {
-    "name": "Snowflake",
-    "ats": "ashby",
-    "slug": "snowflake"
-  },
-  {
-    "name": "Databricks",
-    "ats": "greenhouse",
-    "slug": "databricks"
-  },
-  {
-    "name": "Asana",
-    "ats": "greenhouse",
-    "slug": "asana"
-  },
-  {
-    "name": "Dropbox",
-    "ats": "greenhouse",
-    "slug": "dropbox"
-  },
-  {
-    "name": "Stripe",
-    "ats": "greenhouse",
-    "slug": "stripe"
-  },
-  {
-    "name": "Block (Square)",
-    "ats": "greenhouse",
-    "slug": "block"
-  },
-  {
-    "name": "Robinhood",
-    "ats": "greenhouse",
-    "slug": "robinhood"
-  },
-  {
-    "name": "Plaid",
-    "ats": "ashby",
-    "slug": "plaid"
-  },
-  {
-    "name": "Chime",
-    "ats": "greenhouse",
-    "slug": "chime"
-  },
-  {
-    "name": "Affirm",
-    "ats": "greenhouse",
-    "slug": "affirm"
-  },
-  {
-    "name": "Lyft",
-    "ats": "greenhouse",
-    "slug": "lyft"
-  },
-  {
-    "name": "Instacart",
-    "ats": "greenhouse",
-    "slug": "instacart"
-  },
-  {
-    "name": "Salesforce",
-    "ats": "salesforce"
-  },
-  {
     "name": "Visa",
     "ats": "workday",
     "host": "visa.wd5.myworkdayjobs.com",
@@ -498,32 +711,33 @@
     ]
   },
   {
-    "name": "Mastercard",
+    "name": "Western Digital",
+    "ats": "smartrecruiters",
+    "identifier": "WesternDigital"
+  },
+  {
+    "name": "Zebra Technologies",
     "ats": "workday",
-    "host": "mastercard.wd1.myworkdayjobs.com",
-    "tenant": "mastercard",
-    "site": "CorporateCareers",
+    "host": "zebra.wd501.myworkdayjobs.com",
+    "tenant": "zebra",
+    "site": "Zebra_careers",
     "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
       "software engineer"
     ]
   },
   {
-    "name": "PayPal",
-    "ats": "workday",
-    "host": "paypal.wd1.myworkdayjobs.com",
-    "tenant": "paypal",
-    "site": "jobs",
+    "name": "onsemi",
+    "ats": "oracle_recruiting",
+    "host": "hctz.fa.us2.oraclecloud.com",
+    "site_number": "CX_1001",
     "queries": [
+      "embedded",
+      "fpga",
+      "signal processing",
       "software engineer"
     ]
-  },
-  {
-    "name": "DoorDash",
-    "ats": "greenhouse",
-    "slug": "doordashusa"
-  },
-  {
-    "name": "EA",
-    "ats": "ea"
   }
 ]
