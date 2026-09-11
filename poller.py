@@ -677,6 +677,9 @@ def fetch_atlassian(company):
                 posted_ts = datetime.strptime(updated, "%Y-%m-%d %I:%M %p").timestamp()
             except ValueError:
                 posted_ts = None
+        description = strip_html(
+            " ".join(j.get(k, "") for k in ("overview", "responsibilities", "qualifications"))
+        )
         jobs.append(
             {
                 "id": str(j.get("id", "")),
@@ -684,6 +687,7 @@ def fetch_atlassian(company):
                 "url": j.get("applyUrl", ""),
                 "location": ", ".join(locations),
                 "posted_ts": posted_ts,
+                "description": description,
             }
         )
     return jobs
@@ -959,7 +963,7 @@ def strip_html(text):
     return html.unescape(re.sub(r"<[^>]+>", " ", text))
 
 
-YEARS_RE = re.compile(r"(?:(\d+)\s*(?:-|–|—|to)\s*)?(\d+)\s*(\+)?\s*years?\b", re.IGNORECASE)
+YEARS_RE = re.compile(r"(?:(\d+)\s*(?:-|–|—|to)\s*)?(\d+)\s*(\+)?\s*(?:years?|yrs?)\b", re.IGNORECASE)
 
 
 def exceeds_experience_cap(text, cap, context_window=60):
