@@ -51,6 +51,21 @@ US_CITY_HINTS = {
     "salt lake city", "charlotte", "santa barbara", "santa clara",
 }
 
+# Some companies use US city names as internal campus/building codenames at
+# non-US sites (e.g. Micron's "Hyderabad - Phoenix Aquila, India"). If the
+# location text names a non-US country outright, trust that over any city hint.
+NON_US_COUNTRY_RE = re.compile(
+    r"\b(india|china|japan|germany|france|spain|italy|poland|ireland|israel|"
+    r"canada|mexico|brazil|argentina|australia|singapore|malaysia|philippines|"
+    r"vietnam|thailand|indonesia|taiwan|korea|hong kong|united kingdom|"
+    r"netherlands|belgium|switzerland|austria|sweden|norway|denmark|finland|"
+    r"portugal|greece|turkey|russia|ukraine|romania|hungary|czech republic|"
+    r"slovakia|south africa|egypt|saudi arabia|united arab emirates|qatar|"
+    r"costa rica|colombia|chile|peru|panama|new zealand|scotland|england|"
+    r"dominican republic|morocco|kenya|nigeria|pakistan|bangladesh)\b",
+    re.IGNORECASE,
+)
+
 
 def is_us_job(job):
     country_code = job.get("country_code")
@@ -61,14 +76,17 @@ def is_us_job(job):
     if not text:
         return False
     lower = text.lower()
+    if NON_US_COUNTRY_RE.search(lower):
+        return False
     if US_LOCATION_RE.search(lower):
         return True
     if any(re.search(rf"\b{re.escape(name)}\b", lower) for name in US_STATE_NAMES):
         return True
     if any(city in lower for city in US_CITY_HINTS):
         return True
-    last_token = re.split(r"[,/]", text)[-1].strip().upper()
-    return last_token in US_STATE_ABBREVS
+    last_segment = re.split(r"[,/]", text)[-1].strip()
+    segment_tokens = re.split(r"[\s\-]+", last_segment)
+    return any(tok.upper() in US_STATE_ABBREVS for tok in segment_tokens if tok)
 
 
 def _metro_re(cities, extra_phrases=()):
@@ -134,6 +152,8 @@ def is_seattle_job(job):
 def is_in_metro(job, metro_names):
     text = (job.get("location") or "").strip()
     if not text:
+        return False
+    if NON_US_COUNTRY_RE.search(text.lower()):
         return False
     for name in metro_names:
         regex = METRO_REGEX.get(name)
