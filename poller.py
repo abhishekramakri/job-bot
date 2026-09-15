@@ -75,6 +75,18 @@ def is_us_job(job):
     text = (job.get("location") or "").strip()
     if not text:
         return False
+
+    # Some ATS platforms (e.g. iCIMS) format locations as "CC-ST-City" with a
+    # leading ISO-style country-code prefix. That prefix is authoritative for
+    # this specific structure, even for an ambiguous code like "IN" (India's
+    # country code, but also Indiana's postal abbreviation) -- in this format
+    # it's always the country slot, so trust the prefix over the generic
+    # state-abbreviation guessing below, which would otherwise misread e.g.
+    # "IN-Hyderabad" as Indiana.
+    prefix_m = re.match(r"^([A-Z]{2})-", text)
+    if prefix_m:
+        return prefix_m.group(1) == "US"
+
     lower = text.lower()
     if NON_US_COUNTRY_RE.search(lower):
         return False
@@ -152,6 +164,9 @@ def is_seattle_job(job):
 def is_in_metro(job, metro_names):
     text = (job.get("location") or "").strip()
     if not text:
+        return False
+    prefix_m = re.match(r"^([A-Z]{2})-", text)
+    if prefix_m and prefix_m.group(1) != "US":
         return False
     if NON_US_COUNTRY_RE.search(text.lower()):
         return False
@@ -799,6 +814,7 @@ def fetch_shure(company):
             loc_m = re.search(
                 r"Job Locations</span>\s*</dt>\s*<dd[^>]*><span[^>]*>\s*([^<]+)</span>", card, re.DOTALL
             )
+            desc_m = re.search(r'class="col-xs-12 description">(.*?)</div>', card, re.DOTALL)
             if not link_m:
                 continue
             job_id = id_m.group(1).strip() if id_m else link_m.group(1)
@@ -808,6 +824,7 @@ def fetch_shure(company):
                     "title": link_m.group(2).strip(),
                     "url": html.unescape(link_m.group(1)),
                     "location": loc_m.group(1).strip() if loc_m else "",
+                    "description": strip_html(desc_m.group(1)) if desc_m else "",
                 }
             )
         page += 1
@@ -848,6 +865,14 @@ def fetch_harman(company):
             )
         offset += limit
     return jobs
+
+
+def fetch_whatnot_description(job, company):
+    resp = request_with_retry("GET", f"https://jobs.ashbyhq.com/whatnot/{job['id']}", timeout=30)
+    raw = extract_js_object(resp.text, "window.__appData = ")
+    data = json.loads(raw) if raw else {}
+    posting = data.get("posting") or {}
+    return strip_html(posting.get("descriptionHtml", ""))
 
 
 def fetch_whatnot(company):
@@ -901,6 +926,9 @@ def fetch_amd(company):
             j = entry.get("data", {})
             req_id = j.get("req_id", "")
             location = f"{j.get('city', '')}, {j.get('state', '')}".strip(", ")
+            description = strip_html(
+                " ".join(j.get(k) or "" for k in ("qualifications", "responsibilities", "description"))
+            )
             jobs.append(
                 {
                     "id": req_id,
@@ -909,6 +937,7 @@ def fetch_amd(company):
                     "location": location,
                     "country_code": j.get("country_code"),
                     "posted_ts": parse_iso_date(j.get("posted_date")),
+                    "description": description,
                 }
             )
         page += 1
@@ -1028,6 +1057,7 @@ DESCRIPTION_FETCHERS = {
     "smartrecruiters": fetch_smartrecruiters_description,
     "phenom": fetch_phenom_description,
     "phenom_v2": fetch_phenom_description,
+    "whatnot": fetch_whatnot_description,
 }
 
 
