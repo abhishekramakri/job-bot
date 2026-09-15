@@ -62,6 +62,11 @@
     "ats": "atlassian"
   },
   {
+    "name": "Audible",
+    "ats": "amazon",
+    "query": "audible"
+  },
+  {
     "name": "Block (Square)",
     "ats": "greenhouse",
     "slug": "block"
@@ -145,6 +150,10 @@
     "slug": "focusrite"
   },
   {
+    "name": "Harman",
+    "ats": "harman"
+  },
+  {
     "name": "Instacart",
     "ats": "greenhouse",
     "slug": "instacart"
@@ -198,6 +207,28 @@
     "ats": "phenom",
     "host": "apply.careers.microsoft.com",
     "domain": "microsoft.com",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
+    "name": "Motorola Solutions",
+    "ats": "workday",
+    "host": "motorolasolutions.wd5.myworkdayjobs.com",
+    "tenant": "motorolasolutions",
+    "site": "Careers",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
+    "name": "NBCUniversal",
+    "ats": "workday",
+    "host": "comcast.wd115.myworkdayjobs.com",
+    "tenant": "comcast",
+    "site": "Comcast_Careers",
     "queries": [
       "software engineer",
       "audio"
@@ -271,6 +302,16 @@
     "slug": "plaid"
   },
   {
+    "name": "Qualcomm",
+    "ats": "phenom",
+    "host": "careers.qualcomm.com",
+    "domain": "qualcomm.com",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
     "name": "Reddit",
     "ats": "greenhouse",
     "slug": "reddit"
@@ -286,6 +327,15 @@
     "name": "Riot Games",
     "ats": "greenhouse",
     "slug": "riotgames"
+  },
+  {
+    "name": "Rivian",
+    "ats": "amd",
+    "host": "careers.rivian.com",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
   },
   {
     "name": "Robinhood",
@@ -312,6 +362,15 @@
     "identifier": "ServiceNow"
   },
   {
+    "name": "Shure",
+    "ats": "shure"
+  },
+  {
+    "name": "SiriusXM",
+    "ats": "amd",
+    "host": "careers.siriusxm.com"
+  },
+  {
     "name": "Snap",
     "ats": "snap"
   },
@@ -326,6 +385,11 @@
     "host": "sonos.wd1.myworkdayjobs.com",
     "tenant": "sonos",
     "site": "Sonos"
+  },
+  {
+    "name": "Sony Interactive Entertainment",
+    "ats": "greenhouse",
+    "slug": "sonyinteractiveentertainmentglobal"
   },
   {
     "name": "SoundCloud",
@@ -358,6 +422,11 @@
     "slug": "substack"
   },
   {
+    "name": "Twilio",
+    "ats": "greenhouse",
+    "slug": "twilio"
+  },
+  {
     "name": "Twitch",
     "ats": "greenhouse",
     "slug": "twitch"
@@ -375,10 +444,43 @@
     "slug": "universalaudio"
   },
   {
+    "name": "Universal Music Group",
+    "ats": "workday",
+    "host": "umusic.wd5.myworkdayjobs.com",
+    "tenant": "umusic",
+    "site": "UMGUS"
+  },
+  {
     "name": "Visa",
     "ats": "workday",
     "host": "visa.wd5.myworkdayjobs.com",
     "tenant": "visa",
     "site": "Visa"
+  },
+  {
+    "name": "Warner Bros. Discovery",
+    "ats": "workday",
+    "host": "warnerbros.wd5.myworkdayjobs.com",
+    "tenant": "warnerbros",
+    "site": "global",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
+    "name": "Whatnot",
+    "ats": "whatnot"
+  },
+  {
+    "name": "iHeartMedia",
+    "ats": "workday",
+    "host": "iheartmedia.wd5.myworkdayjobs.com",
+    "tenant": "iheartmedia",
+    "site": "External_iHM",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
   }
 ]

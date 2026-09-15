@@ -777,7 +777,104 @@ def fetch_ea(company):
     return jobs
 
 
+def fetch_shure(company):
+    jobs = []
+    page = 0
+    while True:
+        resp = request_with_retry(
+            "GET",
+            "https://careershub-shure.icims.com/jobs/search",
+            params={"pr": page, "in_iframe": 1},
+            timeout=30,
+        )
+        html_text = resp.text
+        cards = re.findall(r'<li class="iCIMS_JobCardItem">(.*?)</li>', html_text, re.DOTALL)
+        if not cards:
+            break
+        for card in cards:
+            id_m = re.search(r"Job ID</span>\s*<span[^>]*>\s*([^<]+)</span>", card)
+            link_m = re.search(
+                r'<a href="([^"]+)" class="iCIMS_Anchor"[^>]*>.*?<h3[^>]*>\s*([^<]+)</h3>', card, re.DOTALL
+            )
+            loc_m = re.search(
+                r"Job Locations</span>\s*</dt>\s*<dd[^>]*><span[^>]*>\s*([^<]+)</span>", card, re.DOTALL
+            )
+            if not link_m:
+                continue
+            job_id = id_m.group(1).strip() if id_m else link_m.group(1)
+            jobs.append(
+                {
+                    "id": job_id,
+                    "title": link_m.group(2).strip(),
+                    "url": html.unescape(link_m.group(1)),
+                    "location": loc_m.group(1).strip() if loc_m else "",
+                }
+            )
+        page += 1
+    return jobs
+
+
+def fetch_harman(company):
+    jobs = []
+    offset = 0
+    limit = 20
+    while True:
+        resp = request_with_retry(
+            "GET",
+            "https://jobsearch.harman.com/en_US/careers/SearchJobs/",
+            params={"jobRecordsPerPage": limit, "jobOffset": offset},
+            timeout=30,
+        )
+        html_text = resp.text
+        cards = re.findall(
+            r'<article class="article article--result"[^>]*>.*?</article>', html_text, re.DOTALL
+        )
+        if not cards:
+            break
+        for card in cards:
+            title_m = re.search(r'<a class="link" href="([^"]+)">\s*([^<]+?)\s*</a>', card, re.DOTALL)
+            if not title_m:
+                continue
+            loc_m = re.search(r'list-item-location"><strong>\s*Location:\s*</strong>\s*([^<]+)</span>', card)
+            ref_m = re.search(r'list-item-ref"><strong>\s*Ref #</strong>\s*([^<]+)</span>', card)
+            url = title_m.group(1)
+            jobs.append(
+                {
+                    "id": ref_m.group(1).strip() if ref_m else url,
+                    "title": title_m.group(2).strip(),
+                    "url": url,
+                    "location": loc_m.group(1).strip() if loc_m else "",
+                }
+            )
+        offset += limit
+    return jobs
+
+
+def fetch_whatnot(company):
+    resp = request_with_retry("GET", "https://jobs.ashbyhq.com/whatnot", timeout=30)
+    raw = extract_js_object(resp.text, "window.__appData = ")
+    data = json.loads(raw) if raw else {}
+    postings = data.get("jobBoard", {}).get("jobPostings", [])
+    jobs = []
+    for p in postings:
+        job_id = p.get("id", "")
+        location = p.get("locationName", "")
+        secondary = p.get("secondaryLocations") or []
+        if secondary:
+            location = ", ".join([location] + [s.get("locationName", "") for s in secondary])
+        jobs.append(
+            {
+                "id": job_id,
+                "title": p.get("title", ""),
+                "url": f"https://jobs.ashbyhq.com/whatnot/{job_id}",
+                "location": location,
+            }
+        )
+    return jobs
+
+
 def fetch_amd(company):
+    host = company.get("host", "careers.amd.com")
     query = company.get("query", "")
     jobs = []
     page = 1
@@ -785,7 +882,7 @@ def fetch_amd(company):
     while True:
         resp = request_with_retry(
             "GET",
-            "https://careers.amd.com/api/jobs",
+            f"https://{host}/api/jobs",
             params={
                 "page": page,
                 "sortBy": "relevance",
@@ -808,7 +905,7 @@ def fetch_amd(company):
                 {
                     "id": req_id,
                     "title": j.get("title", ""),
-                    "url": f"https://careers.amd.com/careers-home/jobs/{req_id}?lang=en-us",
+                    "url": f"https://{host}/careers-home/jobs/{req_id}?lang=en-us",
                     "location": location,
                     "country_code": j.get("country_code"),
                     "posted_ts": parse_iso_date(j.get("posted_date")),
@@ -953,6 +1050,9 @@ FETCHERS = {
     "teamtailor": fetch_teamtailor,
     "snap": fetch_snap,
     "amd": fetch_amd,
+    "shure": fetch_shure,
+    "harman": fetch_harman,
+    "whatnot": fetch_whatnot,
     "atlassian": fetch_atlassian,
     "smartrecruiters": fetch_smartrecruiters,
 }
