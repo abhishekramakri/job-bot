@@ -1095,8 +1095,22 @@ def load_json(path, default):
     return default
 
 
+PHD_RE = re.compile(r"\bph\.?d\.?\b", re.IGNORECASE)
+DUAL_DEGREE_RE = re.compile(r"\bmaster'?s?\b|\bm\.?s\.?\b", re.IGNORECASE)
+
+
+def is_phd_only(title):
+    """True if the title names a PhD requirement with no Master's-tier alternative
+    mentioned alongside it (e.g. "Research Scientist, PhD" vs "Research Scientist, MS/PhD")."""
+    if not PHD_RE.search(title):
+        return False
+    return not DUAL_DEGREE_RE.search(title)
+
+
 def title_passes_filter(title, exclude_re, include_keywords, require_keywords=None):
     if exclude_re.search(title):
+        return False
+    if is_phd_only(title):
         return False
     if include_keywords:
         if not any(kw.lower() in title.lower() for kw in include_keywords):
