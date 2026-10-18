@@ -1,5 +1,10 @@
 [
   {
+    "name": "2K",
+    "ats": "greenhouse",
+    "slug": "2k"
+  },
+  {
     "name": "AMD",
     "ats": "amd",
     "queries": [
@@ -67,14 +72,33 @@
     "query": "audible"
   },
   {
+    "name": "Avid",
+    "ats": "workday",
+    "host": "avid.wd5.myworkdayjobs.com",
+    "tenant": "avid",
+    "site": "Avid"
+  },
+  {
     "name": "Block (Square)",
     "ats": "greenhouse",
     "slug": "block"
   },
   {
+    "name": "Bose",
+    "ats": "workday",
+    "host": "boseallaboutme.wd503.myworkdayjobs.com",
+    "tenant": "boseallaboutme",
+    "site": "Bose_Careers"
+  },
+  {
     "name": "Chime",
     "ats": "greenhouse",
     "slug": "chime"
+  },
+  {
+    "name": "Crunchyroll",
+    "ats": "greenhouse",
+    "slug": "crunchyroll"
   },
   {
     "name": "Databricks",
@@ -95,6 +119,17 @@
     "name": "Discord",
     "ats": "greenhouse",
     "slug": "discord"
+  },
+  {
+    "name": "Disney",
+    "ats": "workday",
+    "host": "disney.wd5.myworkdayjobs.com",
+    "tenant": "disney",
+    "site": "disneycareer",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
   },
   {
     "name": "Dolby",
@@ -154,6 +189,16 @@
     "ats": "harman"
   },
   {
+    "name": "Hasbro (Wizards of the Coast)",
+    "ats": "greenhouse",
+    "slug": "hasbro"
+  },
+  {
+    "name": "Hudl",
+    "ats": "greenhouse",
+    "slug": "hudl"
+  },
+  {
     "name": "Instacart",
     "ats": "greenhouse",
     "slug": "instacart"
@@ -180,9 +225,32 @@
     "slug": "landr"
   },
   {
+    "name": "Live Nation / Ticketmaster",
+    "ats": "workday",
+    "host": "livenation.wd503.myworkdayjobs.com",
+    "tenant": "livenation",
+    "site": "LNExternalSite",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
+    "name": "Logitech",
+    "ats": "workday",
+    "host": "logitech.wd5.myworkdayjobs.com",
+    "tenant": "logitech",
+    "site": "Logitech"
+  },
+  {
     "name": "Lyft",
     "ats": "greenhouse",
     "slug": "lyft"
+  },
+  {
+    "name": "MLB",
+    "ats": "greenhouse",
+    "slug": "majorleaguebaseball"
   },
   {
     "name": "Mastercard",
@@ -280,6 +348,15 @@
     "slug": "output"
   },
   {
+    "name": "Paramount",
+    "ats": "jobs2web",
+    "host": "careers.paramount.com",
+    "queries": [
+      "software engineer",
+      "audio"
+    ]
+  },
+  {
     "name": "Patreon",
     "ats": "ashby",
     "slug": "patreon"
@@ -292,9 +369,21 @@
     "site": "jobs"
   },
   {
+    "name": "Peloton",
+    "ats": "greenhouse",
+    "slug": "peloton"
+  },
+  {
     "name": "Pinterest",
     "ats": "greenhouse",
     "slug": "pinterest"
+  },
+  {
+    "name": "Pixar",
+    "ats": "workday",
+    "host": "pixar.wd501.myworkdayjobs.com",
+    "tenant": "pixar",
+    "site": "Pixar_External_Career_Site"
   },
   {
     "name": "Plaid",
@@ -348,6 +437,16 @@
     "slug": "roblox"
   },
   {
+    "name": "Rockstar Games",
+    "ats": "greenhouse",
+    "slug": "rockstargames"
+  },
+  {
+    "name": "Roku",
+    "ats": "greenhouse",
+    "slug": "roku"
+  },
+  {
     "name": "Roland",
     "ats": "teamtailor",
     "host": "www.rolandcareers.com"
@@ -355,6 +454,16 @@
   {
     "name": "Salesforce",
     "ats": "salesforce"
+  },
+  {
+    "name": "Scopely",
+    "ats": "greenhouse",
+    "slug": "scopely"
+  },
+  {
+    "name": "SeatGeek",
+    "ats": "greenhouse",
+    "slug": "seatgeek"
   },
   {
     "name": "ServiceNow",
@@ -397,6 +506,11 @@
     "slug": "soundcloud71"
   },
   {
+    "name": "Sphere Entertainment",
+    "ats": "greenhouse",
+    "slug": "sphereentertainment"
+  },
+  {
     "name": "Splice",
     "ats": "greenhouse",
     "slug": "splice"
@@ -417,9 +531,29 @@
     "slug": "stripe"
   },
   {
+    "name": "StubHub",
+    "ats": "greenhouse",
+    "slug": "stubhubinc"
+  },
+  {
     "name": "Substack",
     "ats": "ashby",
     "slug": "substack"
+  },
+  {
+    "name": "Take-Two Interactive",
+    "ats": "greenhouse",
+    "slug": "taketwo"
+  },
+  {
+    "name": "The New York Times",
+    "ats": "greenhouse",
+    "slug": "thenewyorktimes"
+  },
+  {
+    "name": "Tubi",
+    "ats": "greenhouse",
+    "slug": "tubitv"
   },
   {
     "name": "Twilio",
@@ -467,6 +601,18 @@
       "software engineer",
       "audio"
     ]
+  },
+  {
+    "name": "Warner Music Group",
+    "ats": "lever",
+    "slug": "wmg"
+  },
+  {
+    "name": "Warner Music Group (US)",
+    "ats": "workday",
+    "host": "wmg.wd1.myworkdayjobs.com",
+    "tenant": "wmg",
+    "site": "WMGUS"
   },
   {
     "name": "Whatnot",

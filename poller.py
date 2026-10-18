@@ -238,7 +238,10 @@ def fetch_greenhouse(company):
     result = []
     for j in jobs:
         offices = j.get("offices") or []
-        location = offices[0].get("location", "") if offices else (j.get("location") or {}).get("name", "")
+        # Some boards (e.g. NYT) leave the office's location null, so fall back
+        # to the job's own location name.
+        office_location = offices[0].get("location") if offices else None
+        location = office_location or (j.get("location") or {}).get("name", "")
         result.append(
             {
                 "id": str(j["id"]),
@@ -545,9 +548,12 @@ def fetch_jobs2web(company):
     path = company.get("path", "")
     query = company.get("query", "")
     card_re = re.compile(
-        r'<a[^>]*class="jobTitle-link"[^>]*href="([^"]+)"[^>]*>(.*?)</a>', re.DOTALL
+        r'<a[^>]*class="jobTitle-link[^"]*"[^>]*href="([^"]+)"[^>]*>(.*?)</a>', re.DOTALL
     )
     loc_re = re.compile(r'<span class="jobLocation">(.*?)</span>', re.DOTALL)
+    # Tile-layout sites (e.g. Paramount) put the location in a per-job div further
+    # down the card instead, formatted "City, ST, CC, ZIP".
+    tile_loc_tmpl = r'id="job-{}-desktop-section-location-value">(.*?)</div>'
 
     jobs_by_id = {}
     startrow = 0
@@ -571,12 +577,21 @@ def fetch_jobs2web(company):
             title = re.sub(r"\s+", " ", strip_html(inner)).strip()
             window = html_text[m.end() : m.end() + 500]
             loc_m = loc_re.search(window)
-            location = re.sub(r"\s+", " ", strip_html(loc_m.group(1))).strip() if loc_m else ""
+            country_code = None
+            if loc_m:
+                location = re.sub(r"\s+", " ", strip_html(loc_m.group(1))).strip()
+            else:
+                tile_m = re.search(tile_loc_tmpl.format(re.escape(job_id)), html_text, re.DOTALL)
+                location = re.sub(r"\s+", " ", strip_html(tile_m.group(1))).strip() if tile_m else ""
+                parts = [p.strip() for p in location.split(",")]
+                if len(parts) >= 3 and re.fullmatch(r"[A-Z]{2}", parts[2]):
+                    country_code = parts[2]
             jobs_by_id[job_id] = {
                 "id": job_id,
                 "title": title,
                 "url": f"https://{host}{html.unescape(href)}",
                 "location": location,
+                "country_code": country_code,
             }
         if new_count == 0:
             break
