@@ -1,0 +1,85 @@
+name: Daily list picks
+
+on:
+  # Once a day at 5 pm Pacific (follows daylight saving). GitHub's `schedule:`
+  # trigger can run late (see poll.yml), which matters less at this cadence.
+  schedule:
+    - cron: "0 17 * * *"
+      timezone: "America/Los_Angeles"
+  workflow_dispatch:
+    inputs:
+      max_age_days:
+        description: "Look back this many days instead of the profile's max_age_days (e.g. 365 for the whole backlog)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  lists-abhi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Run list picks
+        env:
+          # Posts to its own channel if DISCORD_WEBHOOK_URL_LISTS is set,
+          # otherwise to the main bot's channel under its own sender name.
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_LISTS || secrets.DISCORD_WEBHOOK_URL }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MAX_AGE_DAYS: ${{ inputs.max_age_days }}
+        run: python lists.py abhi-lists ${MAX_AGE_DAYS:+--max-age-days "$MAX_AGE_DAYS"}
+
+      - name: Commit updated seen.json and automatic ratings
+        env:
+          PROFILE_DIR: profiles/abhi-lists
+        run: |
+          git config user.name "job-bot"
+          git config user.email "job-bot@users.noreply.github.com"
+
+          cp "$PROFILE_DIR/seen.json" /tmp/run_seen.json
+          if [ -f "$PROFILE_DIR/company_tiers_auto.json" ]; then
+            cp "$PROFILE_DIR/company_tiers_auto.json" /tmp/run_tiers_auto.json
+          fi
+
+          pushed=false
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if [ -f "$PROFILE_DIR/seen.json" ]; then
+              python3 merge_seen.py /tmp/run_seen.json "$PROFILE_DIR/seen.json"
+            else
+              cp /tmp/run_seen.json "$PROFILE_DIR/seen.json"
+            fi
+            # Only this workflow writes the automatic ratings, so the run's copy wins.
+            if [ -f /tmp/run_tiers_auto.json ]; then
+              cp /tmp/run_tiers_auto.json "$PROFILE_DIR/company_tiers_auto.json"
+            fi
+
+            git add "$PROFILE_DIR"
+            if git diff --quiet --cached; then
+              echo "no changes to commit"
+              pushed=true
+              break
+            fi
+            git commit -m "update list picks (abhi)"
+
+            if git push origin HEAD:main; then
+              echo "pushed successfully"
+              pushed=true
+              break
+            fi
+            echo "push rejected, retrying with fresh merge (attempt $attempt)"
+          done
+
+          if [ "$pushed" != "true" ]; then
+            echo "::error::failed to push list picks state after 5 attempts"
+            exit 1
+          fi

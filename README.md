@@ -41,6 +41,22 @@ Edit a profile's `filters.json`:
 - `include_keywords`: a title must contain at least one of these (case-insensitive substring match) to pass. Empty list means no title requirement.
 - `region`: `"us"` (default) requires a US location; `"seattle"` requires a Seattle-metro city specifically (Seattle, Bellevue, Redmond, Kirkland, Tacoma, Everett, etc.) — bare "Remote" postings with no named city won't match either mode.
 
+## Daily list picks (`lists.py`)
+
+A second, separate feed: once a day, `lists.py` reads the community new-grad lists ([SimplifyJobs](https://github.com/SimplifyJobs/New-Grad-Positions) and [Jobright](https://github.com/jobright-ai/2026-Software-Engineer-New-Grad)), keeps new US roles that pass the profile's title filter at companies the main bot doesn't already poll, and posts a digest grouped by how worth applying the company is. Posts come from the sender name "job-bot · list picks".
+
+It runs from `.github/workflows/lists.yml` (5 pm Pacific daily, or "Run workflow" from the Actions tab, where `max_age_days` can be raised to post older, still-open roles once) with the `profiles/abhi-lists/` profile:
+- `filters.json` — same title filter shape as above, plus `max_age_days` (ignore postings older than this) and `skip_companies_tracked_by` (a profile whose `companies.json` companies are left to the main bot).
+- `company_tiers.json` — hand ratings. `creative`, `strong` and `solid` companies are posted; `pass` and `skip` are dropped; `flags` adds a ⚠️ note. Edit freely; it always wins.
+- `company_tiers_auto.json` — ratings Claude made for companies missing from the hand file (auto-managed). Move an entry into `company_tiers.json` to override it.
+- `seen.json` — roles already handled (auto-managed).
+
+Secrets:
+- `ANTHROPIC_API_KEY` (optional) — rates new, unknown companies with Claude. Without it they are posted under "Not rated yet".
+- `DISCORD_WEBHOOK_URL_LISTS` (optional) — post to a different channel. Without it, posts go to the main `DISCORD_WEBHOOK_URL` channel.
+
+Preview without posting or saving anything: `python lists.py abhi-lists --dry-run` (add `--max-age-days 365` to see the whole backlog).
+
 ## Local testing
 
 ```bash
