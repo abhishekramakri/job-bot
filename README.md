@@ -52,7 +52,7 @@ It runs from `.github/workflows/lists.yml` (5 pm Pacific daily, or "Run workflow
 - `seen.json` — roles already handled (auto-managed).
 
 Secrets:
-- `ANTHROPIC_API_KEY` (optional) — rates new, unknown companies with Claude. Without it they are posted under "Not rated yet".
+- `CLAUDE_CODE_OAUTH_TOKEN` (optional) — rates new, unknown companies with Claude through Claude Code, on your Claude subscription (Pro, Max, Team or Enterprise) rather than API billing. Create it with `claude setup-token`; it lasts a year. Without it they are posted under "Not rated yet". Locally, `lists.py` uses whatever account the `claude` CLI is signed in to.
 - `DISCORD_WEBHOOK_URL_LISTS` (optional) — post to a different channel. Without it, posts go to the main `DISCORD_WEBHOOK_URL` channel.
 
 Preview without posting or saving anything: `python lists.py abhi-lists --dry-run` (add `--max-age-days 365` to see the whole backlog).

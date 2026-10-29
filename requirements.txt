@@ -1,2 +1,1 @@
 requests
-anthropic>=2.3

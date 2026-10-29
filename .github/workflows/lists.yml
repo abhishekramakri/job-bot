@@ -28,12 +28,19 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      # Rates companies missing from company_tiers.json, on the Claude
+      # subscription behind CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`).
+      - name: Install Claude Code
+        run: |
+          curl -fsSL https://claude.ai/install.sh | bash
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
       - name: Run list picks
         env:
           # Posts to its own channel if DISCORD_WEBHOOK_URL_LISTS is set,
           # otherwise to the main bot's channel under its own sender name.
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_LISTS || secrets.DISCORD_WEBHOOK_URL }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           MAX_AGE_DAYS: ${{ inputs.max_age_days }}
         run: python lists.py abhi-lists ${MAX_AGE_DAYS:+--max-age-days "$MAX_AGE_DAYS"}
 

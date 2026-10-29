@@ -6,7 +6,10 @@ import argparse
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
 import time
 from datetime import datetime
 
@@ -24,8 +27,9 @@ WEBHOOK_USERNAME = "job-bot · list picks"
 DISCORD_SUPPRESS_EMBEDS = 1 << 2
 DISCORD_MAX_CHARS = 1900
 
-RATING_MODEL = "claude-opus-5-5"
+RATING_MODEL = "opus"
 RATING_BATCH_SIZE = 40
+RATING_TIMEOUT_SECONDS = 600
 
 POSTED_TIERS = ("creative", "strong", "solid")
 SECTIONS = [
@@ -206,14 +210,18 @@ These ratings were made by hand; stay consistent with them:
 
 
 def rate_companies(unknown, profile_dir):
-    """Ask Claude to rate companies with no rating yet. Returns {company: rating}.
-    Returns {} (so they show up as "not rated yet") without an API key or on failure."""
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print(f"[rate] no ANTHROPIC_API_KEY; {len(unknown)} companies left unrated", file=sys.stderr)
+    """Ask Claude to rate companies with no rating yet, through the Claude Code CLI so
+    it runs on a Claude subscription (CLAUDE_CODE_OAUTH_TOKEN in CI, the signed-in
+    account locally). Returns {company: rating}, or {} (so they show up as "not rated
+    yet") when Claude Code is missing or signed out, or the call fails."""
+    claude = shutil.which("claude")
+    if not claude:
+        print(f"[rate] Claude Code not installed; {len(unknown)} companies left unrated", file=sys.stderr)
         return {}
-    import anthropic
+    if os.environ.get("CI") and not os.environ.get("CLAUDE_CODE_OAUTH_TOKEN"):
+        print(f"[rate] no CLAUDE_CODE_OAUTH_TOKEN; {len(unknown)} companies left unrated", file=sys.stderr)
+        return {}
 
-    client = anthropic.Anthropic()
     hand = load_json(profile_dir / "company_tiers.json", {})
     hand.pop("_about", None)
     system = RATING_INSTRUCTIONS.replace("{hand_ratings}", json.dumps(hand, ensure_ascii=False))
@@ -230,29 +238,40 @@ def rate_companies(unknown, profile_dir):
             "Rate these companies. Use each name exactly as written. "
             "Next to each name are some of its open roles.\n\n" + "\n".join(lines)
         )
+        cmd = [
+            claude, "-p", prompt,
+            "--output-format", "json",
+            "--json-schema", json.dumps(RATING_SCHEMA),
+            "--system-prompt", system,
+            "--model", RATING_MODEL,
+            "--effort", "medium",
+            # A pure rating call: no tools, MCP servers, skills or saved session.
+            "--tools", "",
+            "--strict-mcp-config",
+            "--disable-slash-commands",
+            "--no-session-persistence",
+        ]
         try:
-            response = client.beta.messages.create(
-                model=RATING_MODEL,
-                max_tokens=16000,
-                betas=["server-side-fallback-2026-07-01"],
-                fallbacks="default",
-                output_config={"effort": "medium", "format": {"type": "json_schema", "schema": RATING_SCHEMA}},
-                system=system,
-                messages=[{"role": "user", "content": prompt}],
+            # Run outside the repo so no project settings or CLAUDE.md get picked up.
+            proc = subprocess.run(
+                cmd, capture_output=True, text=True, timeout=RATING_TIMEOUT_SECONDS, cwd=tempfile.gettempdir()
             )
-        except anthropic.APIStatusError as e:
-            print(f"[rate] API error {e.status_code}: {e.message}", file=sys.stderr)
+        except subprocess.TimeoutExpired:
+            print("[rate] Claude Code timed out; batch left unrated", file=sys.stderr)
             continue
-        except anthropic.APIConnectionError as e:
-            print(f"[rate] connection error: {e}", file=sys.stderr)
+        try:
+            out = json.loads(proc.stdout)
+        except json.JSONDecodeError:
+            detail = (proc.stderr or proc.stdout).strip()[:300]
+            print(f"[rate] Claude Code failed (exit {proc.returncode}): {detail}", file=sys.stderr)
             continue
-        if response.stop_reason in ("refusal", "max_tokens"):
-            print(f"[rate] batch not rated (stop_reason={response.stop_reason})", file=sys.stderr)
+        rated = out.get("structured_output")
+        if out.get("is_error") or not rated:
+            print(f"[rate] batch not rated: {str(out.get('result', ''))[:300]}", file=sys.stderr)
             continue
-        text = next(b.text for b in response.content if b.type == "text")
         wanted = set(batch)
-        for r in json.loads(text)["companies"]:
-            if r["name"] in wanted:
+        for r in rated.get("companies", []):
+            if r.get("name") in wanted:
                 results[r["name"]] = r
     return results
 
