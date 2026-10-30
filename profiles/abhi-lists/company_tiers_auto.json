@@ -1,8 +1,182 @@
 {
+  "AFP Cuprum": {
+    "tier": "pass",
+    "reason": "Chilean pension fund under Principal; insurance/finance",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "Argonne National Laboratory": {
+    "tier": "solid",
+    "reason": "Reputable DOE science lab; modest pay",
+    "flag": "some national-security work alongside science research",
+    "rated": "2026-10-30"
+  },
+  "Axon": {
+    "tier": "skip",
+    "reason": "Tasers, police body cams and surveillance",
+    "flag": "weapons (Tasers) and police surveillance tech",
+    "rated": "2026-10-30"
+  },
+  "CareFirst BlueCross BlueShield": {
+    "tier": "pass",
+    "reason": "Health insurer; non-tech employer",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "Coinflow": {
+    "tier": "skip",
+    "reason": "Crypto payments company",
+    "flag": "crypto (stablecoin/crypto payments)",
+    "rated": "2026-10-30"
+  },
+  "DraftKings": {
+    "tier": "skip",
+    "reason": "Sports betting",
+    "flag": "sports betting / gambling",
+    "rated": "2026-10-30"
+  },
+  "Esri": {
+    "tier": "solid",
+    "reason": "GIS software leader; stable, reputable",
+    "flag": "many military/intelligence government customers",
+    "rated": "2026-10-30"
+  },
+  "General Atomics": {
+    "tier": "skip",
+    "reason": "Makes Predator/Reaper military drones",
+    "flag": "defense (military drones)",
+    "rated": "2026-10-30"
+  },
+  "HelloFresh": {
+    "tier": "pass",
+    "reason": "Meal-kit warehouse software; less exciting",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "Karthik Consulting": {
+    "tier": "skip",
+    "reason": "Consulting firm working at Air Force base",
+    "flag": "defense contractor (Gunter Annex, Air Force)",
+    "rated": "2026-10-30"
+  },
+  "Ketch": {
+    "tier": "solid",
+    "reason": "Data-privacy consent software startup",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "Military Spouse Jobs": {
+    "tier": "skip",
+    "reason": "Navy training software role",
+    "flag": "defense (Navy software)",
+    "rated": "2026-10-30"
+  },
+  "Modern Woodmen of America": {
+    "tier": "pass",
+    "reason": "Fraternal insurance company",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "Moog Inc.": {
+    "tier": "skip",
+    "reason": "Aerospace and defense motion-control manufacturer",
+    "flag": "defense contractor (missile/military systems)",
+    "rated": "2026-10-30"
+  },
+  "Morningstar": {
+    "tier": "solid",
+    "reason": "Reputable financial research and data firm",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "Nimble": {
+    "tier": "solid",
+    "reason": "Well-funded warehouse robotics startup",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "Northwood": {
+    "tier": "solid",
+    "reason": "Northwood Space; space ground-station startup",
+    "flag": "Space Force customers",
+    "rated": "2026-10-30"
+  },
+  "Principal": {
+    "tier": "pass",
+    "reason": "Insurance/retirement financial company",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "Principal Chile": {
+    "tier": "pass",
+    "reason": "Insurance/retirement financial company",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "Principal Financial Group": {
+    "tier": "pass",
+    "reason": "Insurance/retirement financial company",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "Principal México": {
+    "tier": "pass",
+    "reason": "Insurance/retirement financial company",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "Thoughtworks": {
+    "tier": "pass",
+    "reason": "IT consulting firm",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "Tyler Technologies": {
+    "tier": "pass",
+    "reason": "Government software; lower pay",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "UnitedHealth Group": {
+    "tier": "pass",
+    "reason": "Health insurer; non-tech employer",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "University of Rochester": {
+    "tier": "pass",
+    "reason": "University job; low pay",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
   "Vituity": {
     "tier": "pass",
     "reason": "Physician-led healthcare staffing group; non-tech employer",
     "flag": "",
     "rated": "2026-10-29"
+  },
+  "WD": {
+    "tier": "solid",
+    "reason": "Western Digital storage hardware; reputable",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "Waggoner Financial": {
+    "tier": "pass",
+    "reason": "Small financial firm",
+    "flag": "",
+    "rated": "2026-10-30"
+  },
+  "York Space Systems": {
+    "tier": "skip",
+    "reason": "Satellites mostly for military customers",
+    "flag": "defense (Space Development Agency satellites)",
+    "rated": "2026-10-30"
+  },
+  "Zoox": {
+    "tier": "strong",
+    "reason": "Amazon-owned robotaxi company; well-paid",
+    "flag": "Amazon subsidiary; role is contract student worker",
+    "rated": "2026-10-30"
   }
 }
