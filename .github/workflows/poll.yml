@@ -5,7 +5,12 @@ on:
   # workflow_dispatch API on a reliable timer) since GitHub's own
   # `schedule:` trigger was being delayed by hours instead of running
   # every 15 minutes. See conversation history / commit log for why.
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      start_list_picks:
+        description: "Also start the daily list picks now, whatever the time"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -217,4 +222,23 @@ jobs:
           if [ "$pushed" != "true" ]; then
             echo "::error::failed to push seen.json after 5 attempts"
             exit 1
+          fi
+
+  # Starts the once-a-day list picks (lists.yml) during the 5 pm Pacific hour.
+  # GitHub's own schedule skips most runs for this repo, so it rides on this
+  # workflow's hourly cron-job.org trigger instead.
+  start-list-picks:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Start list picks at 5 pm Pacific
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FORCE: ${{ inputs.start_list_picks }}
+        run: |
+          if [ "$FORCE" = "true" ] || [ "$(TZ=America/Los_Angeles date +%H)" = "17" ]; then
+            gh workflow run lists.yml --repo "$GITHUB_REPOSITORY" --ref main
+          else
+            echo "not the 5 pm Pacific hour; nothing to start"
           fi

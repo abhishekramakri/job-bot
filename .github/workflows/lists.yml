@@ -1,11 +1,9 @@
 name: Daily list picks
 
 on:
-  # Once a day at 5 pm Pacific (follows daylight saving). GitHub's `schedule:`
-  # trigger can run late (see poll.yml), which matters less at this cadence.
-  schedule:
-    - cron: "0 17 * * *"
-      timezone: "America/Los_Angeles"
+  # Started once a day during the 5 pm Pacific hour by the start-list-picks job
+  # in poll.yml, which cron-job.org triggers hourly. GitHub's own `schedule:`
+  # trigger skips most runs for this repo (see poll.yml).
   workflow_dispatch:
     inputs:
       max_age_days:
@@ -16,11 +14,19 @@ on:
 permissions:
   contents: write
 
+# One run at a time, each checking out the latest main, so a second run reads
+# the first one's seen.json and doesn't repost its roles.
+concurrency:
+  group: list-picks
+  cancel-in-progress: false
+
 jobs:
   lists-abhi:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-python@v5
         with:

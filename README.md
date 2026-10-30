@@ -45,7 +45,7 @@ Edit a profile's `filters.json`:
 
 A second, separate feed: once a day, `lists.py` reads the community new-grad lists ([SimplifyJobs](https://github.com/SimplifyJobs/New-Grad-Positions) and [Jobright](https://github.com/jobright-ai/2026-Software-Engineer-New-Grad)), keeps new US roles that pass the profile's title filter at companies the main bot doesn't already poll, and posts a digest grouped by how worth applying the company is. Posts come from the sender name "job-bot · list picks".
 
-It runs from `.github/workflows/lists.yml` (5 pm Pacific daily, or "Run workflow" from the Actions tab, where `max_age_days` can be raised to post older, still-open roles once) with the `profiles/abhi-lists/` profile:
+It runs from `.github/workflows/lists.yml`, started once a day during the 5 pm Pacific hour by the `start-list-picks` job in `poll.yml` (GitHub's own schedule is too unreliable here). To start it by hand, use "Run workflow" on it in the Actions tab, where `max_age_days` can be raised to post older, still-open roles once. It uses the `profiles/abhi-lists/` profile:
 - `filters.json` — same title filter shape as above, plus `max_age_days` (ignore postings older than this) and `skip_companies_tracked_by` (a profile whose `companies.json` companies are left to the main bot).
 - `company_tiers.json` — hand ratings. `creative`, `strong` and `solid` companies are posted; `pass` and `skip` are dropped; `flags` adds a ⚠️ note. Edit freely; it always wins.
 - `company_tiers_auto.json` — ratings Claude made for companies missing from the hand file (auto-managed). Move an entry into `company_tiers.json` to override it.
