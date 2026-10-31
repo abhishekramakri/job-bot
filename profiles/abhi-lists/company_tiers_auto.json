@@ -17,6 +17,36 @@
     "flag": "weapons (Tasers) and police surveillance tech",
     "rated": "2026-10-30"
   },
+  "Blue River Technology": {
+    "tier": "solid",
+    "reason": "John Deere ag-robotics/computer-vision subsidiary",
+    "flag": "",
+    "rated": "2026-10-31"
+  },
+  "BodySpec": {
+    "tier": "pass",
+    "reason": "Small body-scan health startup",
+    "flag": "",
+    "rated": "2026-10-31"
+  },
+  "Built": {
+    "tier": "pass",
+    "reason": "Construction-lending fintech; unremarkable",
+    "flag": "",
+    "rated": "2026-10-31"
+  },
+  "Built Technologies": {
+    "tier": "pass",
+    "reason": "Construction-lending fintech; unremarkable",
+    "flag": "",
+    "rated": "2026-10-31"
+  },
+  "Cantor Fitzgerald": {
+    "tier": "solid",
+    "reason": "Established financial-services firm, decent pay",
+    "flag": "major crypto ties (custodian for Tether reserves)",
+    "rated": "2026-10-31"
+  },
   "CareFirst BlueCross BlueShield": {
     "tier": "pass",
     "reason": "Health insurer; non-tech employer",
@@ -28,6 +58,18 @@
     "reason": "Crypto payments company",
     "flag": "crypto (stablecoin/crypto payments)",
     "rated": "2026-10-30"
+  },
+  "Cotiviti": {
+    "tier": "pass",
+    "reason": "Healthcare analytics; QA role",
+    "flag": "",
+    "rated": "2026-10-31"
+  },
+  "Dexcom": {
+    "tier": "solid",
+    "reason": "Reputable medical-device (glucose monitor) maker",
+    "flag": "",
+    "rated": "2026-10-31"
   },
   "DraftKings": {
     "tier": "skip",
@@ -89,6 +131,18 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "Mphasis": {
+    "tier": "pass",
+    "reason": "IT services / outsourcing body shop",
+    "flag": "",
+    "rated": "2026-10-31"
+  },
+  "Newmark": {
+    "tier": "pass",
+    "reason": "Commercial real-estate services, not tech",
+    "flag": "",
+    "rated": "2026-10-31"
+  },
   "Nimble": {
     "tier": "solid",
     "reason": "Well-funded warehouse robotics startup",
@@ -124,6 +178,36 @@
     "reason": "Insurance/retirement financial company",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "Rochester Institute of Technology": {
+    "tier": "pass",
+    "reason": "University role; low pay",
+    "flag": "",
+    "rated": "2026-10-31"
+  },
+  "Rocket Lab": {
+    "tier": "solid",
+    "reason": "Reputable launch and spacecraft company",
+    "flag": "significant defense work (SDA satellites, hypersonic testing)",
+    "rated": "2026-10-31"
+  },
+  "Rocket Lab Corporation": {
+    "tier": "solid",
+    "reason": "Reputable launch and spacecraft company",
+    "flag": "significant defense work (SDA satellites, hypersonic testing)",
+    "rated": "2026-10-31"
+  },
+  "Saab, Inc.": {
+    "tier": "skip",
+    "reason": "Defense contractor",
+    "flag": "defense (Saab's US arm makes military radars/systems)",
+    "rated": "2026-10-31"
+  },
+  "Stanford University": {
+    "tier": "pass",
+    "reason": "University staff role; low pay",
+    "flag": "",
+    "rated": "2026-10-31"
   },
   "Thoughtworks": {
     "tier": "pass",
@@ -172,6 +256,18 @@
     "reason": "Satellites mostly for military customers",
     "flag": "defense (Space Development Agency satellites)",
     "rated": "2026-10-30"
+  },
+  "Zebra Technologies": {
+    "tier": "solid",
+    "reason": "Established barcode/scanner hardware company",
+    "flag": "",
+    "rated": "2026-10-31"
+  },
+  "Zefr": {
+    "tier": "pass",
+    "reason": "Ad-tech brand-safety company; unremarkable",
+    "flag": "",
+    "rated": "2026-10-31"
   },
   "Zoox": {
     "tier": "strong",
