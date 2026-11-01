@@ -5,11 +5,23 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "Apogee Research, LLC": {
+    "tier": "skip",
+    "reason": "DARPA/DoD-funded research contractor in Arlington",
+    "flag": "defense research contractor",
+    "rated": "2026-11-01"
+  },
   "Argonne National Laboratory": {
     "tier": "solid",
     "reason": "Reputable DOE science lab; modest pay",
     "flag": "some national-security work alongside science research",
     "rated": "2026-10-30"
+  },
+  "Aspen Technology": {
+    "tier": "solid",
+    "reason": "Same as AspenTech; industrial process software",
+    "flag": "",
+    "rated": "2026-11-01"
   },
   "Axon": {
     "tier": "skip",
@@ -22,6 +34,18 @@
     "reason": "John Deere ag-robotics/computer-vision subsidiary",
     "flag": "",
     "rated": "2026-10-31"
+  },
+  "Bluestaq": {
+    "tier": "skip",
+    "reason": "Space Force data platform builder, Colorado Springs",
+    "flag": "defense/Space Force contractor",
+    "rated": "2026-11-01"
+  },
+  "Bluestaq Australia": {
+    "tier": "skip",
+    "reason": "Bluestaq affiliate; Space Force data work",
+    "flag": "defense/Space Force contractor",
+    "rated": "2026-11-01"
   },
   "BodySpec": {
     "tier": "pass",
@@ -89,11 +113,23 @@
     "flag": "defense (military drones)",
     "rated": "2026-10-30"
   },
+  "Handshake": {
+    "tier": "solid",
+    "reason": "Well-funded career platform with decent pay",
+    "flag": "",
+    "rated": "2026-11-01"
+  },
   "HelloFresh": {
     "tier": "pass",
     "reason": "Meal-kit warehouse software; less exciting",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "Instrumental Inc.": {
+    "tier": "solid",
+    "reason": "VC-backed manufacturing AI inspection startup",
+    "flag": "",
+    "rated": "2026-11-01"
   },
   "Karthik Consulting": {
     "tier": "skip",
@@ -106,6 +142,12 @@
     "reason": "Data-privacy consent software startup",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "Mfinite Consulting LLC": {
+    "tier": "pass",
+    "reason": "Contract staffing body shop",
+    "flag": "",
+    "rated": "2026-11-01"
   },
   "Military Spouse Jobs": {
     "tier": "skip",
@@ -154,6 +196,12 @@
     "reason": "Northwood Space; space ground-station startup",
     "flag": "Space Force customers",
     "rated": "2026-10-30"
+  },
+  "Optum": {
+    "tier": "pass",
+    "reason": "Healthcare insurer IT; modest pay, like CVS Health",
+    "flag": "",
+    "rated": "2026-11-01"
   },
   "Principal": {
     "tier": "pass",
