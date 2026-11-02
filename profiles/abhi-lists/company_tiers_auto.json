@@ -1,4 +1,22 @@
 {
+  "A Full Renovation – Home Improvement": {
+    "tier": "pass",
+    "reason": "Home renovation business, not a tech employer",
+    "flag": "",
+    "rated": "2026-11-02"
+  },
+  "A Full Renovation – Interiors & Design": {
+    "tier": "pass",
+    "reason": "Home renovation business, not a tech employer",
+    "flag": "",
+    "rated": "2026-11-02"
+  },
+  "A Full Renovation – Residential Remodeling": {
+    "tier": "pass",
+    "reason": "Home renovation business, not a tech employer",
+    "flag": "",
+    "rated": "2026-11-02"
+  },
   "AFP Cuprum": {
     "tier": "pass",
     "reason": "Chilean pension fund under Principal; insurance/finance",
@@ -22,6 +40,12 @@
     "reason": "Same as AspenTech; industrial process software",
     "flag": "",
     "rated": "2026-11-01"
+  },
+  "Asure Software": {
+    "tier": "pass",
+    "reason": "Unremarkable HR/payroll software company",
+    "flag": "",
+    "rated": "2026-11-02"
   },
   "Axon": {
     "tier": "skip",
@@ -107,6 +131,12 @@
     "flag": "many military/intelligence government customers",
     "rated": "2026-10-30"
   },
+  "Fortune": {
+    "tier": "creative",
+    "reason": "Well-known business media publication",
+    "flag": "",
+    "rated": "2026-11-02"
+  },
   "General Atomics": {
     "tier": "skip",
     "reason": "Makes Predator/Reaper military drones",
@@ -125,6 +155,12 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "Huntington Ingalls Industries": {
+    "tier": "skip",
+    "reason": "Builds Navy warships and nuclear submarines",
+    "flag": "defense (military shipbuilding)",
+    "rated": "2026-11-02"
+  },
   "Instrumental Inc.": {
     "tier": "solid",
     "reason": "VC-backed manufacturing AI inspection startup",
@@ -142,6 +178,12 @@
     "reason": "Data-privacy consent software startup",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "Light Iron": {
+    "tier": "creative",
+    "reason": "Film/TV post-production company owned by Panavision",
+    "flag": "",
+    "rated": "2026-11-02"
   },
   "Mfinite Consulting LLC": {
     "tier": "pass",
@@ -227,6 +269,12 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "Render": {
+    "tier": "strong",
+    "reason": "Well-funded, respected cloud hosting platform",
+    "flag": "",
+    "rated": "2026-11-02"
+  },
   "Rochester Institute of Technology": {
     "tier": "pass",
     "reason": "University role; low pay",
@@ -256,6 +304,12 @@
     "reason": "University staff role; low pay",
     "flag": "",
     "rated": "2026-10-31"
+  },
+  "Sun West Mortgage Company, Inc.": {
+    "tier": "pass",
+    "reason": "Mortgage lender, not a tech employer",
+    "flag": "",
+    "rated": "2026-11-02"
   },
   "Thoughtworks": {
     "tier": "pass",
@@ -322,5 +376,11 @@
     "reason": "Amazon-owned robotaxi company; well-paid",
     "flag": "Amazon subsidiary; role is contract student worker",
     "rated": "2026-10-30"
+  },
+  "impact.com": {
+    "tier": "solid",
+    "reason": "Established partnership-marketing SaaS company",
+    "flag": "affiliate/ad tracking tech",
+    "rated": "2026-11-02"
   }
 }
