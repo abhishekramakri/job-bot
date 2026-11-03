@@ -23,6 +23,30 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "AMEWAS": {
+    "tier": "skip",
+    "reason": "Naval aviation contractor at Patuxent River",
+    "flag": "defense contractor (Navy)",
+    "rated": "2026-11-03"
+  },
+  "AbbVie": {
+    "tier": "pass",
+    "reason": "Pharma company; software isn't core",
+    "flag": "",
+    "rated": "2026-11-03"
+  },
+  "Allergan Aesthetics, an AbbVie Company": {
+    "tier": "pass",
+    "reason": "Pharma/aesthetics device unit; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-03"
+  },
+  "Andromeda Systems Incorporated": {
+    "tier": "skip",
+    "reason": "Military aircraft sustainment contractor",
+    "flag": "defense contractor",
+    "rated": "2026-11-03"
+  },
   "Apogee Research, LLC": {
     "tier": "skip",
     "reason": "DARPA/DoD-funded research contractor in Arlington",
@@ -113,11 +137,23 @@
     "flag": "",
     "rated": "2026-10-31"
   },
+  "DTCC": {
+    "tier": "solid",
+    "reason": "Core financial market infrastructure; stable, decent pay",
+    "flag": "",
+    "rated": "2026-11-03"
+  },
   "Dexcom": {
     "tier": "solid",
     "reason": "Reputable medical-device (glucose monitor) maker",
     "flag": "",
     "rated": "2026-10-31"
+  },
+  "Digital Force Technologies": {
+    "tier": "skip",
+    "reason": "San Diego mission-systems defense contractor",
+    "flag": "defense (military unmanned/mission systems)",
+    "rated": "2026-11-03"
   },
   "DraftKings": {
     "tier": "skip",
@@ -161,11 +197,23 @@
     "flag": "defense (military shipbuilding)",
     "rated": "2026-11-02"
   },
+  "Imagen Technologies": {
+    "tier": "solid",
+    "reason": "Well-funded NYC healthtech/teleradiology startup",
+    "flag": "",
+    "rated": "2026-11-03"
+  },
   "Instrumental Inc.": {
     "tier": "solid",
     "reason": "VC-backed manufacturing AI inspection startup",
     "flag": "",
     "rated": "2026-11-01"
+  },
+  "Iridium": {
+    "tier": "pass",
+    "reason": "Satellite telecom; modest pay, heavy government work",
+    "flag": "",
+    "rated": "2026-11-03"
   },
   "Karthik Consulting": {
     "tier": "skip",
@@ -184,6 +232,12 @@
     "reason": "Film/TV post-production company owned by Panavision",
     "flag": "",
     "rated": "2026-11-02"
+  },
+  "Metro Sales Inc.": {
+    "tier": "pass",
+    "reason": "Office equipment dealer; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-03"
   },
   "Mfinite Consulting LLC": {
     "tier": "pass",
@@ -221,6 +275,12 @@
     "flag": "",
     "rated": "2026-10-31"
   },
+  "NASA Jet Propulsion Laboratory": {
+    "tier": "solid",
+    "reason": "Prestigious NASA lab; space-science missions",
+    "flag": "",
+    "rated": "2026-11-03"
+  },
   "Newmark": {
     "tier": "pass",
     "reason": "Commercial real-estate services, not tech",
@@ -238,6 +298,12 @@
     "reason": "Northwood Space; space ground-station startup",
     "flag": "Space Force customers",
     "rated": "2026-10-30"
+  },
+  "Odyssey Space Research, LLC": {
+    "tier": "pass",
+    "reason": "Small NASA contractor, unremarkable",
+    "flag": "",
+    "rated": "2026-11-03"
   },
   "Optum": {
     "tier": "pass",
@@ -269,6 +335,12 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "Qualtrics": {
+    "tier": "solid",
+    "reason": "Well-known experience-management SaaS; decent pay",
+    "flag": "",
+    "rated": "2026-11-03"
+  },
   "Render": {
     "tier": "strong",
     "reason": "Well-funded, respected cloud hosting platform",
@@ -299,6 +371,18 @@
     "flag": "defense (Saab's US arm makes military radars/systems)",
     "rated": "2026-10-31"
   },
+  "Schweitzer Engineering Laboratories (SEL)": {
+    "tier": "solid",
+    "reason": "Respected employee-owned power-grid tech firm; technician role",
+    "flag": "",
+    "rated": "2026-11-03"
+  },
+  "Smartsheet": {
+    "tier": "solid",
+    "reason": "Established work-management SaaS company",
+    "flag": "",
+    "rated": "2026-11-03"
+  },
   "Stanford University": {
     "tier": "pass",
     "reason": "University staff role; low pay",
@@ -316,6 +400,12 @@
     "reason": "IT consulting firm",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "Toshiba Business": {
+    "tier": "pass",
+    "reason": "Office printer/copier business unit",
+    "flag": "",
+    "rated": "2026-11-03"
   },
   "Tyler Technologies": {
     "tier": "pass",
