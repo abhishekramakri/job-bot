@@ -41,6 +41,12 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "Altron, Inc.": {
+    "tier": "skip",
+    "reason": "Navy undersea warfare support contractor near NUWC Newport",
+    "flag": "defense contractor (Navy)",
+    "rated": "2026-11-04"
+  },
   "Andromeda Systems Incorporated": {
     "tier": "skip",
     "reason": "Military aircraft sustainment contractor",
@@ -52,6 +58,12 @@
     "reason": "DARPA/DoD-funded research contractor in Arlington",
     "flag": "defense research contractor",
     "rated": "2026-11-01"
+  },
+  "Arc Institute": {
+    "tier": "solid",
+    "reason": "Well-funded Palo Alto biomedical research nonprofit",
+    "flag": "",
+    "rated": "2026-11-04"
   },
   "Argonne National Laboratory": {
     "tier": "solid",
@@ -65,6 +77,12 @@
     "flag": "",
     "rated": "2026-11-01"
   },
+  "Astrolab": {
+    "tier": "solid",
+    "reason": "Venture-backed lunar rover startup in Hawthorne",
+    "flag": "",
+    "rated": "2026-11-04"
+  },
   "Asure Software": {
     "tier": "pass",
     "reason": "Unremarkable HR/payroll software company",
@@ -76,6 +94,12 @@
     "reason": "Tasers, police body cams and surveillance",
     "flag": "weapons (Tasers) and police surveillance tech",
     "rated": "2026-10-30"
+  },
+  "Bectran, Inc.": {
+    "tier": "pass",
+    "reason": "Small credit-management SaaS company",
+    "flag": "",
+    "rated": "2026-11-04"
   },
   "Blue River Technology": {
     "tier": "solid",
@@ -101,6 +125,12 @@
     "flag": "",
     "rated": "2026-10-31"
   },
+  "Boston Scientific": {
+    "tier": "pass",
+    "reason": "Medical device maker; modest software pay",
+    "flag": "",
+    "rated": "2026-11-04"
+  },
   "Built": {
     "tier": "pass",
     "reason": "Construction-lending fintech; unremarkable",
@@ -112,6 +142,12 @@
     "reason": "Construction-lending fintech; unremarkable",
     "flag": "",
     "rated": "2026-10-31"
+  },
+  "BusinessRate": {
+    "tier": "pass",
+    "reason": "Unremarkable small company",
+    "flag": "",
+    "rated": "2026-11-04"
   },
   "Cantor Fitzgerald": {
     "tier": "solid",
@@ -125,11 +161,23 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "Cohere Health": {
+    "tier": "solid",
+    "reason": "Funded health-tech startup automating prior authorization",
+    "flag": "prior-authorization tooling for insurers can enable care denials",
+    "rated": "2026-11-04"
+  },
   "Coinflow": {
     "tier": "skip",
     "reason": "Crypto payments company",
     "flag": "crypto (stablecoin/crypto payments)",
     "rated": "2026-10-30"
+  },
+  "Columbia Technology Partners": {
+    "tier": "skip",
+    "reason": "Northern Virginia federal IT contractor",
+    "flag": "federal/defense IT contractor",
+    "rated": "2026-11-04"
   },
   "Cotiviti": {
     "tier": "pass",
@@ -161,6 +209,12 @@
     "flag": "sports betting / gambling",
     "rated": "2026-10-30"
   },
+  "Eaton": {
+    "tier": "pass",
+    "reason": "Industrial power-management company; non-tech pay",
+    "flag": "",
+    "rated": "2026-11-04"
+  },
   "Esri": {
     "tier": "solid",
     "reason": "GIS software leader; stable, reputable",
@@ -191,6 +245,12 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "Honeywell Aerospace": {
+    "tier": "skip",
+    "reason": "Honeywell's aerospace and defense unit",
+    "flag": "major defense contractor (Honeywell)",
+    "rated": "2026-11-04"
+  },
   "Huntington Ingalls Industries": {
     "tier": "skip",
     "reason": "Builds Navy warships and nuclear submarines",
@@ -208,6 +268,12 @@
     "reason": "VC-backed manufacturing AI inspection startup",
     "flag": "",
     "rated": "2026-11-01"
+  },
+  "Interactive Brokers": {
+    "tier": "solid",
+    "reason": "Well-known, tech-heavy brokerage with decent pay",
+    "flag": "",
+    "rated": "2026-11-04"
   },
   "Iridium": {
     "tier": "pass",
@@ -299,6 +365,12 @@
     "flag": "Space Force customers",
     "rated": "2026-10-30"
   },
+  "Oceaneering": {
+    "tier": "skip",
+    "reason": "Hanover MD role is in its government/defense segment",
+    "flag": "defense contractor (Navy/government work near Fort Meade)",
+    "rated": "2026-11-04"
+  },
   "Odyssey Space Research, LLC": {
     "tier": "pass",
     "reason": "Small NASA contractor, unremarkable",
@@ -347,6 +419,12 @@
     "flag": "",
     "rated": "2026-11-02"
   },
+  "Reqpedia": {
+    "tier": "pass",
+    "reason": "Likely staffing or recruiting shop",
+    "flag": "",
+    "rated": "2026-11-04"
+  },
   "Rochester Institute of Technology": {
     "tier": "pass",
     "reason": "University role; low pay",
@@ -376,6 +454,24 @@
     "reason": "Respected employee-owned power-grid tech firm; technician role",
     "flag": "",
     "rated": "2026-11-03"
+  },
+  "Seerist": {
+    "tier": "skip",
+    "reason": "Threat-intelligence/OSINT platform for government and military",
+    "flag": "OSINT/surveillance intelligence for government and defense",
+    "rated": "2026-11-04"
+  },
+  "Sigma Defense Systems LLC": {
+    "tier": "skip",
+    "reason": "Defense contractor",
+    "flag": "defense",
+    "rated": "2026-11-04"
+  },
+  "Skyward": {
+    "tier": "pass",
+    "reason": "K-12 school software; small-town, lower pay",
+    "flag": "",
+    "rated": "2026-11-04"
   },
   "Smartsheet": {
     "tier": "solid",
@@ -424,6 +520,18 @@
     "reason": "University job; low pay",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "Vantive": {
+    "tier": "pass",
+    "reason": "Baxter kidney-care spin-off; medical devices",
+    "flag": "",
+    "rated": "2026-11-04"
+  },
+  "Verizon": {
+    "tier": "solid",
+    "reason": "Large telecom with decent pay, like T-Mobile",
+    "flag": "",
+    "rated": "2026-11-04"
   },
   "Vituity": {
     "tier": "pass",
