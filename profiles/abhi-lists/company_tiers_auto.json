@@ -179,6 +179,12 @@
     "flag": "federal/defense IT contractor",
     "rated": "2026-11-04"
   },
+  "Corning Incorporated": {
+    "tier": "pass",
+    "reason": "Glass/materials manufacturer; software is not its core business",
+    "flag": "",
+    "rated": "2026-11-05"
+  },
   "Cotiviti": {
     "tier": "pass",
     "reason": "Healthcare analytics; QA role",
@@ -232,6 +238,12 @@
     "reason": "Makes Predator/Reaper military drones",
     "flag": "defense (military drones)",
     "rated": "2026-10-30"
+  },
+  "Guidewire Software": {
+    "tier": "solid",
+    "reason": "Established insurance-software company; decent pay",
+    "flag": "",
+    "rated": "2026-11-05"
   },
   "Handshake": {
     "tier": "solid",
@@ -298,6 +310,12 @@
     "reason": "Film/TV post-production company owned by Panavision",
     "flag": "",
     "rated": "2026-11-02"
+  },
+  "Mercury Systems": {
+    "tier": "skip",
+    "reason": "Defense electronics contractor",
+    "flag": "defense electronics for military systems",
+    "rated": "2026-11-05"
   },
   "Metro Sales Inc.": {
     "tier": "pass",
@@ -377,6 +395,12 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "One Call": {
+    "tier": "pass",
+    "reason": "Workers' comp care management; not a tech employer",
+    "flag": "",
+    "rated": "2026-11-05"
+  },
   "Optum": {
     "tier": "pass",
     "reason": "Healthcare insurer IT; modest pay, like CVS Health",
@@ -413,6 +437,18 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "RWE": {
+    "tier": "pass",
+    "reason": "Energy utility; software is not its core business",
+    "flag": "",
+    "rated": "2026-11-05"
+  },
+  "Reflex": {
+    "tier": "pass",
+    "reason": "Small Python web-framework startup; unremarkable",
+    "flag": "",
+    "rated": "2026-11-05"
+  },
   "Render": {
     "tier": "strong",
     "reason": "Well-funded, respected cloud hosting platform",
@@ -442,6 +478,12 @@
     "reason": "Reputable launch and spacecraft company",
     "flag": "significant defense work (SDA satellites, hypersonic testing)",
     "rated": "2026-10-31"
+  },
+  "STERIS": {
+    "tier": "pass",
+    "reason": "Medical sterilization equipment; not a tech employer",
+    "flag": "",
+    "rated": "2026-11-05"
   },
   "Saab, Inc.": {
     "tier": "skip",
@@ -485,11 +527,29 @@
     "flag": "",
     "rated": "2026-10-31"
   },
+  "Starkey México": {
+    "tier": "creative",
+    "reason": "Hearing-aid maker; acoustics role is real audio DSP work",
+    "flag": "",
+    "rated": "2026-11-05"
+  },
   "Sun West Mortgage Company, Inc.": {
     "tier": "pass",
     "reason": "Mortgage lender, not a tech employer",
     "flag": "",
     "rated": "2026-11-02"
+  },
+  "Teradata": {
+    "tier": "solid",
+    "reason": "Established data-warehouse company; stable but less exciting",
+    "flag": "",
+    "rated": "2026-11-05"
+  },
+  "Thatch": {
+    "tier": "pass",
+    "reason": "Small health-benefits startup; unremarkable",
+    "flag": "",
+    "rated": "2026-11-05"
   },
   "Thoughtworks": {
     "tier": "pass",
@@ -508,6 +568,12 @@
     "reason": "Government software; lower pay",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "UNCOMN": {
+    "tier": "pass",
+    "reason": "St. Louis IT consulting shop; some government clients",
+    "flag": "",
+    "rated": "2026-11-05"
   },
   "UnitedHealth Group": {
     "tier": "pass",
