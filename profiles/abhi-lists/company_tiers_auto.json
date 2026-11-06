@@ -71,6 +71,12 @@
     "flag": "some national-security work alongside science research",
     "rated": "2026-10-30"
   },
+  "Ascend Analytics": {
+    "tier": "pass",
+    "reason": "Small energy-market analytics software firm; unremarkable",
+    "flag": "",
+    "rated": "2026-11-06"
+  },
   "Aspen Technology": {
     "tier": "solid",
     "reason": "Same as AspenTech; industrial process software",
@@ -161,6 +167,18 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "Choice Hotels": {
+    "tier": "pass",
+    "reason": "Hotel company, non-tech employer",
+    "flag": "",
+    "rated": "2026-11-06"
+  },
+  "Cisive": {
+    "tier": "pass",
+    "reason": "Background-screening company; unremarkable",
+    "flag": "",
+    "rated": "2026-11-06"
+  },
   "Cohere Health": {
     "tier": "solid",
     "reason": "Funded health-tech startup automating prior authorization",
@@ -215,17 +233,53 @@
     "flag": "sports betting / gambling",
     "rated": "2026-10-30"
   },
+  "Draper": {
+    "tier": "skip",
+    "reason": "Draper Lab does military guidance systems research",
+    "flag": "defense research lab (missile guidance)",
+    "rated": "2026-11-06"
+  },
+  "Early Warning": {
+    "tier": "solid",
+    "reason": "Bank-owned company behind Zelle and Paze; decent pay",
+    "flag": "",
+    "rated": "2026-11-06"
+  },
   "Eaton": {
     "tier": "pass",
     "reason": "Industrial power-management company; non-tech pay",
     "flag": "",
     "rated": "2026-11-04"
   },
+  "Empower Pharmacy": {
+    "tier": "pass",
+    "reason": "Compounding pharmacy, non-tech employer",
+    "flag": "",
+    "rated": "2026-11-06"
+  },
   "Esri": {
     "tier": "solid",
     "reason": "GIS software leader; stable, reputable",
     "flag": "many military/intelligence government customers",
     "rated": "2026-10-30"
+  },
+  "Everwatch": {
+    "tier": "skip",
+    "reason": "Intelligence contractor based in Annapolis Junction",
+    "flag": "intelligence-community contractor",
+    "rated": "2026-11-06"
+  },
+  "Expedition Technology": {
+    "tier": "skip",
+    "reason": "Signal-processing contractor for defense and intelligence, Herndon",
+    "flag": "defense/intelligence contractor",
+    "rated": "2026-11-06"
+  },
+  "Extra Space Storage": {
+    "tier": "pass",
+    "reason": "Self-storage company, non-tech employer",
+    "flag": "",
+    "rated": "2026-11-06"
   },
   "Fortune": {
     "tier": "creative",
@@ -238,6 +292,12 @@
     "reason": "Makes Predator/Reaper military drones",
     "flag": "defense (military drones)",
     "rated": "2026-10-30"
+  },
+  "Guidewire": {
+    "tier": "solid",
+    "reason": "Established insurance software company; decent pay",
+    "flag": "",
+    "rated": "2026-11-06"
   },
   "Guidewire Software": {
     "tier": "solid",
@@ -256,6 +316,12 @@
     "reason": "Meal-kit warehouse software; less exciting",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "Highmark Health": {
+    "tier": "pass",
+    "reason": "Health insurer, non-tech employer",
+    "flag": "",
+    "rated": "2026-11-06"
   },
   "Honeywell Aerospace": {
     "tier": "skip",
@@ -292,6 +358,12 @@
     "reason": "Satellite telecom; modest pay, heavy government work",
     "flag": "",
     "rated": "2026-11-03"
+  },
+  "Johnson Controls": {
+    "tier": "pass",
+    "reason": "Building-equipment conglomerate; not a tech employer",
+    "flag": "",
+    "rated": "2026-11-06"
   },
   "Karthik Consulting": {
     "tier": "skip",
@@ -407,6 +479,12 @@
     "flag": "",
     "rated": "2026-11-01"
   },
+  "Paul Logistics": {
+    "tier": "pass",
+    "reason": "Logistics company, non-tech employer",
+    "flag": "",
+    "rated": "2026-11-06"
+  },
   "Principal": {
     "tier": "pass",
     "reason": "Insurance/retirement financial company",
@@ -497,6 +575,12 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "Science and Technology Corporation (STC)": {
+    "tier": "skip",
+    "reason": "Virginia government contractor that does defense work",
+    "flag": "government/defense contractor",
+    "rated": "2026-11-06"
+  },
   "Seerist": {
     "tier": "skip",
     "reason": "Threat-intelligence/OSINT platform for government and military",
@@ -539,6 +623,12 @@
     "flag": "",
     "rated": "2026-11-02"
   },
+  "Susquehanna International Group": {
+    "tier": "strong",
+    "reason": "Top quant trading firm; excellent pay",
+    "flag": "has crypto trading and sports-betting ventures",
+    "rated": "2026-11-06"
+  },
   "Teradata": {
     "tier": "solid",
     "reason": "Established data-warehouse company; stable but less exciting",
@@ -556,6 +646,12 @@
     "reason": "IT consulting firm",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "Tokenworks Inc": {
+    "tier": "pass",
+    "reason": "Small ID-scanner software maker, not crypto",
+    "flag": "",
+    "rated": "2026-11-06"
   },
   "Toshiba Business": {
     "tier": "pass",
@@ -587,6 +683,12 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "Urban Science": {
+    "tier": "pass",
+    "reason": "Automotive retail analytics consultancy; unremarkable",
+    "flag": "",
+    "rated": "2026-11-06"
+  },
   "Vantive": {
     "tier": "pass",
     "reason": "Baxter kidney-care spin-off; medical devices",
@@ -599,6 +701,12 @@
     "flag": "",
     "rated": "2026-11-04"
   },
+  "Vitu": {
+    "tier": "pass",
+    "reason": "Small vehicle-registration software company",
+    "flag": "",
+    "rated": "2026-11-06"
+  },
   "Vituity": {
     "tier": "pass",
     "reason": "Physician-led healthcare staffing group; non-tech employer",
@@ -610,6 +718,12 @@
     "reason": "Western Digital storage hardware; reputable",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "WGU": {
+    "tier": "pass",
+    "reason": "Online university, non-tech employer",
+    "flag": "",
+    "rated": "2026-11-06"
   },
   "Waggoner Financial": {
     "tier": "pass",
