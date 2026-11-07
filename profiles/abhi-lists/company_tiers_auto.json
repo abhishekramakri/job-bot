@@ -47,11 +47,29 @@
     "flag": "defense contractor (Navy)",
     "rated": "2026-11-04"
   },
+  "Amazon Web Services (AWS)": {
+    "tier": "strong",
+    "reason": "Amazon's cloud arm; top pay, SoC/hardware-adjacent role",
+    "flag": "labor practices; AWS holds defense/intelligence cloud contracts",
+    "rated": "2026-11-07"
+  },
+  "American College of Obstetricians and Gynecologists (ACOG)": {
+    "tier": "pass",
+    "reason": "Medical professional association, non-tech employer",
+    "flag": "",
+    "rated": "2026-11-07"
+  },
   "Andromeda Systems Incorporated": {
     "tier": "skip",
     "reason": "Military aircraft sustainment contractor",
     "flag": "defense contractor",
     "rated": "2026-11-03"
+  },
+  "Annapurna Labs": {
+    "tier": "strong",
+    "reason": "Amazon's custom chip team; Amazon-level pay",
+    "flag": "Amazon subsidiary; AWS defense/intelligence cloud contracts",
+    "rated": "2026-11-07"
   },
   "Apogee Research, LLC": {
     "tier": "skip",
@@ -95,11 +113,23 @@
     "flag": "",
     "rated": "2026-11-02"
   },
+  "Aurex": {
+    "tier": "skip",
+    "reason": "Unknown small company in Huntsville",
+    "flag": "likely defense contractor (Huntsville)",
+    "rated": "2026-11-07"
+  },
   "Axon": {
     "tier": "skip",
     "reason": "Tasers, police body cams and surveillance",
     "flag": "weapons (Tasers) and police surveillance tech",
     "rated": "2026-10-30"
+  },
+  "Bank of America": {
+    "tier": "solid",
+    "reason": "Major bank, stable with decent pay",
+    "flag": "fossil-fuel and defense-industry financing",
+    "rated": "2026-11-07"
   },
   "Bectran, Inc.": {
     "tier": "pass",
@@ -155,6 +185,12 @@
     "flag": "",
     "rated": "2026-11-04"
   },
+  "CGI": {
+    "tier": "pass",
+    "reason": "IT consulting body shop",
+    "flag": "",
+    "rated": "2026-11-07"
+  },
   "Cantor Fitzgerald": {
     "tier": "solid",
     "reason": "Established financial-services firm, decent pay",
@@ -166,6 +202,12 @@
     "reason": "Health insurer; non-tech employer",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "Chewy": {
+    "tier": "solid",
+    "reason": "Large e-commerce company with decent engineering pay",
+    "flag": "",
+    "rated": "2026-11-07"
   },
   "Choice Hotels": {
     "tier": "pass",
@@ -197,6 +239,12 @@
     "flag": "federal/defense IT contractor",
     "rated": "2026-11-04"
   },
+  "Cook Group": {
+    "tier": "pass",
+    "reason": "Medical device maker, not tech-focused",
+    "flag": "",
+    "rated": "2026-11-07"
+  },
   "Corning Incorporated": {
     "tier": "pass",
     "reason": "Glass/materials manufacturer; software is not its core business",
@@ -214,6 +262,12 @@
     "reason": "Core financial market infrastructure; stable, decent pay",
     "flag": "",
     "rated": "2026-11-03"
+  },
+  "Deel": {
+    "tier": "solid",
+    "reason": "Well-funded HR/payroll tech company",
+    "flag": "Rippling corporate-espionage lawsuit",
+    "rated": "2026-11-07"
   },
   "Dexcom": {
     "tier": "solid",
@@ -251,11 +305,23 @@
     "flag": "",
     "rated": "2026-11-04"
   },
+  "Elevation Autism Center": {
+    "tier": "pass",
+    "reason": "Healthcare provider, non-tech employer",
+    "flag": "",
+    "rated": "2026-11-07"
+  },
   "Empower Pharmacy": {
     "tier": "pass",
     "reason": "Compounding pharmacy, non-tech employer",
     "flag": "",
     "rated": "2026-11-06"
+  },
+  "Engine": {
+    "tier": "pass",
+    "reason": "Travel booking startup; GTM engineering role",
+    "flag": "",
+    "rated": "2026-11-07"
   },
   "Esri": {
     "tier": "solid",
@@ -335,6 +401,18 @@
     "flag": "defense (military shipbuilding)",
     "rated": "2026-11-02"
   },
+  "ICF": {
+    "tier": "pass",
+    "reason": "Government consulting firm",
+    "flag": "",
+    "rated": "2026-11-07"
+  },
+  "ICF International": {
+    "tier": "pass",
+    "reason": "Government consulting firm",
+    "flag": "",
+    "rated": "2026-11-07"
+  },
   "Imagen Technologies": {
     "tier": "solid",
     "reason": "Well-funded NYC healthtech/teleradiology startup",
@@ -377,11 +455,29 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "Keyfactor": {
+    "tier": "pass",
+    "reason": "Mid-size PKI security vendor, unremarkable",
+    "flag": "",
+    "rated": "2026-11-07"
+  },
   "Light Iron": {
     "tier": "creative",
     "reason": "Film/TV post-production company owned by Panavision",
     "flag": "",
     "rated": "2026-11-02"
+  },
+  "Markon": {
+    "tier": "skip",
+    "reason": "Unknown small company in Annapolis Junction",
+    "flag": "likely intelligence-community contractor (Annapolis Junction)",
+    "rated": "2026-11-07"
+  },
+  "Markondo": {
+    "tier": "skip",
+    "reason": "Unknown small company in Annapolis Junction",
+    "flag": "likely intelligence-community contractor (Annapolis Junction)",
+    "rated": "2026-11-07"
   },
   "Mercury Systems": {
     "tier": "skip",
@@ -437,6 +533,12 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "Nationwide": {
+    "tier": "pass",
+    "reason": "Insurance company, modest pay",
+    "flag": "",
+    "rated": "2026-11-07"
+  },
   "Newmark": {
     "tier": "pass",
     "reason": "Commercial real-estate services, not tech",
@@ -479,6 +581,24 @@
     "flag": "",
     "rated": "2026-11-01"
   },
+  "Ovative": {
+    "tier": "pass",
+    "reason": "Marketing agency analyst role",
+    "flag": "",
+    "rated": "2026-11-07"
+  },
+  "Overland AI": {
+    "tier": "skip",
+    "reason": "Autonomous off-road vehicles for military",
+    "flag": "defense (military autonomous ground vehicles)",
+    "rated": "2026-11-07"
+  },
+  "PANTHERx Rare Pharmacy": {
+    "tier": "pass",
+    "reason": "Specialty pharmacy, non-tech employer",
+    "flag": "",
+    "rated": "2026-11-07"
+  },
   "Paul Logistics": {
     "tier": "pass",
     "reason": "Logistics company, non-tech employer",
@@ -509,11 +629,29 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "Prosync": {
+    "tier": "skip",
+    "reason": "Unknown small company in Annapolis Junction",
+    "flag": "likely intelligence-community contractor (Annapolis Junction)",
+    "rated": "2026-11-07"
+  },
+  "Qnity": {
+    "tier": "pass",
+    "reason": "Electronics materials manufacturer, manufacturing software role",
+    "flag": "",
+    "rated": "2026-11-07"
+  },
   "Qualtrics": {
     "tier": "solid",
     "reason": "Well-known experience-management SaaS; decent pay",
     "flag": "",
     "rated": "2026-11-03"
+  },
+  "Quicken Loans": {
+    "tier": "pass",
+    "reason": "Mortgage lender (Rocket), rated pass",
+    "flag": "",
+    "rated": "2026-11-07"
   },
   "RWE": {
     "tier": "pass",
@@ -568,6 +706,12 @@
     "reason": "Defense contractor",
     "flag": "defense (Saab's US arm makes military radars/systems)",
     "rated": "2026-10-31"
+  },
+  "Salk Institute for Biological Studies": {
+    "tier": "pass",
+    "reason": "Research nonprofit, low pay",
+    "flag": "",
+    "rated": "2026-11-07"
   },
   "Schweitzer Engineering Laboratories (SEL)": {
     "tier": "solid",
@@ -730,6 +874,18 @@
     "reason": "Small financial firm",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "Wells Fargo": {
+    "tier": "solid",
+    "reason": "Major bank, stable with decent pay",
+    "flag": "fake-accounts scandal",
+    "rated": "2026-11-07"
+  },
+  "Western Governors University": {
+    "tier": "pass",
+    "reason": "Online university, non-tech employer",
+    "flag": "",
+    "rated": "2026-11-07"
   },
   "York Space Systems": {
     "tier": "skip",
