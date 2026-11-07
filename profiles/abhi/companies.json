@@ -22,12 +22,14 @@
   {
     "name": "Affirm",
     "ats": "greenhouse",
-    "slug": "affirm"
+    "slug": "affirm",
+    "disabled": true
   },
   {
     "name": "Airbnb",
     "ats": "greenhouse",
-    "slug": "airbnb"
+    "slug": "airbnb",
+    "disabled": true
   },
   {
     "name": "Amazon",
@@ -47,7 +49,8 @@
     "queries": [
       "software engineer",
       "audio"
-    ]
+    ],
+    "disabled": true
   },
   {
     "name": "Apple",
@@ -60,7 +63,8 @@
   {
     "name": "Asana",
     "ats": "greenhouse",
-    "slug": "asana"
+    "slug": "asana",
+    "disabled": true
   },
   {
     "name": "Atlassian",
@@ -81,7 +85,8 @@
   {
     "name": "Block (Square)",
     "ats": "greenhouse",
-    "slug": "block"
+    "slug": "block",
+    "disabled": true
   },
   {
     "name": "Bose",
@@ -93,12 +98,14 @@
   {
     "name": "Chime",
     "ats": "greenhouse",
-    "slug": "chime"
+    "slug": "chime",
+    "disabled": true
   },
   {
     "name": "Crunchyroll",
     "ats": "greenhouse",
-    "slug": "crunchyroll"
+    "slug": "crunchyroll",
+    "disabled": true
   },
   {
     "name": "Databricks",
@@ -108,7 +115,8 @@
   {
     "name": "Datadog",
     "ats": "greenhouse",
-    "slug": "datadog"
+    "slug": "datadog",
+    "disabled": true
   },
   {
     "name": "Descript",
@@ -129,7 +137,8 @@
     "queries": [
       "software engineer",
       "audio"
-    ]
+    ],
+    "disabled": true
   },
   {
     "name": "Dolby",
@@ -146,12 +155,14 @@
   {
     "name": "Dropbox",
     "ats": "greenhouse",
-    "slug": "dropbox"
+    "slug": "dropbox",
+    "disabled": true
   },
   {
     "name": "Duolingo",
     "ats": "greenhouse",
-    "slug": "duolingo"
+    "slug": "duolingo",
+    "disabled": true
   },
   {
     "name": "EA",
@@ -167,7 +178,8 @@
     "ats": "workday",
     "host": "etsy.wd5.myworkdayjobs.com",
     "tenant": "etsy",
-    "site": "Etsy_Careers"
+    "site": "Etsy_Careers",
+    "disabled": true
   },
   {
     "name": "Fender (PreSonus)",
@@ -196,12 +208,14 @@
   {
     "name": "Hudl",
     "ats": "greenhouse",
-    "slug": "hudl"
+    "slug": "hudl",
+    "disabled": true
   },
   {
     "name": "Instacart",
     "ats": "greenhouse",
-    "slug": "instacart"
+    "slug": "instacart",
+    "disabled": true
   },
   {
     "name": "Intel",
@@ -212,12 +226,14 @@
     "queries": [
       "software engineer",
       "audio"
-    ]
+    ],
+    "disabled": true
   },
   {
     "name": "Kickstarter",
     "ats": "greenhouse",
-    "slug": "kickstarter"
+    "slug": "kickstarter",
+    "disabled": true
   },
   {
     "name": "LANDR",
@@ -233,14 +249,16 @@
     "queries": [
       "software engineer",
       "audio"
-    ]
+    ],
+    "disabled": true
   },
   {
     "name": "Logitech",
     "ats": "workday",
     "host": "logitech.wd5.myworkdayjobs.com",
     "tenant": "logitech",
-    "site": "Logitech"
+    "site": "Logitech",
+    "disabled": true
   },
   {
     "name": "Lyft",
@@ -250,14 +268,16 @@
   {
     "name": "MLB",
     "ats": "greenhouse",
-    "slug": "majorleaguebaseball"
+    "slug": "majorleaguebaseball",
+    "disabled": true
   },
   {
     "name": "Mastercard",
     "ats": "workday",
     "host": "mastercard.wd1.myworkdayjobs.com",
     "tenant": "mastercard",
-    "site": "CorporateCareers"
+    "site": "CorporateCareers",
+    "disabled": true
   },
   {
     "name": "Micron",
@@ -268,7 +288,8 @@
     "queries": [
       "software engineer",
       "audio"
-    ]
+    ],
+    "disabled": true
   },
   {
     "name": "Microsoft",
@@ -289,7 +310,8 @@
     "queries": [
       "software engineer",
       "audio"
-    ]
+    ],
+    "disabled": true
   },
   {
     "name": "NBCUniversal",
@@ -300,7 +322,8 @@
     "queries": [
       "software engineer",
       "audio"
-    ]
+    ],
+    "disabled": true
   },
   {
     "name": "NVIDIA",
@@ -311,7 +334,8 @@
     "queries": [
       "software engineer",
       "audio"
-    ]
+    ],
+    "disabled": true
   },
   {
     "name": "Native Instruments",
@@ -340,7 +364,8 @@
   {
     "name": "Notion",
     "ats": "ashby",
-    "slug": "notion"
+    "slug": "notion",
+    "disabled": true
   },
   {
     "name": "Output",
@@ -354,7 +379,8 @@
     "queries": [
       "software engineer",
       "audio"
-    ]
+    ],
+    "disabled": true
   },
   {
     "name": "Patreon",
@@ -366,12 +392,14 @@
     "ats": "workday",
     "host": "paypal.wd1.myworkdayjobs.com",
     "tenant": "paypal",
-    "site": "jobs"
+    "site": "jobs",
+    "disabled": true
   },
   {
     "name": "Peloton",
     "ats": "greenhouse",
-    "slug": "peloton"
+    "slug": "peloton",
+    "disabled": true
   },
   {
     "name": "Pinterest",
@@ -388,7 +416,8 @@
   {
     "name": "Plaid",
     "ats": "ashby",
-    "slug": "plaid"
+    "slug": "plaid",
+    "disabled": true
   },
   {
     "name": "Qualcomm",
@@ -424,12 +453,14 @@
     "queries": [
       "software engineer",
       "audio"
-    ]
+    ],
+    "disabled": true
   },
   {
     "name": "Robinhood",
     "ats": "greenhouse",
-    "slug": "robinhood"
+    "slug": "robinhood",
+    "disabled": true
   },
   {
     "name": "Roblox",
@@ -444,7 +475,8 @@
   {
     "name": "Roku",
     "ats": "greenhouse",
-    "slug": "roku"
+    "slug": "roku",
+    "disabled": true
   },
   {
     "name": "Roland",
@@ -453,7 +485,8 @@
   },
   {
     "name": "Salesforce",
-    "ats": "salesforce"
+    "ats": "salesforce",
+    "disabled": true
   },
   {
     "name": "Scopely",
@@ -463,7 +496,8 @@
   {
     "name": "SeatGeek",
     "ats": "greenhouse",
-    "slug": "seatgeek"
+    "slug": "seatgeek",
+    "disabled": true
   },
   {
     "name": "ServiceNow",
@@ -508,7 +542,8 @@
   {
     "name": "Sphere Entertainment",
     "ats": "greenhouse",
-    "slug": "sphereentertainment"
+    "slug": "sphereentertainment",
+    "disabled": true
   },
   {
     "name": "Splice",
@@ -523,7 +558,8 @@
   {
     "name": "Strava",
     "ats": "ashby",
-    "slug": "strava"
+    "slug": "strava",
+    "disabled": true
   },
   {
     "name": "Stripe",
@@ -533,7 +569,8 @@
   {
     "name": "StubHub",
     "ats": "greenhouse",
-    "slug": "stubhubinc"
+    "slug": "stubhubinc",
+    "disabled": true
   },
   {
     "name": "Substack",
@@ -553,12 +590,14 @@
   {
     "name": "Tubi",
     "ats": "greenhouse",
-    "slug": "tubitv"
+    "slug": "tubitv",
+    "disabled": true
   },
   {
     "name": "Twilio",
     "ats": "greenhouse",
-    "slug": "twilio"
+    "slug": "twilio",
+    "disabled": true
   },
   {
     "name": "Twitch",
@@ -616,7 +655,8 @@
   },
   {
     "name": "Whatnot",
-    "ats": "whatnot"
+    "ats": "whatnot",
+    "disabled": true
   },
   {
     "name": "iHeartMedia",

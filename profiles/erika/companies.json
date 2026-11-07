@@ -56,11 +56,6 @@
     ]
   },
   {
-    "name": "Anthropic",
-    "ats": "greenhouse",
-    "slug": "anthropic"
-  },
-  {
     "name": "Apple",
     "ats": "apple",
     "max_pages": 50,
@@ -251,11 +246,6 @@
     "name": "Notion",
     "ats": "ashby",
     "slug": "notion"
-  },
-  {
-    "name": "OpenAI",
-    "ats": "ashby",
-    "slug": "openai"
   },
   {
     "name": "Patreon",

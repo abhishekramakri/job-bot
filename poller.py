@@ -693,7 +693,9 @@ def fetch_oracle_recruiting(company):
 
 def fetch_snap(company):
     resp = request_with_retry("GET", "https://careers.snap.com/jobs")
-    raw = extract_js_object(resp.text, "window.ASYNC_DATA_CONTROLLER_CACHE = ")
+    # Spacing around the "=" changes between site builds, so match it rather than assume it.
+    marker = re.search(r"window\.ASYNC_DATA_CONTROLLER_CACHE\s*=\s*", resp.text)
+    raw = extract_js_object(resp.text, marker.group(0)) if marker else None
     if not raw:
         return []
     data = json.loads(raw)
