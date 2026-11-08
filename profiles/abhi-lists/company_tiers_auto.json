@@ -431,17 +431,35 @@
     "flag": "",
     "rated": "2026-11-04"
   },
+  "Iowa State University": {
+    "tier": "pass",
+    "reason": "University IT role; low pay, not a tech company",
+    "flag": "",
+    "rated": "2026-11-08"
+  },
   "Iridium": {
     "tier": "pass",
     "reason": "Satellite telecom; modest pay, heavy government work",
     "flag": "",
     "rated": "2026-11-03"
   },
+  "JB Mobility": {
+    "tier": "pass",
+    "reason": "Small unremarkable company; language-restricted role",
+    "flag": "",
+    "rated": "2026-11-08"
+  },
   "Johnson Controls": {
     "tier": "pass",
     "reason": "Building-equipment conglomerate; not a tech employer",
     "flag": "",
     "rated": "2026-11-06"
+  },
+  "KAYAK": {
+    "tier": "solid",
+    "reason": "Well-known travel search, Booking Holdings sibling of Priceline",
+    "flag": "",
+    "rated": "2026-11-08"
   },
   "Karthik Consulting": {
     "tier": "skip",
@@ -467,6 +485,12 @@
     "flag": "",
     "rated": "2026-11-02"
   },
+  "Louisiana Economic Development": {
+    "tier": "pass",
+    "reason": "State government agency; low pay, non-tech",
+    "flag": "",
+    "rated": "2026-11-08"
+  },
   "Markon": {
     "tier": "skip",
     "reason": "Unknown small company in Annapolis Junction",
@@ -478,6 +502,12 @@
     "reason": "Unknown small company in Annapolis Junction",
     "flag": "likely intelligence-community contractor (Annapolis Junction)",
     "rated": "2026-11-07"
+  },
+  "Maverick Power": {
+    "tier": "pass",
+    "reason": "Small unremarkable company",
+    "flag": "",
+    "rated": "2026-11-08"
   },
   "Mercury Systems": {
     "tier": "skip",
@@ -773,6 +803,12 @@
     "flag": "has crypto trading and sports-betting ventures",
     "rated": "2026-11-06"
   },
+  "Swisslog": {
+    "tier": "pass",
+    "reason": "Industrial warehouse automation (KUKA); unexciting sustaining work",
+    "flag": "",
+    "rated": "2026-11-08"
+  },
   "Teradata": {
     "tier": "solid",
     "reason": "Established data-warehouse company; stable but less exciting",
@@ -886,6 +922,12 @@
     "reason": "Online university, non-tech employer",
     "flag": "",
     "rated": "2026-11-07"
+  },
+  "WhiteOptics LLC": {
+    "tier": "pass",
+    "reason": "Acuity subsidiary lighting company; Acuity rated pass",
+    "flag": "",
+    "rated": "2026-11-08"
   },
   "York Space Systems": {
     "tier": "skip",
