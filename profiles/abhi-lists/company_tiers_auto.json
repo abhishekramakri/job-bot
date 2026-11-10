@@ -17,6 +17,12 @@
     "flag": "",
     "rated": "2026-11-02"
   },
+  "AECOM": {
+    "tier": "pass",
+    "reason": "Engineering/infrastructure consultancy; software isn't core",
+    "flag": "",
+    "rated": "2026-11-10"
+  },
   "AFP Cuprum": {
     "tier": "pass",
     "reason": "Chilean pension fund under Principal; insurance/finance",
@@ -190,6 +196,12 @@
     "reason": "IT consulting body shop",
     "flag": "",
     "rated": "2026-11-07"
+  },
+  "CSI": {
+    "tier": "pass",
+    "reason": "Regional banking software vendor; modest pay",
+    "flag": "",
+    "rated": "2026-11-10"
   },
   "Cantor Fitzgerald": {
     "tier": "solid",
@@ -509,6 +521,12 @@
     "flag": "",
     "rated": "2026-11-08"
   },
+  "Mercury Insurance": {
+    "tier": "pass",
+    "reason": "Insurance company; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-10"
+  },
   "Mercury Systems": {
     "tier": "skip",
     "reason": "Defense electronics contractor",
@@ -563,11 +581,29 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "National Grid": {
+    "tier": "pass",
+    "reason": "Utility company; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-10"
+  },
   "Nationwide": {
     "tier": "pass",
     "reason": "Insurance company, modest pay",
     "flag": "",
     "rated": "2026-11-07"
+  },
+  "NetApp": {
+    "tier": "solid",
+    "reason": "Established storage/cloud data company; decent pay",
+    "flag": "",
+    "rated": "2026-11-10"
+  },
+  "New Jersey Department of Transportation": {
+    "tier": "pass",
+    "reason": "State government agency; low pay",
+    "flag": "",
+    "rated": "2026-11-10"
   },
   "Newmark": {
     "tier": "pass",
@@ -725,6 +761,12 @@
     "flag": "significant defense work (SDA satellites, hypersonic testing)",
     "rated": "2026-10-31"
   },
+  "S&C Electric Company": {
+    "tier": "pass",
+    "reason": "Electrical equipment manufacturer; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-10"
+  },
   "STERIS": {
     "tier": "pass",
     "reason": "Medical sterilization equipment; not a tech employer",
@@ -797,6 +839,12 @@
     "flag": "",
     "rated": "2026-11-02"
   },
+  "Sur La Table": {
+    "tier": "pass",
+    "reason": "Kitchenware retailer; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-10"
+  },
   "Susquehanna International Group": {
     "tier": "strong",
     "reason": "Top quant trading firm; excellent pay",
@@ -809,6 +857,12 @@
     "flag": "",
     "rated": "2026-11-08"
   },
+  "Synchrony": {
+    "tier": "pass",
+    "reason": "Consumer credit/store-card bank; unexciting",
+    "flag": "",
+    "rated": "2026-11-10"
+  },
   "TGW Logistics": {
     "tier": "pass",
     "reason": "Warehouse automation integrator; unremarkable pay for new grads",
@@ -820,6 +874,12 @@
     "reason": "Established data-warehouse company; stable but less exciting",
     "flag": "",
     "rated": "2026-11-05"
+  },
+  "Teradyne": {
+    "tier": "solid",
+    "reason": "Major semiconductor test equipment maker; reputable",
+    "flag": "",
+    "rated": "2026-11-10"
   },
   "Thatch": {
     "tier": "pass",
@@ -844,6 +904,12 @@
     "reason": "Office printer/copier business unit",
     "flag": "",
     "rated": "2026-11-03"
+  },
+  "TrustWILL": {
+    "tier": "pass",
+    "reason": "Small unknown company; trainee role",
+    "flag": "",
+    "rated": "2026-11-10"
   },
   "Tyler Technologies": {
     "tier": "pass",
@@ -911,6 +977,12 @@
     "flag": "",
     "rated": "2026-11-06"
   },
+  "WHOOP": {
+    "tier": "solid",
+    "reason": "Well-funded wearables company; decent Boston pay",
+    "flag": "",
+    "rated": "2026-11-10"
+  },
   "Waggoner Financial": {
     "tier": "pass",
     "reason": "Small financial firm",
@@ -934,6 +1006,12 @@
     "reason": "Acuity subsidiary lighting company; Acuity rated pass",
     "flag": "",
     "rated": "2026-11-08"
+  },
+  "Whoop": {
+    "tier": "solid",
+    "reason": "Well-funded wearables company; decent Boston pay",
+    "flag": "",
+    "rated": "2026-11-10"
   },
   "York Space Systems": {
     "tier": "skip",
