@@ -125,6 +125,18 @@
     "flag": "likely defense contractor (Huntsville)",
     "rated": "2026-11-07"
   },
+  "Auria Space": {
+    "tier": "skip",
+    "reason": "Role supports Sentinel ICBM program at Hill AFB",
+    "flag": "defense (Sentinel nuclear ICBM program)",
+    "rated": "2026-11-11"
+  },
+  "Autodesk": {
+    "tier": "creative",
+    "reason": "Major design/CAD and media creative tools maker",
+    "flag": "",
+    "rated": "2026-11-11"
+  },
   "Axon": {
     "tier": "skip",
     "reason": "Tasers, police body cams and surveillance",
@@ -233,6 +245,12 @@
     "flag": "",
     "rated": "2026-11-06"
   },
+  "Cognizant": {
+    "tier": "pass",
+    "reason": "IT consulting/outsourcing body shop",
+    "flag": "",
+    "rated": "2026-11-11"
+  },
   "Cohere Health": {
     "tier": "solid",
     "reason": "Funded health-tech startup automating prior authorization",
@@ -269,6 +287,18 @@
     "flag": "",
     "rated": "2026-10-31"
   },
+  "Cox Automotive": {
+    "tier": "pass",
+    "reason": "Auto-industry software; unremarkable pay and work",
+    "flag": "",
+    "rated": "2026-11-11"
+  },
+  "Cursor": {
+    "tier": "strong",
+    "reason": "Anysphere's AI code editor; top-tier startup",
+    "flag": "",
+    "rated": "2026-11-11"
+  },
   "DTCC": {
     "tier": "solid",
     "reason": "Core financial market infrastructure; stable, decent pay",
@@ -304,6 +334,12 @@
     "reason": "Draper Lab does military guidance systems research",
     "flag": "defense research lab (missile guidance)",
     "rated": "2026-11-06"
+  },
+  "Eagle Wireless": {
+    "tier": "pass",
+    "reason": "Small manufacturing MES role, unremarkable",
+    "flag": "",
+    "rated": "2026-11-11"
   },
   "Early Warning": {
     "tier": "solid",
@@ -359,6 +395,12 @@
     "flag": "",
     "rated": "2026-11-06"
   },
+  "Fidelity National Information Services": {
+    "tier": "pass",
+    "reason": "Mainframe fintech role; low pay, legacy work",
+    "flag": "",
+    "rated": "2026-11-11"
+  },
   "Fortune": {
     "tier": "creative",
     "reason": "Well-known business media publication",
@@ -370,6 +412,12 @@
     "reason": "Makes Predator/Reaper military drones",
     "flag": "defense (military drones)",
     "rated": "2026-10-30"
+  },
+  "Goldman Sachs": {
+    "tier": "solid",
+    "reason": "Reputable bank, decent pay; like JPMorgan/Citi",
+    "flag": "",
+    "rated": "2026-11-11"
   },
   "Guidewire": {
     "tier": "solid",
@@ -425,6 +473,12 @@
     "flag": "",
     "rated": "2026-11-07"
   },
+  "Identity Digital Inc.": {
+    "tier": "pass",
+    "reason": "Domain registry; unremarkable",
+    "flag": "",
+    "rated": "2026-11-11"
+  },
   "Imagen Technologies": {
     "tier": "solid",
     "reason": "Well-funded NYC healthtech/teleradiology startup",
@@ -472,6 +526,12 @@
     "reason": "Well-known travel search, Booking Holdings sibling of Priceline",
     "flag": "",
     "rated": "2026-11-08"
+  },
+  "Kalshi": {
+    "tier": "skip",
+    "reason": "Prediction market dominated by sports betting",
+    "flag": "gambling / sports betting",
+    "rated": "2026-11-11"
   },
   "Karthik Consulting": {
     "tier": "skip",
@@ -550,6 +610,12 @@
     "reason": "Navy training software role",
     "flag": "defense (Navy software)",
     "rated": "2026-10-30"
+  },
+  "Mirantis": {
+    "tier": "solid",
+    "reason": "Reputable cloud-infrastructure/Kubernetes company, remote",
+    "flag": "",
+    "rated": "2026-11-11"
   },
   "Modern Woodmen of America": {
     "tier": "pass",
@@ -731,6 +797,12 @@
     "flag": "",
     "rated": "2026-11-05"
   },
+  "Regions Bank": {
+    "tier": "pass",
+    "reason": "Regional bank; low pay",
+    "flag": "",
+    "rated": "2026-11-11"
+  },
   "Render": {
     "tier": "strong",
     "reason": "Well-funded, respected cloud hosting platform",
@@ -869,6 +941,12 @@
     "flag": "",
     "rated": "2026-11-09"
   },
+  "TP-Link Systems Inc.": {
+    "tier": "pass",
+    "reason": "Consumer networking hardware; middling pay",
+    "flag": "",
+    "rated": "2026-11-11"
+  },
   "Teradata": {
     "tier": "solid",
     "reason": "Established data-warehouse company; stable but less exciting",
@@ -910,6 +988,12 @@
     "reason": "Small unknown company; trainee role",
     "flag": "",
     "rated": "2026-11-10"
+  },
+  "Twenty-Six Defense": {
+    "tier": "skip",
+    "reason": "Defense contractor",
+    "flag": "defense contractor",
+    "rated": "2026-11-11"
   },
   "Tyler Technologies": {
     "tier": "pass",
@@ -988,6 +1072,12 @@
     "reason": "Small financial firm",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "Watts Water Technologies": {
+    "tier": "pass",
+    "reason": "Plumbing manufacturer; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-11"
   },
   "Wells Fargo": {
     "tier": "solid",
