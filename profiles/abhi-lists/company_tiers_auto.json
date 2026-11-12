@@ -41,6 +41,12 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "Allegion": {
+    "tier": "pass",
+    "reason": "Lock and security hardware maker; not a tech employer.",
+    "flag": "",
+    "rated": "2026-11-12"
+  },
   "Allergan Aesthetics, an AbbVie Company": {
     "tier": "pass",
     "reason": "Pharma/aesthetics device unit; non-tech employer",
@@ -149,6 +155,12 @@
     "flag": "fossil-fuel and defense-industry financing",
     "rated": "2026-11-07"
   },
+  "Bask Health": {
+    "tier": "pass",
+    "reason": "Small telehealth platform startup; unremarkable.",
+    "flag": "",
+    "rated": "2026-11-12"
+  },
   "Bectran, Inc.": {
     "tier": "pass",
     "reason": "Small credit-management SaaS company",
@@ -215,11 +227,23 @@
     "flag": "",
     "rated": "2026-11-10"
   },
+  "California State University San Marcos": {
+    "tier": "pass",
+    "reason": "University IT job; low pay.",
+    "flag": "",
+    "rated": "2026-11-12"
+  },
   "Cantor Fitzgerald": {
     "tier": "solid",
     "reason": "Established financial-services firm, decent pay",
     "flag": "major crypto ties (custodian for Tether reserves)",
     "rated": "2026-10-31"
+  },
+  "Capgemini Engineering": {
+    "tier": "pass",
+    "reason": "Consulting/outsourcing body shop.",
+    "flag": "",
+    "rated": "2026-11-12"
   },
   "CareFirst BlueCross BlueShield": {
     "tier": "pass",
@@ -365,6 +389,12 @@
     "flag": "",
     "rated": "2026-11-06"
   },
+  "Empowerly": {
+    "tier": "pass",
+    "reason": "Small college-counseling edtech; unremarkable.",
+    "flag": "",
+    "rated": "2026-11-12"
+  },
   "Engine": {
     "tier": "pass",
     "reason": "Travel booking startup; GTM engineering role",
@@ -407,11 +437,23 @@
     "flag": "",
     "rated": "2026-11-02"
   },
+  "Gen II Fund Services": {
+    "tier": "pass",
+    "reason": "Fund administration firm; not tech-focused.",
+    "flag": "",
+    "rated": "2026-11-12"
+  },
   "General Atomics": {
     "tier": "skip",
     "reason": "Makes Predator/Reaper military drones",
     "flag": "defense (military drones)",
     "rated": "2026-10-30"
+  },
+  "General Atomics Aeronautical Systems": {
+    "tier": "skip",
+    "reason": "Makes Predator/Reaper military drones.",
+    "flag": "defense (military drones)",
+    "rated": "2026-11-12"
   },
   "Goldman Sachs": {
     "tier": "solid",
@@ -437,11 +479,23 @@
     "flag": "",
     "rated": "2026-11-01"
   },
+  "HavocAI": {
+    "tier": "skip",
+    "reason": "Autonomous naval vessels for military customers.",
+    "flag": "defense (autonomous military boats)",
+    "rated": "2026-11-12"
+  },
   "HelloFresh": {
     "tier": "pass",
     "reason": "Meal-kit warehouse software; less exciting",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "Hidden Level": {
+    "tier": "skip",
+    "reason": "Airspace/drone surveillance sensing for defense.",
+    "flag": "defense/surveillance (counter-drone sensing)",
+    "rated": "2026-11-12"
   },
   "Highmark Health": {
     "tier": "pass",
@@ -497,6 +551,12 @@
     "flag": "",
     "rated": "2026-11-04"
   },
+  "Intercontinental Exchange": {
+    "tier": "solid",
+    "reason": "NYSE owner; stable exchange/fintech engineering.",
+    "flag": "large investment in Polymarket (crypto prediction market)",
+    "rated": "2026-11-12"
+  },
   "Iowa State University": {
     "tier": "pass",
     "reason": "University IT role; low pay, not a tech company",
@@ -514,6 +574,12 @@
     "reason": "Small unremarkable company; language-restricted role",
     "flag": "",
     "rated": "2026-11-08"
+  },
+  "Jamf": {
+    "tier": "solid",
+    "reason": "Established Apple device-management software company.",
+    "flag": "",
+    "rated": "2026-11-12"
   },
   "Johnson Controls": {
     "tier": "pass",
@@ -563,6 +629,12 @@
     "flag": "",
     "rated": "2026-11-08"
   },
+  "MSC Industrial Supply Co.": {
+    "tier": "pass",
+    "reason": "Industrial distributor; non-tech employer.",
+    "flag": "",
+    "rated": "2026-11-12"
+  },
   "Markon": {
     "tier": "skip",
     "reason": "Unknown small company in Annapolis Junction",
@@ -580,6 +652,12 @@
     "reason": "Small unremarkable company",
     "flag": "",
     "rated": "2026-11-08"
+  },
+  "Mayo Clinic": {
+    "tier": "pass",
+    "reason": "Hospital system; limited-tenure role, modest pay.",
+    "flag": "",
+    "rated": "2026-11-12"
   },
   "Mercury Insurance": {
     "tier": "pass",
@@ -875,6 +953,12 @@
     "flag": "OSINT/surveillance intelligence for government and defense",
     "rated": "2026-11-04"
   },
+  "Self Financial": {
+    "tier": "pass",
+    "reason": "Small credit-builder fintech; unremarkable.",
+    "flag": "",
+    "rated": "2026-11-12"
+  },
   "Sigma Defense Systems LLC": {
     "tier": "skip",
     "reason": "Defense contractor",
@@ -929,6 +1013,12 @@
     "flag": "",
     "rated": "2026-11-08"
   },
+  "Symbotic": {
+    "tier": "solid",
+    "reason": "Warehouse robotics company; real robotics work.",
+    "flag": "",
+    "rated": "2026-11-12"
+  },
   "Synchrony": {
     "tier": "pass",
     "reason": "Consumer credit/store-card bank; unexciting",
@@ -964,6 +1054,18 @@
     "reason": "Small health-benefits startup; unremarkable",
     "flag": "",
     "rated": "2026-11-05"
+  },
+  "The Amatriot Group": {
+    "tier": "skip",
+    "reason": "Bethesda government contractor serving federal/defense clients.",
+    "flag": "federal/defense contractor",
+    "rated": "2026-11-12"
+  },
+  "The Hartford": {
+    "tier": "pass",
+    "reason": "Insurance company; non-tech employer.",
+    "flag": "",
+    "rated": "2026-11-12"
   },
   "Thoughtworks": {
     "tier": "pass",
@@ -1109,6 +1211,12 @@
     "flag": "defense (Space Development Agency satellites)",
     "rated": "2026-10-30"
   },
+  "ZT Systems": {
+    "tier": "pass",
+    "reason": "Server hardware manufacturing; test-software role.",
+    "flag": "",
+    "rated": "2026-11-12"
+  },
   "Zebra Technologies": {
     "tier": "solid",
     "reason": "Established barcode/scanner hardware company",
@@ -1120,6 +1228,12 @@
     "reason": "Ad-tech brand-safety company; unremarkable",
     "flag": "",
     "rated": "2026-10-31"
+  },
+  "Zensar": {
+    "tier": "pass",
+    "reason": "IT services/outsourcing body shop.",
+    "flag": "",
+    "rated": "2026-11-12"
   },
   "Zoox": {
     "tier": "strong",
