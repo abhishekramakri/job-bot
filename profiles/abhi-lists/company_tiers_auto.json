@@ -323,6 +323,12 @@
     "flag": "",
     "rated": "2026-11-11"
   },
+  "DMC Engineering": {
+    "tier": "pass",
+    "reason": "Engineering consulting and systems integration firm",
+    "flag": "",
+    "rated": "2026-11-13"
+  },
   "DTCC": {
     "tier": "solid",
     "reason": "Core financial market infrastructure; stable, decent pay",
@@ -569,11 +575,23 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "Isuzu North America": {
+    "tier": "pass",
+    "reason": "Truck maker; not a tech employer",
+    "flag": "",
+    "rated": "2026-11-13"
+  },
   "JB Mobility": {
     "tier": "pass",
     "reason": "Small unremarkable company; language-restricted role",
     "flag": "",
     "rated": "2026-11-08"
+  },
+  "JBT Marel": {
+    "tier": "pass",
+    "reason": "Food-processing machinery maker",
+    "flag": "",
+    "rated": "2026-11-13"
   },
   "Jamf": {
     "tier": "solid",
@@ -658,6 +676,18 @@
     "reason": "Hospital system; limited-tenure role, modest pay.",
     "flag": "",
     "rated": "2026-11-12"
+  },
+  "Mayo Clinic Healthcare London": {
+    "tier": "pass",
+    "reason": "Healthcare provider; limited-tenure role",
+    "flag": "",
+    "rated": "2026-11-13"
+  },
+  "Mayo Clinic Rochester": {
+    "tier": "pass",
+    "reason": "Healthcare provider; limited-tenure role",
+    "flag": "",
+    "rated": "2026-11-13"
   },
   "Mercury Insurance": {
     "tier": "pass",
@@ -863,6 +893,18 @@
     "flag": "",
     "rated": "2026-11-07"
   },
+  "RLI": {
+    "tier": "pass",
+    "reason": "Specialty insurance company; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-13"
+  },
+  "RLI Insurance Company": {
+    "tier": "pass",
+    "reason": "Specialty insurance company; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-13"
+  },
   "RWE": {
     "tier": "pass",
     "reason": "Energy utility; software is not its core business",
@@ -910,6 +952,18 @@
     "reason": "Reputable launch and spacecraft company",
     "flag": "significant defense work (SDA satellites, hypersonic testing)",
     "rated": "2026-10-31"
+  },
+  "Rokt": {
+    "tier": "solid",
+    "reason": "Well-funded e-commerce ad tech; good NYC pay",
+    "flag": "Checkout-page ad offers; some call them dark patterns",
+    "rated": "2026-11-13"
+  },
+  "Rundoo": {
+    "tier": "pass",
+    "reason": "Small, unremarkable retail software startup",
+    "flag": "",
+    "rated": "2026-11-13"
   },
   "S&C Electric Company": {
     "tier": "pass",
@@ -964,6 +1018,12 @@
     "reason": "Defense contractor",
     "flag": "defense",
     "rated": "2026-11-04"
+  },
+  "Skyryse": {
+    "tier": "solid",
+    "reason": "Well-funded aviation flight-automation startup",
+    "flag": "Has done some military helicopter (Black Hawk) work",
+    "rated": "2026-11-13"
   },
   "Skyward": {
     "tier": "pass",
@@ -1024,6 +1084,12 @@
     "reason": "Consumer credit/store-card bank; unexciting",
     "flag": "",
     "rated": "2026-11-10"
+  },
+  "Systems Planning & Analysis": {
+    "tier": "skip",
+    "reason": "Navy/DoD analysis contractor",
+    "flag": "defense contractor",
+    "rated": "2026-11-13"
   },
   "TGW Logistics": {
     "tier": "pass",
@@ -1204,6 +1270,12 @@
     "reason": "Well-funded wearables company; decent Boston pay",
     "flag": "",
     "rated": "2026-11-10"
+  },
+  "Wolters Kluwer": {
+    "tier": "pass",
+    "reason": "Information-services company; unexciting, middling pay",
+    "flag": "",
+    "rated": "2026-11-13"
   },
   "York Space Systems": {
     "tier": "skip",
