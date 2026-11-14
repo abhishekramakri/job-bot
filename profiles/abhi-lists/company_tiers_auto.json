@@ -41,6 +41,12 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "Akeneo": {
+    "tier": "pass",
+    "reason": "Mid-size product-information management SaaS; unremarkable",
+    "flag": "",
+    "rated": "2026-11-14"
+  },
   "Allegion": {
     "tier": "pass",
     "reason": "Lock and security hardware maker; not a tech employer.",
@@ -70,6 +76,18 @@
     "reason": "Medical professional association, non-tech employer",
     "flag": "",
     "rated": "2026-11-07"
+  },
+  "Amphenol": {
+    "tier": "pass",
+    "reason": "Connector manufacturer; internal IT role",
+    "flag": "",
+    "rated": "2026-11-14"
+  },
+  "Amphenol Network Solutions": {
+    "tier": "pass",
+    "reason": "Connector manufacturer subsidiary; internal IT role",
+    "flag": "",
+    "rated": "2026-11-14"
   },
   "Andromeda Systems Incorporated": {
     "tier": "skip",
@@ -149,6 +167,12 @@
     "flag": "weapons (Tasers) and police surveillance tech",
     "rated": "2026-10-30"
   },
+  "BHE Compression Services": {
+    "tier": "pass",
+    "reason": "Energy-sector subsidiary of Berkshire Hathaway Energy; non-tech",
+    "flag": "",
+    "rated": "2026-11-14"
+  },
   "Bank of America": {
     "tier": "solid",
     "reason": "Major bank, stable with decent pay",
@@ -221,6 +245,12 @@
     "flag": "",
     "rated": "2026-11-07"
   },
+  "CMT.AI": {
+    "tier": "solid",
+    "reason": "Cambridge Mobile Telematics rebrand; reputable telematics company",
+    "flag": "",
+    "rated": "2026-11-14"
+  },
   "CSI": {
     "tier": "pass",
     "reason": "Regional banking software vendor; modest pay",
@@ -292,6 +322,12 @@
     "reason": "Northern Virginia federal IT contractor",
     "flag": "federal/defense IT contractor",
     "rated": "2026-11-04"
+  },
+  "Connection Technology Center": {
+    "tier": "pass",
+    "reason": "Small industrial sensor manufacturer",
+    "flag": "",
+    "rated": "2026-11-14"
   },
   "Cook Group": {
     "tier": "pass",
@@ -431,6 +467,12 @@
     "flag": "",
     "rated": "2026-11-06"
   },
+  "Fannie Mae": {
+    "tier": "solid",
+    "reason": "Large mortgage company; stable, decent pay",
+    "flag": "",
+    "rated": "2026-11-14"
+  },
   "Fidelity National Information Services": {
     "tier": "pass",
     "reason": "Mainframe fintech role; low pay, legacy work",
@@ -478,6 +520,18 @@
     "reason": "Established insurance-software company; decent pay",
     "flag": "",
     "rated": "2026-11-05"
+  },
+  "H2O.ai": {
+    "tier": "solid",
+    "reason": "Established AI/ML platform company",
+    "flag": "",
+    "rated": "2026-11-14"
+  },
+  "HII": {
+    "tier": "skip",
+    "reason": "Huntington Ingalls, Navy shipbuilder",
+    "flag": "defense (warships, submarines)",
+    "rated": "2026-11-14"
   },
   "Handshake": {
     "tier": "solid",
@@ -875,6 +929,18 @@
     "flag": "likely intelligence-community contractor (Annapolis Junction)",
     "rated": "2026-11-07"
   },
+  "Publix Super Markets": {
+    "tier": "pass",
+    "reason": "Grocery chain; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-14"
+  },
+  "Q2": {
+    "tier": "pass",
+    "reason": "Banking software vendor; unremarkable",
+    "flag": "",
+    "rated": "2026-11-14"
+  },
   "Qnity": {
     "tier": "pass",
     "reason": "Electronics materials manufacturer, manufacturing software role",
@@ -1073,6 +1139,12 @@
     "flag": "",
     "rated": "2026-11-08"
   },
+  "Switchboard": {
+    "tier": "pass",
+    "reason": "Ambiguous small NYC startup; unremarkable",
+    "flag": "",
+    "rated": "2026-11-14"
+  },
   "Symbotic": {
     "tier": "solid",
     "reason": "Warehouse robotics company; real robotics work.",
@@ -1193,6 +1265,12 @@
     "flag": "",
     "rated": "2026-11-06"
   },
+  "Valiant Solutions": {
+    "tier": "skip",
+    "reason": "Federal cloud/security contractor",
+    "flag": "federal contractor, likely intelligence-community work",
+    "rated": "2026-11-14"
+  },
   "Vantive": {
     "tier": "pass",
     "reason": "Baxter kidney-care spin-off; medical devices",
@@ -1276,6 +1354,18 @@
     "reason": "Information-services company; unexciting, middling pay",
     "flag": "",
     "rated": "2026-11-13"
+  },
+  "Wyetech, LLC": {
+    "tier": "skip",
+    "reason": "Maryland intelligence-community contractor",
+    "flag": "intelligence-community contractor",
+    "rated": "2026-11-14"
+  },
+  "Yale University": {
+    "tier": "pass",
+    "reason": "University research role; lower pay",
+    "flag": "",
+    "rated": "2026-11-14"
   },
   "York Space Systems": {
     "tier": "skip",
