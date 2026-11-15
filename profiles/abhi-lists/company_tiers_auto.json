@@ -239,6 +239,12 @@
     "flag": "",
     "rated": "2026-11-04"
   },
+  "CDPHP": {
+    "tier": "pass",
+    "reason": "Regional health insurer; non-tech employer, modest pay.",
+    "flag": "",
+    "rated": "2026-11-15"
+  },
   "CGI": {
     "tier": "pass",
     "reason": "IT consulting body shop",
@@ -604,6 +610,12 @@
     "reason": "VC-backed manufacturing AI inspection startup",
     "flag": "",
     "rated": "2026-11-01"
+  },
+  "Integrated Biosciences": {
+    "tier": "pass",
+    "reason": "Small biotech startup; unremarkable for SWE career.",
+    "flag": "",
+    "rated": "2026-11-15"
   },
   "Interactive Brokers": {
     "tier": "solid",
@@ -1397,11 +1409,23 @@
     "flag": "",
     "rated": "2026-11-12"
   },
+  "Zip": {
+    "tier": "solid",
+    "reason": "Well-funded procurement SaaS startup with decent SF pay.",
+    "flag": "",
+    "rated": "2026-11-15"
+  },
   "Zoox": {
     "tier": "strong",
     "reason": "Amazon-owned robotaxi company; well-paid",
     "flag": "Amazon subsidiary; role is contract student worker",
     "rated": "2026-10-30"
+  },
+  "edmentum": {
+    "tier": "pass",
+    "reason": "K-12 edtech company; typically low pay.",
+    "flag": "",
+    "rated": "2026-11-15"
   },
   "impact.com": {
     "tier": "solid",
