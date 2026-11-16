@@ -359,6 +359,12 @@
     "flag": "",
     "rated": "2026-11-11"
   },
+  "Current": {
+    "tier": "pass",
+    "reason": "Consumer fintech/neobank app, like Chime; unremarkable",
+    "flag": "",
+    "rated": "2026-11-16"
+  },
   "Cursor": {
     "tier": "strong",
     "reason": "Anysphere's AI code editor; top-tier startup",
