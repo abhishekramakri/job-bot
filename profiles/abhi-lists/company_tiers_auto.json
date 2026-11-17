@@ -305,6 +305,12 @@
     "flag": "",
     "rated": "2026-11-06"
   },
+  "Cla-Val": {
+    "tier": "pass",
+    "reason": "Industrial valve manufacturer; not a tech employer.",
+    "flag": "",
+    "rated": "2026-11-17"
+  },
   "Cognizant": {
     "tier": "pass",
     "reason": "IT consulting/outsourcing body shop",
@@ -370,6 +376,12 @@
     "reason": "Anysphere's AI code editor; top-tier startup",
     "flag": "",
     "rated": "2026-11-11"
+  },
+  "DISH TV": {
+    "tier": "pass",
+    "reason": "Struggling satellite TV business; modest pay.",
+    "flag": "",
+    "rated": "2026-11-17"
   },
   "DMC Engineering": {
     "tier": "pass",
@@ -581,6 +593,12 @@
     "flag": "major defense contractor (Honeywell)",
     "rated": "2026-11-04"
   },
+  "Hughes": {
+    "tier": "pass",
+    "reason": "EchoStar satellite internet unit; unremarkable pay.",
+    "flag": "",
+    "rated": "2026-11-17"
+  },
   "Huntington Ingalls Industries": {
     "tier": "skip",
     "reason": "Builds Navy warships and nuclear submarines",
@@ -724,6 +742,12 @@
     "reason": "Industrial distributor; non-tech employer.",
     "flag": "",
     "rated": "2026-11-12"
+  },
+  "Manheim Dallas-Fort Worth": {
+    "tier": "pass",
+    "reason": "Cox Automotive car-auction business; not a tech employer.",
+    "flag": "",
+    "rated": "2026-11-17"
   },
   "Markon": {
     "tier": "skip",
@@ -887,6 +911,12 @@
     "flag": "",
     "rated": "2026-11-05"
   },
+  "Onyx Point, LLC.": {
+    "tier": "skip",
+    "reason": "Hanover, MD contractor with cleared-style job codes.",
+    "flag": "intelligence-community contractor (Fort Meade area)",
+    "rated": "2026-11-17"
+  },
   "Optum": {
     "tier": "pass",
     "reason": "Healthcare insurer IT; modest pay, like CVS Health",
@@ -916,6 +946,12 @@
     "reason": "Logistics company, non-tech employer",
     "flag": "",
     "rated": "2026-11-06"
+  },
+  "Paychex": {
+    "tier": "pass",
+    "reason": "Payroll services company; low pay for new grads.",
+    "flag": "",
+    "rated": "2026-11-17"
   },
   "Principal": {
     "tier": "pass",
@@ -988,6 +1024,12 @@
     "reason": "Specialty insurance company; non-tech employer",
     "flag": "",
     "rated": "2026-11-13"
+  },
+  "RRD": {
+    "tier": "pass",
+    "reason": "Printing and marketing company; not a tech employer.",
+    "flag": "",
+    "rated": "2026-11-17"
   },
   "RWE": {
     "tier": "pass",
@@ -1258,6 +1300,12 @@
     "reason": "Government software; lower pay",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "U.S. Bank": {
+    "tier": "pass",
+    "reason": "Regional bank; middling pay for tech roles.",
+    "flag": "",
+    "rated": "2026-11-17"
   },
   "UNCOMN": {
     "tier": "pass",
