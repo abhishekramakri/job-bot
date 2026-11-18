@@ -101,6 +101,12 @@
     "flag": "Amazon subsidiary; AWS defense/intelligence cloud contracts",
     "rated": "2026-11-07"
   },
+  "Antech Diagnostics": {
+    "tier": "pass",
+    "reason": "Veterinary diagnostics company; not a tech employer",
+    "flag": "",
+    "rated": "2026-11-18"
+  },
   "Apogee Research, LLC": {
     "tier": "skip",
     "reason": "DARPA/DoD-funded research contractor in Arlington",
@@ -173,6 +179,18 @@
     "flag": "",
     "rated": "2026-11-14"
   },
+  "BMO": {
+    "tier": "pass",
+    "reason": "Regional-scale bank in the US; average pay",
+    "flag": "",
+    "rated": "2026-11-18"
+  },
+  "Banfield Pet Hospital": {
+    "tier": "pass",
+    "reason": "Pet hospital chain; not a tech employer",
+    "flag": "",
+    "rated": "2026-11-18"
+  },
   "Bank of America": {
     "tier": "solid",
     "reason": "Major bank, stable with decent pay",
@@ -185,11 +203,23 @@
     "flag": "",
     "rated": "2026-11-12"
   },
+  "Beast Code": {
+    "tier": "skip",
+    "reason": "Small contractor near Eglin AFB",
+    "flag": "defense contractor (Air Force work)",
+    "rated": "2026-11-18"
+  },
   "Bectran, Inc.": {
     "tier": "pass",
     "reason": "Small credit-management SaaS company",
     "flag": "",
     "rated": "2026-11-04"
+  },
+  "Benchling": {
+    "tier": "strong",
+    "reason": "Well-paid, respected biotech R&D software company",
+    "flag": "",
+    "rated": "2026-11-18"
   },
   "Blue River Technology": {
     "tier": "solid",
@@ -335,6 +365,12 @@
     "flag": "federal/defense IT contractor",
     "rated": "2026-11-04"
   },
+  "Compunetix": {
+    "tier": "pass",
+    "reason": "Small conferencing/comms hardware company; low profile",
+    "flag": "",
+    "rated": "2026-11-18"
+  },
   "Connection Technology Center": {
     "tier": "pass",
     "reason": "Small industrial sensor manufacturer",
@@ -346,6 +382,12 @@
     "reason": "Medical device maker, not tech-focused",
     "flag": "",
     "rated": "2026-11-07"
+  },
+  "Corgi": {
+    "tier": "pass",
+    "reason": "Small insurance startup; unremarkable",
+    "flag": "",
+    "rated": "2026-11-18"
   },
   "Corning Incorporated": {
     "tier": "pass",
@@ -443,6 +485,12 @@
     "flag": "",
     "rated": "2026-11-04"
   },
+  "EchoStar Corporation": {
+    "tier": "solid",
+    "reason": "Large satellite/telecom company; decent early-career program",
+    "flag": "some government satellite work",
+    "rated": "2026-11-18"
+  },
   "Elevation Autism Center": {
     "tier": "pass",
     "reason": "Healthcare provider, non-tech employer",
@@ -496,6 +544,12 @@
     "reason": "Large mortgage company; stable, decent pay",
     "flag": "",
     "rated": "2026-11-14"
+  },
+  "Fantom": {
+    "tier": "skip",
+    "reason": "Small Hanover, MD contractor",
+    "flag": "likely intelligence-community contractor (Fort Meade area)",
+    "rated": "2026-11-18"
   },
   "Fidelity National Information Services": {
     "tier": "pass",
@@ -689,6 +743,12 @@
     "flag": "",
     "rated": "2026-11-12"
   },
+  "John Deere": {
+    "tier": "pass",
+    "reason": "Industrial manufacturer; average tech pay",
+    "flag": "",
+    "rated": "2026-11-18"
+  },
   "Johnson Controls": {
     "tier": "pass",
     "reason": "Building-equipment conglomerate; not a tech employer",
@@ -725,6 +785,18 @@
     "flag": "",
     "rated": "2026-11-07"
   },
+  "Laansu": {
+    "tier": "skip",
+    "reason": "Small unknown Sterling, VA contractor",
+    "flag": "likely government/defense contractor (Dulles corridor)",
+    "rated": "2026-11-18"
+  },
+  "Laborie Medical Technologies": {
+    "tier": "pass",
+    "reason": "Medical device company; unremarkable software role",
+    "flag": "",
+    "rated": "2026-11-18"
+  },
   "Light Iron": {
     "tier": "creative",
     "reason": "Film/TV post-production company owned by Panavision",
@@ -736,6 +808,12 @@
     "reason": "State government agency; low pay, non-tech",
     "flag": "",
     "rated": "2026-11-08"
+  },
+  "Lufco": {
+    "tier": "skip",
+    "reason": "Small Annapolis Junction contractor",
+    "flag": "intelligence-community contractor (Annapolis Junction)",
+    "rated": "2026-11-18"
   },
   "MSC Industrial Supply Co.": {
     "tier": "pass",
@@ -814,6 +892,12 @@
     "reason": "Navy training software role",
     "flag": "defense (Navy software)",
     "rated": "2026-10-30"
+  },
+  "Minitab": {
+    "tier": "solid",
+    "reason": "Established statistics software company; modest pay",
+    "flag": "",
+    "rated": "2026-11-18"
   },
   "Mirantis": {
     "tier": "solid",
@@ -1037,6 +1121,12 @@
     "flag": "",
     "rated": "2026-11-05"
   },
+  "Red Alpha": {
+    "tier": "skip",
+    "reason": "Annapolis Junction/Columbia MD contractor",
+    "flag": "intelligence-community contractor",
+    "rated": "2026-11-18"
+  },
   "Reflex": {
     "tier": "pass",
     "reason": "Small Python web-framework startup; unremarkable",
@@ -1048,6 +1138,12 @@
     "reason": "Regional bank; low pay",
     "flag": "",
     "rated": "2026-11-11"
+  },
+  "Reliable Robotics Corporation": {
+    "tier": "solid",
+    "reason": "Well-funded autonomous aircraft startup",
+    "flag": "has US Air Force contracts",
+    "rated": "2026-11-18"
   },
   "Render": {
     "tier": "strong",
@@ -1096,6 +1192,12 @@
     "reason": "Electrical equipment manufacturer; non-tech employer",
     "flag": "",
     "rated": "2026-11-10"
+  },
+  "SBT Global": {
+    "tier": "pass",
+    "reason": "Staffing/consulting body shop",
+    "flag": "",
+    "rated": "2026-11-18"
   },
   "STERIS": {
     "tier": "pass",
@@ -1229,6 +1331,12 @@
     "flag": "",
     "rated": "2026-11-09"
   },
+  "TMS International": {
+    "tier": "pass",
+    "reason": "Steel mill services; not a tech employer",
+    "flag": "",
+    "rated": "2026-11-18"
+  },
   "TP-Link Systems Inc.": {
     "tier": "pass",
     "reason": "Consumer networking hardware; middling pay",
@@ -1264,6 +1372,12 @@
     "reason": "Insurance company; non-tech employer.",
     "flag": "",
     "rated": "2026-11-12"
+  },
+  "The Tatitlek Corporation": {
+    "tier": "skip",
+    "reason": "Alaska Native corp doing government contracting",
+    "flag": "federal/defense contractor",
+    "rated": "2026-11-18"
   },
   "Thoughtworks": {
     "tier": "pass",
@@ -1396,6 +1510,12 @@
     "reason": "Major bank, stable with decent pay",
     "flag": "fake-accounts scandal",
     "rated": "2026-11-07"
+  },
+  "Welo Global": {
+    "tier": "pass",
+    "reason": "Media rating gig, not engineering",
+    "flag": "",
+    "rated": "2026-11-18"
   },
   "Western Governors University": {
     "tier": "pass",
