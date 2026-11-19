@@ -41,6 +41,12 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "Adyen": {
+    "tier": "solid",
+    "reason": "Reputable global payments company with good engineering pay",
+    "flag": "",
+    "rated": "2026-11-19"
+  },
   "Akeneo": {
     "tier": "pass",
     "reason": "Mid-size product-information management SaaS; unremarkable",
@@ -455,6 +461,12 @@
     "flag": "defense (military unmanned/mission systems)",
     "rated": "2026-11-03"
   },
+  "Digital.ai": {
+    "tier": "pass",
+    "reason": "Unremarkable DevOps software vendor",
+    "flag": "",
+    "rated": "2026-11-19"
+  },
   "DraftKings": {
     "tier": "skip",
     "reason": "Sports betting",
@@ -785,6 +797,18 @@
     "flag": "",
     "rated": "2026-11-07"
   },
+  "Kira Learning": {
+    "tier": "pass",
+    "reason": "Small AI edtech startup, unremarkable",
+    "flag": "",
+    "rated": "2026-11-19"
+  },
+  "L&T Technology Services": {
+    "tier": "pass",
+    "reason": "IT services/outsourcing body shop",
+    "flag": "",
+    "rated": "2026-11-19"
+  },
   "Laansu": {
     "tier": "skip",
     "reason": "Small unknown Sterling, VA contractor",
@@ -814,6 +838,12 @@
     "reason": "Small Annapolis Junction contractor",
     "flag": "intelligence-community contractor (Annapolis Junction)",
     "rated": "2026-11-18"
+  },
+  "MACOM": {
+    "tier": "pass",
+    "reason": "RF semiconductor maker; production software role, unexciting",
+    "flag": "",
+    "rated": "2026-11-19"
   },
   "MSC Industrial Supply Co.": {
     "tier": "pass",
@@ -947,6 +977,12 @@
     "flag": "",
     "rated": "2026-11-07"
   },
+  "Naval Nuclear Laboratory (FMP)": {
+    "tier": "skip",
+    "reason": "Navy nuclear propulsion lab",
+    "flag": "military (naval nuclear reactors)",
+    "rated": "2026-11-19"
+  },
   "NetApp": {
     "tier": "solid",
     "reason": "Established storage/cloud data company; decent pay",
@@ -1036,6 +1072,12 @@
     "reason": "Payroll services company; low pay for new grads.",
     "flag": "",
     "rated": "2026-11-17"
+  },
+  "Paystand": {
+    "tier": "pass",
+    "reason": "Small B2B payments startup",
+    "flag": "",
+    "rated": "2026-11-19"
   },
   "Principal": {
     "tier": "pass",
@@ -1156,6 +1198,12 @@
     "reason": "Likely staffing or recruiting shop",
     "flag": "",
     "rated": "2026-11-04"
+  },
+  "Roche": {
+    "tier": "pass",
+    "reason": "Pharma company; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-19"
   },
   "Rochester Institute of Technology": {
     "tier": "pass",
@@ -1343,6 +1391,12 @@
     "flag": "",
     "rated": "2026-11-11"
   },
+  "Tandem Diabetes Care": {
+    "tier": "pass",
+    "reason": "Medical device maker, modest pay",
+    "flag": "",
+    "rated": "2026-11-19"
+  },
   "Teradata": {
     "tier": "solid",
     "reason": "Established data-warehouse company; stable but less exciting",
@@ -1390,6 +1444,12 @@
     "reason": "Small ID-scanner software maker, not crypto",
     "flag": "",
     "rated": "2026-11-06"
+  },
+  "Torch Technologies": {
+    "tier": "skip",
+    "reason": "Huntsville defense contractor",
+    "flag": "defense contractor (Army/missile defense)",
+    "rated": "2026-11-19"
   },
   "Toshiba Business": {
     "tier": "pass",
