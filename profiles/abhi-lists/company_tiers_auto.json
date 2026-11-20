@@ -95,6 +95,12 @@
     "flag": "",
     "rated": "2026-11-14"
   },
+  "Andrew Wommack Ministries, Inc.": {
+    "tier": "pass",
+    "reason": "Religious ministry; non-tech employer, WordPress work",
+    "flag": "",
+    "rated": "2026-11-20"
+  },
   "Andromeda Systems Incorporated": {
     "tier": "skip",
     "reason": "Military aircraft sustainment contractor",
@@ -118,6 +124,12 @@
     "reason": "DARPA/DoD-funded research contractor in Arlington",
     "flag": "defense research contractor",
     "rated": "2026-11-01"
+  },
+  "Applied Engineering, Inc.": {
+    "tier": "pass",
+    "reason": "Small unremarkable embedded engineering firm in Wisconsin",
+    "flag": "",
+    "rated": "2026-11-20"
   },
   "Arc Institute": {
     "tier": "solid",
@@ -299,6 +311,12 @@
     "flag": "",
     "rated": "2026-11-10"
   },
+  "Cadence": {
+    "tier": "strong",
+    "reason": "Cadence Design Systems; top EDA company, well paid",
+    "flag": "",
+    "rated": "2026-11-20"
+  },
   "California State University San Marcos": {
     "tier": "pass",
     "reason": "University IT job; low pay.",
@@ -371,6 +389,12 @@
     "flag": "federal/defense IT contractor",
     "rated": "2026-11-04"
   },
+  "Comcast": {
+    "tier": "solid",
+    "reason": "Large media/telecom; FreeWheel ad-tech team, decent pay",
+    "flag": "ad-tech/tracking; ISP privacy and lobbying controversies",
+    "rated": "2026-11-20"
+  },
   "Compunetix": {
     "tier": "pass",
     "reason": "Small conferencing/comms hardware company; low profile",
@@ -382,6 +406,12 @@
     "reason": "Small industrial sensor manufacturer",
     "flag": "",
     "rated": "2026-11-14"
+  },
+  "Contexture": {
+    "tier": "pass",
+    "reason": "Regional health information exchange nonprofit; modest pay",
+    "flag": "",
+    "rated": "2026-11-20"
   },
   "Cook Group": {
     "tier": "pass",
@@ -574,6 +604,12 @@
     "reason": "Well-known business media publication",
     "flag": "",
     "rated": "2026-11-02"
+  },
+  "Frontgrade Technologies": {
+    "tier": "skip",
+    "reason": "Rad-hard electronics for space and defense",
+    "flag": "defense/military electronics supplier",
+    "rated": "2026-11-20"
   },
   "Gen II Fund Services": {
     "tier": "pass",
@@ -803,6 +839,12 @@
     "flag": "",
     "rated": "2026-11-19"
   },
+  "Koch Industries": {
+    "tier": "pass",
+    "reason": "Industrial conglomerate; not a tech employer",
+    "flag": "",
+    "rated": "2026-11-20"
+  },
   "L&T Technology Services": {
     "tier": "pass",
     "reason": "IT services/outsourcing body shop",
@@ -1007,11 +1049,23 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "Northwestern Mutual": {
+    "tier": "pass",
+    "reason": "Insurance company; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-20"
+  },
   "Northwood": {
     "tier": "solid",
     "reason": "Northwood Space; space ground-station startup",
     "flag": "Space Force customers",
     "rated": "2026-10-30"
+  },
+  "OKX": {
+    "tier": "skip",
+    "reason": "Crypto exchange",
+    "flag": "crypto exchange",
+    "rated": "2026-11-20"
   },
   "Oceaneering": {
     "tier": "skip",
@@ -1133,11 +1187,23 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "Quevera": {
+    "tier": "skip",
+    "reason": "Columbia, MD intelligence-community contractor",
+    "flag": "intelligence-community contractor",
+    "rated": "2026-11-20"
+  },
   "Quicken Loans": {
     "tier": "pass",
     "reason": "Mortgage lender (Rocket), rated pass",
     "flag": "",
     "rated": "2026-11-07"
+  },
+  "REI Systems": {
+    "tier": "pass",
+    "reason": "Federal government IT contractor; body-shop style work",
+    "flag": "",
+    "rated": "2026-11-20"
   },
   "RLI": {
     "tier": "pass",
@@ -1168,6 +1234,12 @@
     "reason": "Annapolis Junction/Columbia MD contractor",
     "flag": "intelligence-community contractor",
     "rated": "2026-11-18"
+  },
+  "Red Arch Solutions": {
+    "tier": "skip",
+    "reason": "Annapolis Junction intelligence-community contractor",
+    "flag": "intelligence-community contractor",
+    "rated": "2026-11-20"
   },
   "Reflex": {
     "tier": "pass",
@@ -1457,6 +1529,12 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "Tripoint Solutions": {
+    "tier": "pass",
+    "reason": "Government IT contractor doing Salesforce work",
+    "flag": "",
+    "rated": "2026-11-20"
+  },
   "TrustWILL": {
     "tier": "pass",
     "reason": "Small unknown company; trainee role",
@@ -1487,6 +1565,12 @@
     "flag": "",
     "rated": "2026-11-05"
   },
+  "Ultra Maritime": {
+    "tier": "skip",
+    "reason": "Naval sonar and undersea warfare systems",
+    "flag": "defense (naval warfare systems)",
+    "rated": "2026-11-20"
+  },
   "UnitedHealth Group": {
     "tier": "pass",
     "reason": "Health insurer; non-tech employer",
@@ -1498,6 +1582,12 @@
     "reason": "University job; low pay",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "University of Utah": {
+    "tier": "pass",
+    "reason": "University web developer role; low pay",
+    "flag": "",
+    "rated": "2026-11-20"
   },
   "Urban Science": {
     "tier": "pass",
@@ -1612,6 +1702,12 @@
     "reason": "University research role; lower pay",
     "flag": "",
     "rated": "2026-11-14"
+  },
+  "Yaskawa America, Inc. -  Drives & Motion Division": {
+    "tier": "solid",
+    "reason": "Reputable industrial motion/robotics maker; real embedded work",
+    "flag": "",
+    "rated": "2026-11-20"
   },
   "York Space Systems": {
     "tier": "skip",
