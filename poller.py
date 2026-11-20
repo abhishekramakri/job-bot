@@ -9,7 +9,7 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 
 import requests
 
@@ -372,6 +372,17 @@ def fetch_phenom_v2(company):
     return jobs
 
 
+def parse_apple_page_data(page):
+    """jobs.apple.com pages embed their data as an escaped JSON string."""
+    marker = 'window.__staticRouterHydrationData = JSON.parse("'
+    start = page.find(marker)
+    if start == -1:
+        return None
+    start += len(marker)
+    end = page.find('");</script', start)
+    return json.loads(page[start:end].encode().decode("unicode_escape"))
+
+
 def fetch_apple(company):
     query = company.get("query", "")
     max_pages = company.get("max_pages")
@@ -387,15 +398,9 @@ def fetch_apple(company):
             params={"search": query, "page": page, "location": "united-states-USA"},
             timeout=30,
         )
-        html = resp.text
-        marker = 'window.__staticRouterHydrationData = JSON.parse("'
-        start = html.find(marker)
-        if start == -1:
+        data = parse_apple_page_data(resp.text)
+        if data is None:
             break
-        start += len(marker)
-        end = html.find('");</script', start)
-        raw = html[start:end].encode().decode("unicode_escape")
-        data = json.loads(raw)
         search = data.get("loaderData", {}).get("search", {})
         if total is None:
             total = search.get("totalRecords", 0)
@@ -1069,12 +1074,34 @@ def fetch_phenom_description(job, company):
     return strip_html(resp.json().get("job_description", ""))
 
 
+def fetch_apple_description(job, company):
+    resp = request_with_retry("GET", job["url"], timeout=30)
+    data = parse_apple_page_data(resp.text) or {}
+    details = data.get("loaderData", {}).get("jobDetails", {}).get("jobsData", {})
+    fields = ("jobSummary", "description", "minimumQualifications", "preferredQualifications")
+    return strip_html("\n".join(details.get(f) or "" for f in fields))
+
+
+def fetch_snap_description(job, company):
+    # Snap's listings link to its Workday site, which serves the posting as JSON
+    # at the same path under /wday/cxs.
+    parsed = urlparse(job["url"])
+    m = re.match(r"/recruiting/([^/]+)/([^/]+)(/job/.+)", parsed.path)
+    if not m:
+        return ""
+    tenant, site, path = m.groups()
+    resp = request_with_retry("GET", f"https://{parsed.netloc}/wday/cxs/{tenant}/{site}{path}", timeout=20)
+    return strip_html(resp.json().get("jobPostingInfo", {}).get("jobDescription", ""))
+
+
 DESCRIPTION_FETCHERS = {
     "workday": fetch_workday_description,
     "smartrecruiters": fetch_smartrecruiters_description,
     "phenom": fetch_phenom_description,
     "phenom_v2": fetch_phenom_description,
     "whatnot": fetch_whatnot_description,
+    "apple": fetch_apple_description,
+    "snap": fetch_snap_description,
 }
 
 
@@ -1144,27 +1171,80 @@ def strip_html(text):
     return html.unescape(re.sub(r"<[^>]+>", " ", text))
 
 
-YEARS_RE = re.compile(r"(?:(\d+)\s*(?:-|–|—|to)\s*)?(\d+)\s*(\+)?\s*(?:years?|yrs?)\b", re.IGNORECASE)
+WORD_NUMBERS = {
+    "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7,
+    "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "fifteen": 15, "twenty": 20,
+}
+_NUMBER_WORD = "|".join(WORD_NUMBERS)
+# "two (2) years" and "2 (two) years" both become "2 years".
+WORD_NUMBER_RE = re.compile(rf"\b({_NUMBER_WORD})\b(?:\s*\(\s*\d+\s*\))?", re.IGNORECASE)
+PAREN_NUMBER_RE = re.compile(rf"\b(\d+)\s*\(\s*(?:\d+|{_NUMBER_WORD})\s*\)", re.IGNORECASE)
+
+# A number of years, optionally a range ("3-5", "3 to 5", "1 year to 3 years") and a "+"/"plus"/"or more".
+YEARS_RE = re.compile(
+    r"(?<![\w.])(\d+(?:\.\d+)?)(?:\s*(?:years?|yrs?))?(?:\s*(?:-|–|—|to|or)\s*(\d+(?:\.\d+)?))?\s*(?:\+|plus)?\s*"
+    r"(?:or (?:more|greater)\s+)?(?:full[- ]time\s+)?(?:years?|yrs?)\b",
+    re.IGNORECASE,
+)
+# Words right before the number that mean it isn't a minimum: "up to 2 years",
+# "graduated within the last 2 years", "for over 20 years" (company history).
+NOT_MINIMUM_BEFORE_RE = re.compile(
+    r"(?:\bup to|\bless than|\bfewer than|\bunder|\bno more than|\bnot more than|\bmaximum(?: of)?|\bmax\.?"
+    r"|\bwithin(?: the)?(?: last| past| first)?|\b(?:in|over|for|during) the (?:last|past|next|first)"
+    r"|\bthe (?:last|past|next|first)|\blast|\bpast|\bnext|\bafter|\bevery|\beach"
+    r"|\bfor(?: over| more than| nearly| almost| well over)?|\bsince|\bnearly|\balmost)\s*$",
+    re.IGNORECASE,
+)
+# "Bachelor's degree, OR 3+ years of experience": the degree alone qualifies.
+DEGREE_ALTERNATIVE_BEFORE_RE = re.compile(
+    r"\b(?:degree|bachelor\S*|b\.?s\.?|b\.?a\.?|diploma)\b[^.;\n]{0,80}\bor\s*$", re.IGNORECASE
+)
+# What follows "years" when it isn't about the candidate: age, degrees, company history, tenure.
+NOT_EXPERIENCE_AFTER_RE = re.compile(
+    r"^\s*(?:of\s+)?(?:age\b|old\b|ago\b|in a row|running\s*(?:[.,;!)]|$)|history|heritage|tradition"
+    r"|innovation|excellence|success|growth|service\b|existence|operation|partnership)"
+    r"|^[\s-]*(?:degree|program|college|university|bachelor|institution|warranty|contract|anniversary)",
+    re.IGNORECASE,
+)
+# What follows "years" when it is about the candidate.
+EXPERIENCE_AFTER_RE = re.compile(
+    r"^\s*(?:of\b|in\b|with\b|as\b|at\b|on\b|using\b|post|professional|industry|relevant|related|hands|work"
+    r"|building|developing|designing|working|writing|shipping|programming|coding|leading|delivering"
+    r"|creating|doing|deploying|operating|owning|managing|maintaining|running|full)",
+    re.IGNORECASE,
+)
+# "2+ years of experience (internships count)": a new grad's internships can meet it.
+INTERNSHIPS_COUNT_RE = re.compile(
+    r"\binternships?\b[^.;\n]{0,40}?\b(?:count|counts|included|qualify|considered)\b"
+    r"|\b(?:including|incl\.?)\s+(?:\w+\s+){0,2}?internships?\b",
+    re.IGNORECASE,
+)
 
 
 def exceeds_experience_cap(text, cap, context_window=60):
-    """True only if the description clearly states a requirement above `cap` years.
+    """True only if the description clearly asks for more than `cap` years of experience.
+    A range counts as its lower end, so "0-2 years" passes a cap of 1.
     Returns False (keep the job) whenever the signal is missing or ambiguous."""
     if not text:
         return False
+    text = WORD_NUMBER_RE.sub(lambda m: str(WORD_NUMBERS[m.group(1).lower()]), text)
+    text = PAREN_NUMBER_RE.sub(r"\1", text)
     for m in YEARS_RE.finditer(text):
-        number = int(m.group(2))
-        if number <= cap:
+        if float(m.group(1)) <= cap:
             continue
-        start, end = m.start(), m.end()
-        window = text[max(0, start - context_window) : min(len(text), end + context_window)].lower()
-        has_context = (
-            "experience" in window
-            or "years of" in window
-            or "yrs of" in window
-            or re.search(r"years?\s+(in|managing|working|of)\b", window)
-        )
-        if has_context:
+        before = text[max(0, m.start() - 100) : m.start()]
+        after = text[m.end() : m.end() + context_window]
+        if (
+            NOT_MINIMUM_BEFORE_RE.search(before)
+            or DEGREE_ALTERNATIVE_BEFORE_RE.search(before)
+            or NOT_EXPERIENCE_AFTER_RE.match(after)
+        ):
+            continue
+        rest_of_sentence = re.split(r"[.;\n]", text[m.end() : m.end() + 200], maxsplit=1)[0]
+        if INTERNSHIPS_COUNT_RE.search(rest_of_sentence):
+            continue
+        window = (text[max(0, m.start() - context_window) : m.start()] + " " + after).lower()
+        if "experience" in window or EXPERIENCE_AFTER_RE.match(after):
             return True
     return False
 
