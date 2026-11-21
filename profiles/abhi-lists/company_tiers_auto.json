@@ -1,4 +1,10 @@
 {
+  "43North": {
+    "tier": "pass",
+    "reason": "Buffalo accelerator; role is at small startup Valene Health",
+    "flag": "",
+    "rated": "2026-11-21"
+  },
   "A Full Renovation – Home Improvement": {
     "tier": "pass",
     "reason": "Home renovation business, not a tech employer",
@@ -40,6 +46,12 @@
     "reason": "Pharma company; software isn't core",
     "flag": "",
     "rated": "2026-11-03"
+  },
+  "Acuity Insurance": {
+    "tier": "pass",
+    "reason": "Regional insurer; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-21"
   },
   "Adyen": {
     "tier": "solid",
@@ -130,6 +142,12 @@
     "reason": "Small unremarkable embedded engineering firm in Wisconsin",
     "flag": "",
     "rated": "2026-11-20"
+  },
+  "Applied Research Associates": {
+    "tier": "skip",
+    "reason": "Defense research and engineering contractor",
+    "flag": "defense contractor",
+    "rated": "2026-11-21"
   },
   "Arc Institute": {
     "tier": "solid",
@@ -268,6 +286,12 @@
     "reason": "Medical device maker; modest software pay",
     "flag": "",
     "rated": "2026-11-04"
+  },
+  "Brewer Science": {
+    "tier": "pass",
+    "reason": "Small semiconductor materials firm; unremarkable software role",
+    "flag": "",
+    "rated": "2026-11-21"
   },
   "Built": {
     "tier": "pass",
@@ -497,6 +521,18 @@
     "flag": "",
     "rated": "2026-11-19"
   },
+  "Diversified Services Network": {
+    "tier": "pass",
+    "reason": "Staffing firm placing engineers at Caterpillar",
+    "flag": "",
+    "rated": "2026-11-21"
+  },
+  "Diversified Services Network, Inc.": {
+    "tier": "pass",
+    "reason": "Staffing firm placing engineers at Caterpillar",
+    "flag": "",
+    "rated": "2026-11-21"
+  },
   "DraftKings": {
     "tier": "skip",
     "reason": "Sports betting",
@@ -508,6 +544,12 @@
     "reason": "Draper Lab does military guidance systems research",
     "flag": "defense research lab (missile guidance)",
     "rated": "2026-11-06"
+  },
+  "ECPI University": {
+    "tier": "pass",
+    "reason": "For-profit college; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-21"
   },
   "Eagle Wireless": {
     "tier": "pass",
@@ -604,6 +646,12 @@
     "reason": "Well-known business media publication",
     "flag": "",
     "rated": "2026-11-02"
+  },
+  "Freedom Technology Solutions Group, LLC": {
+    "tier": "skip",
+    "reason": "Small Annapolis Junction contractor",
+    "flag": "intelligence-community contractor (Annapolis Junction)",
+    "rated": "2026-11-21"
   },
   "Frontgrade Technologies": {
     "tier": "skip",
@@ -719,6 +767,12 @@
     "flag": "",
     "rated": "2026-11-07"
   },
+  "Ian, Evan & Alexander Corporation (IEA)": {
+    "tier": "skip",
+    "reason": "Small Annapolis Junction contractor",
+    "flag": "intelligence-community contractor (Annapolis Junction)",
+    "rated": "2026-11-21"
+  },
   "Identity Digital Inc.": {
     "tier": "pass",
     "reason": "Domain registry; unremarkable",
@@ -754,6 +808,12 @@
     "reason": "NYSE owner; stable exchange/fintech engineering.",
     "flag": "large investment in Polymarket (crypto prediction market)",
     "rated": "2026-11-12"
+  },
+  "Intramotev": {
+    "tier": "pass",
+    "reason": "Small autonomous rail startup; unremarkable",
+    "flag": "",
+    "rated": "2026-11-21"
   },
   "Iowa State University": {
     "tier": "pass",
@@ -892,6 +952,12 @@
     "reason": "Industrial distributor; non-tech employer.",
     "flag": "",
     "rated": "2026-11-12"
+  },
+  "MSU Federal Credit Union": {
+    "tier": "pass",
+    "reason": "Credit union; non-tech, lower pay",
+    "flag": "",
+    "rated": "2026-11-21"
   },
   "Manheim Dallas-Fort Worth": {
     "tier": "pass",
@@ -1133,6 +1199,12 @@
     "flag": "",
     "rated": "2026-11-19"
   },
+  "Phoenix Defense": {
+    "tier": "skip",
+    "reason": "Defense contractor",
+    "flag": "defense contractor",
+    "rated": "2026-11-21"
+  },
   "Principal": {
     "tier": "pass",
     "reason": "Insurance/retirement financial company",
@@ -1271,6 +1343,12 @@
     "flag": "",
     "rated": "2026-11-04"
   },
+  "Rise Internet": {
+    "tier": "pass",
+    "reason": "Rural internet provider; unremarkable",
+    "flag": "",
+    "rated": "2026-11-21"
+  },
   "Roche": {
     "tier": "pass",
     "reason": "Pharma company; non-tech employer",
@@ -1324,6 +1402,12 @@
     "reason": "Medical sterilization equipment; not a tech employer",
     "flag": "",
     "rated": "2026-11-05"
+  },
+  "STR": {
+    "tier": "skip",
+    "reason": "Systems & Technology Research, defense/intel R&D",
+    "flag": "defense/intelligence research contractor",
+    "rated": "2026-11-21"
   },
   "Saab, Inc.": {
     "tier": "skip",
@@ -1528,6 +1612,18 @@
     "reason": "Office printer/copier business unit",
     "flag": "",
     "rated": "2026-11-03"
+  },
+  "TouchTronics, Inc.": {
+    "tier": "pass",
+    "reason": "Small Elkhart electronics company",
+    "flag": "",
+    "rated": "2026-11-21"
+  },
+  "TransCore": {
+    "tier": "pass",
+    "reason": "Tolling/transportation systems vendor; unremarkable",
+    "flag": "",
+    "rated": "2026-11-21"
   },
   "Tripoint Solutions": {
     "tier": "pass",
@@ -1739,6 +1835,12 @@
     "flag": "",
     "rated": "2026-11-12"
   },
+  "Zepto Life Technology": {
+    "tier": "pass",
+    "reason": "Small medical diagnostics company",
+    "flag": "",
+    "rated": "2026-11-21"
+  },
   "Zip": {
     "tier": "solid",
     "reason": "Well-funded procurement SaaS startup with decent SF pay.",
@@ -1750,6 +1852,12 @@
     "reason": "Amazon-owned robotaxi company; well-paid",
     "flag": "Amazon subsidiary; role is contract student worker",
     "rated": "2026-10-30"
+  },
+  "Zscaler": {
+    "tier": "strong",
+    "reason": "Leading cloud security company, well paid",
+    "flag": "",
+    "rated": "2026-11-21"
   },
   "edmentum": {
     "tier": "pass",
