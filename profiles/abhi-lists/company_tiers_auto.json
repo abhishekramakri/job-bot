@@ -239,6 +239,12 @@
     "flag": "",
     "rated": "2026-11-12"
   },
+  "Baxter International Inc.": {
+    "tier": "pass",
+    "reason": "Medical device maker; software isn't its core business.",
+    "flag": "",
+    "rated": "2026-11-22"
+  },
   "Beast Code": {
     "tier": "skip",
     "reason": "Small contractor near Eglin AFB",
@@ -370,6 +376,12 @@
     "reason": "Large e-commerce company with decent engineering pay",
     "flag": "",
     "rated": "2026-11-07"
+  },
+  "Chicago Cubs": {
+    "tier": "pass",
+    "reason": "Sports team; likely lower pay for engineers.",
+    "flag": "",
+    "rated": "2026-11-22"
   },
   "Choice Hotels": {
     "tier": "pass",
@@ -1001,6 +1013,12 @@
     "flag": "",
     "rated": "2026-11-13"
   },
+  "Medtronic": {
+    "tier": "pass",
+    "reason": "Medical device giant; pay and engineering culture are average.",
+    "flag": "",
+    "rated": "2026-11-22"
+  },
   "Mercury Insurance": {
     "tier": "pass",
     "reason": "Insurance company; non-tech employer",
@@ -1433,6 +1451,12 @@
     "flag": "government/defense contractor",
     "rated": "2026-11-06"
   },
+  "Secureframe": {
+    "tier": "solid",
+    "reason": "Funded compliance-automation startup with a New York new-grad role.",
+    "flag": "",
+    "rated": "2026-11-22"
+  },
   "Seerist": {
     "tier": "skip",
     "reason": "Threat-intelligence/OSINT platform for government and military",
@@ -1474,6 +1498,12 @@
     "reason": "University staff role; low pay",
     "flag": "",
     "rated": "2026-10-31"
+  },
+  "Starbridge": {
+    "tier": "pass",
+    "reason": "Small startup selling government-sales software; unremarkable.",
+    "flag": "Federal-focused role; helps vendors sell to government",
+    "rated": "2026-11-22"
   },
   "Starkey México": {
     "tier": "creative",
