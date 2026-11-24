@@ -803,6 +803,12 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "Indeed": {
+    "tier": "solid",
+    "reason": "Established job-search tech company with decent pay",
+    "flag": "",
+    "rated": "2026-11-24"
+  },
   "Instrumental Inc.": {
     "tier": "solid",
     "reason": "VC-backed manufacturing AI inspection startup",
@@ -905,6 +911,12 @@
     "flag": "",
     "rated": "2026-10-30"
   },
+  "KeyLogic": {
+    "tier": "skip",
+    "reason": "Federal IT contractor (DOE/DoD work)",
+    "flag": "federal/defense IT contractor",
+    "rated": "2026-11-24"
+  },
   "Keyfactor": {
     "tier": "pass",
     "reason": "Mid-size PKI security vendor, unremarkable",
@@ -923,6 +935,12 @@
     "flag": "",
     "rated": "2026-11-20"
   },
+  "Koddi": {
+    "tier": "pass",
+    "reason": "Small ad-tech company, unremarkable",
+    "flag": "",
+    "rated": "2026-11-24"
+  },
   "L&T Technology Services": {
     "tier": "pass",
     "reason": "IT services/outsourcing body shop",
@@ -940,6 +958,12 @@
     "reason": "Medical device company; unremarkable software role",
     "flag": "",
     "rated": "2026-11-18"
+  },
+  "Liberty Mutual Insurance": {
+    "tier": "pass",
+    "reason": "Insurance company, not tech-focused",
+    "flag": "",
+    "rated": "2026-11-24"
   },
   "Light Iron": {
     "tier": "creative",
@@ -1421,6 +1445,12 @@
     "flag": "",
     "rated": "2026-11-18"
   },
+  "SMX": {
+    "tier": "skip",
+    "reason": "Government contractor hiring in Huntsville",
+    "flag": "defense/government contractor",
+    "rated": "2026-11-24"
+  },
   "STERIS": {
     "tier": "pass",
     "reason": "Medical sterilization equipment; not a tech employer",
@@ -1499,6 +1529,18 @@
     "flag": "",
     "rated": "2026-11-03"
   },
+  "Sorenson": {
+    "tier": "pass",
+    "reason": "Relay services for deaf users; modest pay",
+    "flag": "",
+    "rated": "2026-11-24"
+  },
+  "Sorenson Communications": {
+    "tier": "pass",
+    "reason": "Relay services for deaf users; modest pay",
+    "flag": "",
+    "rated": "2026-11-24"
+  },
   "Stanford University": {
     "tier": "pass",
     "reason": "University staff role; low pay",
@@ -1558,6 +1600,12 @@
     "reason": "Consumer credit/store-card bank; unexciting",
     "flag": "",
     "rated": "2026-11-10"
+  },
+  "Synopsys Inc": {
+    "tier": "strong",
+    "reason": "EDA leader, peer of Cadence; well-paid",
+    "flag": "",
+    "rated": "2026-11-24"
   },
   "Systems Planning & Analysis": {
     "tier": "skip",
@@ -1786,6 +1834,12 @@
     "reason": "Plumbing manufacturer; non-tech employer",
     "flag": "",
     "rated": "2026-11-11"
+  },
+  "WebAI": {
+    "tier": "solid",
+    "reason": "Well-funded Austin on-device AI startup",
+    "flag": "",
+    "rated": "2026-11-24"
   },
   "Wells Fargo": {
     "tier": "solid",
