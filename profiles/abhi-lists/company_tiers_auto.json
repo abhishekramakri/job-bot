@@ -263,6 +263,12 @@
     "flag": "",
     "rated": "2026-11-18"
   },
+  "Beyond New Horizons": {
+    "tier": "skip",
+    "reason": "Contractor at Arnold AFB military test complex",
+    "flag": "defense contractor (Air Force test facility)",
+    "rated": "2026-11-25"
+  },
   "Blue River Technology": {
     "tier": "solid",
     "reason": "John Deere ag-robotics/computer-vision subsidiary",
@@ -353,6 +359,12 @@
     "flag": "",
     "rated": "2026-11-12"
   },
+  "Callan Family Office": {
+    "tier": "pass",
+    "reason": "Small private family office; limited tech upside",
+    "flag": "",
+    "rated": "2026-11-25"
+  },
   "Calyx Containers": {
     "tier": "pass",
     "reason": "Cannabis packaging manufacturer; not a tech-focused employer.",
@@ -370,6 +382,12 @@
     "reason": "Consulting/outsourcing body shop.",
     "flag": "",
     "rated": "2026-11-12"
+  },
+  "Capital Blue Cross": {
+    "tier": "pass",
+    "reason": "Regional health insurer; non-tech employer",
+    "flag": "",
+    "rated": "2026-11-25"
   },
   "CareFirst BlueCross BlueShield": {
     "tier": "pass",
@@ -568,6 +586,12 @@
     "reason": "For-profit college; non-tech employer",
     "flag": "",
     "rated": "2026-11-21"
+  },
+  "ESChat": {
+    "tier": "pass",
+    "reason": "Small push-to-talk app for public safety",
+    "flag": "",
+    "rated": "2026-11-25"
   },
   "Eagle Wireless": {
     "tier": "pass",
@@ -898,6 +922,12 @@
     "reason": "Prediction market dominated by sports betting",
     "flag": "gambling / sports betting",
     "rated": "2026-11-11"
+  },
+  "Karman Industries": {
+    "tier": "pass",
+    "reason": "Small industrial heat-pump hardware startup",
+    "flag": "",
+    "rated": "2026-11-25"
   },
   "Karthik Consulting": {
     "tier": "skip",
@@ -1505,6 +1535,12 @@
     "flag": "",
     "rated": "2026-11-12"
   },
+  "Serko": {
+    "tier": "pass",
+    "reason": "Corporate travel booking software; unremarkable",
+    "flag": "",
+    "rated": "2026-11-25"
+  },
   "Sigma Defense Systems LLC": {
     "tier": "skip",
     "reason": "Defense contractor",
@@ -1649,6 +1685,12 @@
     "flag": "",
     "rated": "2026-11-10"
   },
+  "TetraMem - Accelerate The World": {
+    "tier": "solid",
+    "reason": "AI chip startup; compiler work is solid systems experience",
+    "flag": "",
+    "rated": "2026-11-25"
+  },
   "Thatch": {
     "tier": "pass",
     "reason": "Small health-benefits startup; unremarkable",
@@ -1774,6 +1816,12 @@
     "reason": "Automotive retail analytics consultancy; unremarkable",
     "flag": "",
     "rated": "2026-11-06"
+  },
+  "Vagaro": {
+    "tier": "pass",
+    "reason": "Salon/spa booking SaaS; unremarkable",
+    "flag": "",
+    "rated": "2026-11-25"
   },
   "Valiant Solutions": {
     "tier": "skip",
