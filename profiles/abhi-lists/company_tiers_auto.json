@@ -155,6 +155,12 @@
     "flag": "",
     "rated": "2026-11-04"
   },
+  "Arcfield": {
+    "tier": "skip",
+    "reason": "Defense/intelligence contractor supporting Air Force Research Lab",
+    "flag": "defense contractor",
+    "rated": "2026-11-26"
+  },
   "Argonne National Laboratory": {
     "tier": "solid",
     "reason": "Reputable DOE science lab; modest pay",
@@ -220,6 +226,12 @@
     "reason": "Regional-scale bank in the US; average pay",
     "flag": "",
     "rated": "2026-11-18"
+  },
+  "Baltimore County Public Schools": {
+    "tier": "pass",
+    "reason": "School district ERP role; non-tech, low pay",
+    "flag": "",
+    "rated": "2026-11-26"
   },
   "Banfield Pet Hospital": {
     "tier": "pass",
@@ -304,6 +316,12 @@
     "reason": "Small semiconductor materials firm; unremarkable software role",
     "flag": "",
     "rated": "2026-11-21"
+  },
+  "Brim Financial": {
+    "tier": "pass",
+    "reason": "Small Canadian credit-card fintech; unremarkable",
+    "flag": "",
+    "rated": "2026-11-26"
   },
   "Built": {
     "tier": "pass",
@@ -424,6 +442,12 @@
     "reason": "Industrial valve manufacturer; not a tech employer.",
     "flag": "",
     "rated": "2026-11-17"
+  },
+  "CodeRabbit": {
+    "tier": "solid",
+    "reason": "Well-funded AI code review startup, growing fast",
+    "flag": "",
+    "rated": "2026-11-26"
   },
   "Cognizant": {
     "tier": "pass",
@@ -605,6 +629,12 @@
     "flag": "",
     "rated": "2026-11-06"
   },
+  "EarthScope Consortium": {
+    "tier": "pass",
+    "reason": "NSF-funded geoscience nonprofit; modest pay",
+    "flag": "",
+    "rated": "2026-11-26"
+  },
   "Eaton": {
     "tier": "pass",
     "reason": "Industrial power-management company; non-tech pay",
@@ -676,6 +706,12 @@
     "reason": "Small Hanover, MD contractor",
     "flag": "likely intelligence-community contractor (Fort Meade area)",
     "rated": "2026-11-18"
+  },
+  "Faropoint": {
+    "tier": "pass",
+    "reason": "Real estate investment firm; not a tech employer",
+    "flag": "",
+    "rated": "2026-11-26"
   },
   "Fidelity National Information Services": {
     "tier": "pass",
@@ -790,6 +826,12 @@
     "reason": "EchoStar satellite internet unit; unremarkable pay.",
     "flag": "",
     "rated": "2026-11-17"
+  },
+  "Humana": {
+    "tier": "pass",
+    "reason": "Health insurer; non-tech corporate employer",
+    "flag": "",
+    "rated": "2026-11-26"
   },
   "Huntington Ingalls Industries": {
     "tier": "skip",
@@ -1259,6 +1301,18 @@
     "flag": "",
     "rated": "2026-11-07"
   },
+  "Parallel": {
+    "tier": "solid",
+    "reason": "Parag Agrawal's well-funded AI web-search API startup",
+    "flag": "",
+    "rated": "2026-11-26"
+  },
+  "Parallel Web Systems": {
+    "tier": "solid",
+    "reason": "Parag Agrawal's well-funded AI web-search API startup",
+    "flag": "",
+    "rated": "2026-11-26"
+  },
   "Paul Logistics": {
     "tier": "pass",
     "reason": "Logistics company, non-tech employer",
@@ -1480,6 +1534,12 @@
     "reason": "Government contractor hiring in Huntsville",
     "flag": "defense/government contractor",
     "rated": "2026-11-24"
+  },
+  "STC, an Arcfield Company": {
+    "tier": "skip",
+    "reason": "Arcfield subsidiary; defense/intelligence contractor",
+    "flag": "defense contractor",
+    "rated": "2026-11-26"
   },
   "STERIS": {
     "tier": "pass",
@@ -1841,6 +1901,12 @@
     "flag": "",
     "rated": "2026-11-04"
   },
+  "Vestwell": {
+    "tier": "solid",
+    "reason": "Retirement-savings fintech, similar to Human Interest",
+    "flag": "",
+    "rated": "2026-11-26"
+  },
   "Vitu": {
     "tier": "pass",
     "reason": "Small vehicle-registration software company",
@@ -1930,6 +1996,18 @@
     "reason": "Maryland intelligence-community contractor",
     "flag": "intelligence-community contractor",
     "rated": "2026-11-14"
+  },
+  "XPENG": {
+    "tier": "pass",
+    "reason": "Chinese EV maker's US office; less compelling",
+    "flag": "",
+    "rated": "2026-11-26"
+  },
+  "XPENG Motors": {
+    "tier": "pass",
+    "reason": "Chinese EV maker's US office; less compelling",
+    "flag": "",
+    "rated": "2026-11-26"
   },
   "Yale University": {
     "tier": "pass",
