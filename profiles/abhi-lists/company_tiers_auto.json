@@ -941,6 +941,12 @@
     "flag": "",
     "rated": "2026-11-12"
   },
+  "Jane Street": {
+    "tier": "strong",
+    "reason": "Top quant trading firm, exceptional pay",
+    "flag": "trades crypto; sued over Terra collapse",
+    "rated": "2026-11-27"
+  },
   "John Deere": {
     "tier": "pass",
     "reason": "Industrial manufacturer; average tech pay",
@@ -1517,6 +1523,12 @@
     "flag": "",
     "rated": "2026-11-13"
   },
+  "Runpod": {
+    "tier": "solid",
+    "reason": "Growing GPU cloud startup, decent pay",
+    "flag": "",
+    "rated": "2026-11-27"
+  },
   "S&C Electric Company": {
     "tier": "pass",
     "reason": "Electrical equipment manufacturer; non-tech employer",
@@ -1576,6 +1588,12 @@
     "reason": "Virginia government contractor that does defense work",
     "flag": "government/defense contractor",
     "rated": "2026-11-06"
+  },
+  "Scout AI": {
+    "tier": "skip",
+    "reason": "AI autonomy for military vehicles",
+    "flag": "defense (military autonomy)",
+    "rated": "2026-11-27"
   },
   "Secureframe": {
     "tier": "solid",
@@ -1697,6 +1715,12 @@
     "flag": "",
     "rated": "2026-11-10"
   },
+  "Synectic Solutions, Inc.": {
+    "tier": "skip",
+    "reason": "Contractor near Naval Surface Warfare Center Corona",
+    "flag": "defense contractor (Navy)",
+    "rated": "2026-11-27"
+  },
   "Synopsys Inc": {
     "tier": "strong",
     "reason": "EDA leader, peer of Cadence; well-paid",
@@ -1780,6 +1804,12 @@
     "reason": "IT consulting firm",
     "flag": "",
     "rated": "2026-10-30"
+  },
+  "TikTok USDS Joint Venture": {
+    "tier": "strong",
+    "reason": "TikTok US entity, well-paid big tech",
+    "flag": "TikTok data-privacy concerns; Oracle-led JV",
+    "rated": "2026-11-27"
   },
   "Tokenworks Inc": {
     "tier": "pass",
@@ -1900,6 +1930,12 @@
     "reason": "Large telecom with decent pay, like T-Mobile",
     "flag": "",
     "rated": "2026-11-04"
+  },
+  "VestweII": {
+    "tier": "solid",
+    "reason": "Vestwell, retirement fintech similar to Human Interest",
+    "flag": "",
+    "rated": "2026-11-27"
   },
   "Vestwell": {
     "tier": "solid",
