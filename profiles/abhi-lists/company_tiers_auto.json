@@ -389,6 +389,12 @@
     "flag": "",
     "rated": "2026-11-23"
   },
+  "Canfield Scientific": {
+    "tier": "pass",
+    "reason": "Niche medical/aesthetic imaging firm; modest pay, not creative",
+    "flag": "",
+    "rated": "2026-11-28"
+  },
   "Cantor Fitzgerald": {
     "tier": "solid",
     "reason": "Established financial-services firm, decent pay",
@@ -814,6 +820,12 @@
     "reason": "Health insurer, non-tech employer",
     "flag": "",
     "rated": "2026-11-06"
+  },
+  "HireHawk": {
+    "tier": "pass",
+    "reason": "Appears to be a staffing/recruiting intermediary",
+    "flag": "",
+    "rated": "2026-11-28"
   },
   "Honeywell Aerospace": {
     "tier": "skip",
@@ -1343,6 +1355,12 @@
     "flag": "defense contractor",
     "rated": "2026-11-21"
   },
+  "Premier Global Links LLC": {
+    "tier": "pass",
+    "reason": "Staffing/consulting body shop",
+    "flag": "",
+    "rated": "2026-11-28"
+  },
   "Principal": {
     "tier": "pass",
     "reason": "Insurance/retirement financial company",
@@ -1840,6 +1858,12 @@
     "reason": "Tolling/transportation systems vendor; unremarkable",
     "flag": "",
     "rated": "2026-11-21"
+  },
+  "Trinzic": {
+    "tier": "skip",
+    "reason": "Small contractor beside Wright-Patterson AFB",
+    "flag": "likely defense contractor (Beavercreek, OH near Wright-Patterson AFB)",
+    "rated": "2026-11-28"
   },
   "Tripoint Solutions": {
     "tier": "pass",
